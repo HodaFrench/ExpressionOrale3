@@ -20,6 +20,15 @@ const CATEGORIES = [
 // لیست جزوه‌ها
 const LESSONS = [
   {
+    file: "EO_trainer.html",
+    title: "تمرین ترجمه‌ی شفاهی — ۱۲۰ سؤال",
+    titleFr: "Entraînement à la traduction orale — 120 sujets (Tâche 3)",
+    category: "trainer",
+    score: null,
+    tags: ["C1", "فارسی ← فرانسه", "۱۲ موضوع", "تعاملی"],
+    badge: "🎯"
+  },
+  {
     file: "TRAINER_RELATIONS_DISTANCE.html",
     title: "تمرین ترجمه — روابط از راه دور",
     titleFr: "Entraînement à la traduction orale — Relations à distance",

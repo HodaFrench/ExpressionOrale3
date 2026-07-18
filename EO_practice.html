@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تمرین ترجمه — Expression Orale · TCF Avec Hoda</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#1a1a2e; --navy:#0f3460; --purple:#533483;
+    --line:#e2e2ee; --soft:#f6f6fb; --gray:#6b7280;
+    --fr:#1565c0; --fr-bg:#e9f2fd; --fr-bd:#bcd9f7; --amber:#e65100;
+  }
+  body{ font-family:'Tahoma',Arial,sans-serif; background:linear-gradient(135deg,#1a1a2e,#16213e); color:var(--ink); line-height:1.9; min-height:100vh; padding-bottom:60px; }
+  .navbar{ background:rgba(0,0,0,.5); padding:14px 18px; display:flex; align-items:center; justify-content:center; gap:18px; position:sticky; top:0; z-index:100; }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; }
+  .navbar a:hover{ color:#00d4ff; }
+  .navbar span{ color:#00d4ff; font-size:14px; }
+
+  .container{ max-width:1000px; margin:0 auto; padding:34px 18px; }
+  .header{ background:linear-gradient(135deg,var(--navy),var(--purple)); color:#fff; padding:32px 28px; border-radius:20px; margin-bottom:24px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45); }
+  .header .badge{ display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); font-size:12px; font-weight:700; padding:5px 14px; border-radius:20px; margin-bottom:14px; }
+  .header h1{ font-size:24px; font-weight:800; margin-bottom:12px; direction:ltr; line-height:1.35; }
+  .header .meta{ font-size:14px; opacity:.9; }
+
+  .card{ background:#fff; border-radius:18px; margin-bottom:22px; box-shadow:0 10px 30px rgba(0,0,0,.18); overflow:hidden; }
+  .card-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 20px; cursor:pointer; user-select:none; background:var(--navy); color:#fff; }
+  .card-head h2{ font-size:15px; font-weight:800; }
+  .card-head .tog{ font-size:13px; opacity:.7; transition:.2s; }
+  .raw .card-body{ padding:18px 22px; font-size:16px; line-height:2.05; color:#333; direction:rtl; text-align:right; border-top:4px solid var(--amber); }
+  .raw:not(.open) .card-body{ display:none; }
+  .raw.open .card-head .tog{ transform:rotate(180deg); }
+
+  .guide{ background:#fff; border-radius:16px; padding:18px 22px; margin-bottom:22px; border-right:6px solid var(--purple); box-shadow:0 8px 24px rgba(0,0,0,.15); font-size:15px; line-height:1.95; color:#333; }
+  .guide strong{ color:var(--purple); }
+  .guide .hint{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); font-size:13.5px; color:var(--gray); }
+
+  .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
+  .tbtn{ background:#fff; color:var(--ink); border:2px solid var(--line); padding:9px 18px; border-radius:24px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; transition:.2s; }
+  .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
+
+  .tr-para{ background:#fff; border-radius:16px; margin-bottom:18px; box-shadow:0 8px 24px rgba(0,0,0,.14); overflow:hidden; }
+  .tr-phead{ display:flex; align-items:center; justify-content:space-between; padding:11px 18px; background:var(--soft); border-bottom:1px solid var(--line); }
+  .tr-plabel{ font-size:13px; font-weight:800; color:#fff; padding:4px 12px; border-radius:8px; }
+  .lb-intro{ background:var(--amber); } .lb-arg1{ background:var(--fr); } .lb-arg2{ background:#2e7d32; }
+  .lb-arg3{ background:var(--purple); } .lb-arg4{ background:#00695c; } .lb-conc{ background:#b23c17; }
+  .tr-ptime{ font-size:12px; color:var(--gray); }
+
+  .tr-flow{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:flex-end; padding:18px; direction:ltr; }
+  .tr-seg{ display:inline-flex; flex-direction:column; align-items:flex-start; cursor:pointer; direction:ltr; }
+  .tr-fr{ display:block; background:var(--fr-bg); border:1px solid var(--fr-bd); color:var(--fr); font-weight:700; font-size:15px; padding:4px 9px; border-radius:7px; margin-bottom:4px; direction:ltr; text-align:left; white-space:nowrap; }
+  .tr-seg:not(.on) .tr-fr{ visibility:hidden; }
+  .tr-fa{ display:block; background:var(--soft); border:1px dashed var(--line); color:#222; font-size:14px; font-weight:600; padding:4px 9px; border-radius:7px; direction:rtl; text-align:left; line-height:1.7; }
+  .tr-seg:not(.on) .tr-fa{ border-color:#cdd3e6; background:#eef0f8; }
+  .tr-seg:hover .tr-fa{ border-color:var(--purple); color:var(--purple); }
+
+  .missing{ background:#fff; border-radius:16px; padding:40px 24px; text-align:center; color:var(--gray); font-size:16px; box-shadow:0 8px 24px rgba(0,0,0,.14); }
+  .footer{ text-align:center; color:rgba(255,255,255,.75); padding:30px 20px 6px; font-size:14px; }
+  .footer strong{ color:#fff; }
+  #top{ position:fixed; bottom:18px; left:18px; background:var(--navy); color:#fff; border:none; width:44px; height:44px; border-radius:12px; cursor:pointer; font-size:18px; box-shadow:0 6px 18px rgba(0,0,0,.4); display:none; }
+  #top.show{ display:block; }
+  @media(max-width:768px){ .header h1{ font-size:19px; } .tr-fr{ white-space:normal; } }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="EO_trainer.html">← همه‌ی تمرین‌ها</a>
+    <span>TCF Avec Hoda KHEDMATI</span>
+  </div>
+  <div class="container" id="root"></div>
+  <div class="footer"><p>👩‍🏫 <strong>TCF Avec Hoda KHEDMATI</strong> — تمرین ترجمه‌ی شفاهی</p></div>
+  <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="eo-data.js"></script>
+  <script src="eo-trainers.js"></script>
+  <script>
+    function qs(name){ return new URLSearchParams(location.search).get(name); }
+    const id = parseInt(qs('id'), 10);
+    const question = (typeof EO_QUESTIONS!=='undefined') ? EO_QUESTIONS.find(q=>q.id===id) : null;
+    const data = (typeof EO_TRAINERS!=='undefined') ? EO_TRAINERS[id] : null;
+    const root = document.getElementById('root');
+
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    if(!question){
+      root.innerHTML = `<div class="missing">❌ سؤالی با این شماره پیدا نشد.<br><a href="EO_trainer.html" style="color:#00d4ff;">بازگشت</a></div>`;
+    } else if(!data){
+      root.innerHTML = `
+        <div class="header"><div class="badge">🎯 تمرین ترجمه · #${id}</div>
+          <h1>${esc(question.q)}</h1>
+          <div class="meta">این تمرین هنوز ساخته نشده است.</div></div>
+        <div class="missing">⏳ این سؤال هنوز آماده نیست.<br><a href="EO_trainer.html" style="color:#0f3460;font-weight:700;">← بازگشت به لیست</a></div>`;
+    } else {
+      renderPractice();
+    }
+
+    function renderPractice(){
+      const parasHtml = data.paragraphs.map((p,pi)=>{
+        const segs = p.segments.map((s,si)=>
+          `<span class="tr-seg" data-p="${pi}" data-i="${si}"><span class="tr-fr">${esc(s.fr)}</span><span class="tr-fa">${esc(s.fa)}</span></span>`
+        ).join('');
+        return `<div class="tr-para"><div class="tr-phead"><span class="tr-plabel ${p.cls}">${esc(p.label)}</span><span class="tr-ptime">${esc(p.time||'')}</span></div><div class="tr-flow">${segs}</div></div>`;
+      }).join('');
+
+      root.innerHTML = `
+        <div class="header">
+          <div class="badge">🎯 تمرین ترجمه · #${id} · ${esc(data.level||'C1')}</div>
+          <h1>${esc(question.q)}</h1>
+          <div class="meta">${esc(data.position||'')} ${data.time?('· ⏱ '+esc(data.time)):''}</div>
+        </div>
+        ${data.rawFa ? `
+        <div class="card raw open" id="raw">
+          <div class="card-head" onclick="document.getElementById('raw').classList.toggle('open')">
+            <h2>📝 پاسخ فارسیِ من — متنِ خام</h2><span class="tog">▲</span>
+          </div>
+          <div class="card-body">${esc(data.rawFa)}</div>
+        </div>` : ''}
+        <div class="guide">
+          <strong>🎯 روشِ تمرین:</strong> فارسی را از چپ به راست دنبال کن و بلند به فرانسه بگو. هر جا گیر کردی، روی همان عبارتِ فارسی بزن تا فرانسه‌اش و عبارت‌های قبلش نمایش داده شود؛ دوباره بزن تا پنهان شود.
+          <div class="hint">فرانسه بالا، فارسیِ چپ‌چین دقیقاً زیرش. ترتیبِ فارسی عمداً از ساختارِ فرانسه پیروی می‌کند.</div>
+        </div>
+        <div class="toolbar">
+          <button class="tbtn" onclick="revealAll(true)">👁️ نمایش همه</button>
+          <button class="tbtn" onclick="revealAll(false)">🙈 مخفی کردن همه</button>
+        </div>
+        <div id="trainer">${parasHtml}</div>`;
+
+      const upto = data.paragraphs.map(()=>-1);
+      function apply(pi){
+        document.querySelectorAll(`.tr-seg[data-p="${pi}"]`).forEach(seg=>{
+          seg.classList.toggle('on', (+seg.dataset.i) <= upto[pi]);
+        });
+      }
+      document.querySelectorAll('.tr-seg').forEach(seg=>{
+        seg.addEventListener('click', ()=>{
+          const pi=+seg.dataset.p, i=+seg.dataset.i;
+          upto[pi] = (upto[pi] >= i) ? i-1 : i;
+          apply(pi);
+        });
+      });
+      window.revealAll = show => data.paragraphs.forEach((p,pi)=>{ upto[pi]=show?p.segments.length-1:-1; apply(pi); });
+    }
+
+    window.addEventListener('scroll', ()=> document.getElementById('top').classList.toggle('show', window.pageYOffset>320));
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تمرین ترجمه‌ی شفاهی — Expression Orale · TCF Avec Hoda</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#1a1a2e; --accent:#533483; --accent2:#0f3460;
+    --soft:#f4f4f8; --line:#e8e8ef; --muted:#8a8a99;
+  }
+  body{ font-family:'Tahoma',Arial,sans-serif; background:#fbfbfd; color:var(--ink); line-height:1.9; min-height:100vh; }
+  .topbar{ display:flex; align-items:center; justify-content:center; gap:12px; padding:20px; border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:100; }
+  .topbar .logo{ width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--accent2),var(--accent)); display:flex; align-items:center; justify-content:center; font-size:20px; }
+  .topbar h1{ font-size:18px; font-weight:800; }
+  .topbar span{ font-size:12px; color:var(--muted); }
+  .topbar a{ text-decoration:none; color:inherit; }
+
+  .hero{ text-align:center; padding:38px 22px 8px; }
+  .hero h2{ font-size:30px; font-weight:800; margin-bottom:10px;
+    background:linear-gradient(135deg,var(--accent2),var(--accent));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .hero .sub{ font-size:15px; color:#666; max-width:560px; margin:0 auto 8px; }
+  .hero .fr{ direction:ltr; font-family:Georgia,serif; font-style:italic; color:var(--muted); font-size:14px; }
+
+  /* progress */
+  .progress{ max-width:560px; margin:18px auto 8px; }
+  .progress .bar{ height:10px; background:var(--soft); border:1px solid var(--line); border-radius:99px; overflow:hidden; }
+  .progress .fill{ height:100%; width:0%; background:linear-gradient(90deg,var(--accent2),var(--accent)); transition:width .4s; }
+  .progress .lbl{ font-size:13px; color:var(--muted); margin-top:7px; }
+  .progress .lbl b{ color:var(--accent); font-size:15px; }
+
+  .search-box{ max-width:560px; margin:18px auto 8px; position:relative; }
+  .search-box input{ width:100%; padding:15px 50px 15px 20px; font-size:16px; border:2px solid var(--line); border-radius:15px; font-family:inherit; }
+  .search-box input:focus{ outline:none; border-color:var(--accent); box-shadow:0 8px 26px rgba(83,52,131,.12); }
+  .search-box::before{ content:"🔍"; position:absolute; left:18px; top:50%; transform:translateY(-50%); opacity:.5; }
+
+  .tabs{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; max-width:920px; margin:14px auto 6px; padding:0 16px; }
+  .tab{ background:#fff; color:#555; border:2px solid var(--line); padding:8px 15px; border-radius:22px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; transition:.2s; }
+  .tab:hover{ border-color:var(--accent); color:var(--accent); }
+  .tab.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .tab .n{ opacity:.6; font-size:11px; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:16px 20px 80px; }
+  .count{ text-align:center; color:var(--muted); font-size:13px; margin:10px 0 20px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+
+  .qcard{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:0; overflow:hidden; display:flex; flex-direction:column; transition:.2s; text-decoration:none; color:inherit; position:relative; }
+  .qcard.done:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(26,26,46,.10); border-color:transparent; }
+  .qcard .strip{ height:6px; }
+  .qcard .body{ padding:16px 18px; display:flex; flex-direction:column; height:100%; }
+  .qcard .top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .qcard .num{ font-family:'Courier New',monospace; font-size:12px; font-weight:800; color:var(--muted); }
+  .qcard .cat{ font-size:11px; font-weight:700; color:#fff; padding:3px 10px; border-radius:12px; }
+  .qcard .q{ direction:ltr; text-align:left; font-family:Georgia,serif; font-size:15px; line-height:1.5; color:var(--ink); flex:1; }
+  .qcard .status{ margin-top:14px; }
+  .chip{ display:inline-block; font-size:12px; font-weight:700; padding:5px 12px; border-radius:10px; }
+  .chip.todo{ background:var(--soft); color:var(--muted); }
+  .chip.ready{ background:#e8f5e9; color:#2e7d32; }
+  .qcard.done .go{ position:absolute; bottom:14px; left:16px; color:var(--accent); font-size:15px; opacity:0; transition:.2s; }
+  .qcard.done:hover .go{ opacity:1; }
+  .qcard:not(.done){ opacity:.72; }
+
+  .empty{ grid-column:1/-1; text-align:center; color:#aaa; padding:50px; font-size:17px; }
+  .footer{ text-align:center; padding:34px 20px; border-top:1px solid var(--line); color:#aaa; font-size:13px; }
+  .footer strong{ color:#666; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+      <div class="logo">🎯</div>
+      <div><h1>تمرین ترجمه‌ی شفاهی</h1><span>Expression Orale · Tâche 3 · فارسی ← فرانسه</span></div>
+    </a>
+  </div>
+
+  <div class="hero">
+    <h2>تمرینِ ترجمه‌ی شفاهی</h2>
+    <p class="sub">فارسی را از چپ به راست بخوان و بلند به فرانسه بگو · هر جا گیر کردی روی عبارت بزن.</p>
+    <p class="fr">Entraînement à la traduction orale — du persan vers le français</p>
+
+    <div class="progress">
+      <div class="bar"><div class="fill" id="fill"></div></div>
+      <div class="lbl"><b id="doneN">0</b> از <span id="totN">120</span> تمرین آماده است</div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="جستجو در سؤال‌ها…" oninput="render()">
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="wrap">
+    <div class="count" id="count"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="footer">
+    <p>👩‍🏫 <strong>TCF Avec Hoda KHEDMATI</strong> — Expression Orale · Tâche 3</p>
+    <p style="margin-top:5px;font-size:11px;">© 2025</p>
+  </div>
+
+  <script src="eo-data.js"></script>
+  <script src="eo-trainers.js"></script>
+  <script>
+    let activeTheme = 'all';
+    const isDone = q => (typeof EO_TRAINERS !== 'undefined') && !!EO_TRAINERS[q.id];
+    const theme = id => EO_THEMES.find(t => t.id === id) || { fa:id, fr:id, color:'#999' };
+
+    function buildTabs(){
+      let html = `<button class="tab ${activeTheme==='all'?'active':''}" onclick="setTheme('all')">🌟 همه <span class="n">(${EO_QUESTIONS.length})</span></button>`;
+      EO_THEMES.forEach(t=>{
+        const n = EO_QUESTIONS.filter(q=>q.theme===t.id).length;
+        if(!n) return;
+        html += `<button class="tab ${activeTheme===t.id?'active':''}" onclick="setTheme('${t.id}')">${t.fa} <span class="n">(${n})</span></button>`;
+      });
+      document.getElementById('tabs').innerHTML = html;
+    }
+    function setTheme(t){ activeTheme=t; buildTabs(); render(); }
+
+    function render(){
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      const list = EO_QUESTIONS.filter(item=>{
+        const okTheme = activeTheme==='all' || item.theme===activeTheme;
+        const okSearch = !q || item.q.toLowerCase().includes(q) || String(item.id)===q;
+        return okTheme && okSearch;
+      });
+      document.getElementById('count').textContent = list.length + ' سؤال';
+      const grid = document.getElementById('grid');
+      if(!list.length){ grid.innerHTML = `<div class="empty">😕 چیزی پیدا نشد</div>`; return; }
+      grid.innerHTML = list.map(item=>{
+        const t = theme(item.theme);
+        const done = isDone(item);
+        const inner = `
+          <div class="strip" style="background:${t.color}"></div>
+          <div class="body">
+            <div class="top">
+              <span class="num">#${item.id}</span>
+              <span class="cat" style="background:${t.color}">${t.fa}</span>
+            </div>
+            <div class="q">${item.q}</div>
+            <div class="status"><span class="chip ${done?'ready':'todo'}">${done?'✓ آماده — تمرین کن':'در حال ساخت'}</span></div>
+            ${done?'<span class="go">←</span>':''}
+          </div>`;
+        return done
+          ? `<a class="qcard done" href="EO_practice.html?id=${item.id}">${inner}</a>`
+          : `<div class="qcard">${inner}</div>`;
+      }).join('');
+    }
+
+    function updateProgress(){
+      const done = EO_QUESTIONS.filter(isDone).length;
+      document.getElementById('doneN').textContent = done;
+      document.getElementById('totN').textContent = EO_QUESTIONS.length;
+      document.getElementById('fill').style.width = (done/EO_QUESTIONS.length*100).toFixed(1) + '%';
+    }
+
+    buildTabs(); render(); updateProgress();
+  </script>
+</body>
+</html>
