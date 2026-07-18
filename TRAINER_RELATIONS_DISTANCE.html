@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تمرین ترجمه — Relations à Distance | TCF Avec Hoda</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#1a1a2e; --navy:#0f3460; --purple:#533483;
+    --line:#e2e2ee; --soft:#f6f6fb; --gray:#6b7280;
+    --fr:#1565c0; --fr-bg:#e9f2fd; --fr-bd:#bcd9f7;
+    --amber:#e65100; --amber-bg:#fff3e0;
+  }
+  body{
+    font-family:'Tahoma',Arial,sans-serif;
+    background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);
+    color:var(--ink); line-height:1.9; min-height:100vh; padding-bottom:60px;
+  }
+  .navbar{
+    background:rgba(0,0,0,.5); padding:14px 18px; text-align:center;
+    position:sticky; top:0; z-index:100; display:flex; align-items:center;
+    justify-content:center; gap:18px;
+  }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; }
+  .navbar a:hover{ color:#00d4ff; }
+  .navbar span{ color:#00d4ff; font-size:14px; }
+
+  .container{ max-width:1000px; margin:0 auto; padding:34px 18px; }
+
+  .header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--purple) 100%);
+    color:#fff; padding:34px 30px; border-radius:20px; margin-bottom:26px;
+    text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45);
+  }
+  .header .badge{
+    display:inline-block; background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25); font-size:12px; font-weight:700;
+    letter-spacing:.04em; padding:5px 14px; border-radius:20px; margin-bottom:16px;
+  }
+  .header h1{ font-size:30px; font-weight:800; margin-bottom:12px; direction:ltr; }
+  .header p.fa{ font-size:16px; opacity:.92; }
+  .header .meta{ margin-top:16px; font-size:14px; opacity:.85; }
+
+  /* ── generic white card ── */
+  .card{
+    background:#fff; border-radius:18px; margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18); overflow:hidden;
+  }
+  .card-head{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:14px 20px; cursor:pointer; user-select:none;
+    background:var(--navy); color:#fff;
+  }
+  .card-head h2{ font-size:16px; font-weight:800; }
+  .card-head .tog{ font-size:13px; opacity:.7; }
+
+  /* ── raw Persian answer ── */
+  .raw .card-body{
+    padding:18px 22px; font-size:16px; line-height:2.05; color:#333;
+    direction:rtl; text-align:right; border-top:4px solid var(--amber);
+  }
+  .raw:not(.open) .card-body{ display:none; }
+  .raw.open .card-head .tog{ transform:rotate(180deg); }
+
+  /* ── guide ── */
+  .guide{
+    background:#fff; border-radius:16px; padding:18px 22px; margin-bottom:22px;
+    border-right:6px solid var(--purple); box-shadow:0 8px 24px rgba(0,0,0,.15);
+    font-size:15px; line-height:1.95; color:#333;
+  }
+  .guide strong{ color:var(--purple); }
+  .guide .hint{
+    margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);
+    font-size:13.5px; color:var(--gray);
+  }
+
+  /* ── toolbar ── */
+  .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
+  .tbtn{
+    background:#fff; color:var(--ink); border:2px solid var(--line);
+    padding:9px 18px; border-radius:24px; font-family:inherit; font-size:14px;
+    font-weight:700; cursor:pointer; transition:.2s;
+  }
+  .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
+
+  /* ── trainer paragraph ── */
+  .tr-para{ background:#fff; border-radius:16px; margin-bottom:18px;
+            box-shadow:0 8px 24px rgba(0,0,0,.14); overflow:hidden; }
+  .tr-phead{ display:flex; align-items:center; justify-content:space-between;
+             padding:11px 18px; background:var(--soft); border-bottom:1px solid var(--line); }
+  .tr-plabel{ font-size:13px; font-weight:800; letter-spacing:.03em; color:#fff;
+              padding:4px 12px; border-radius:8px; }
+  .lb-intro{ background:var(--amber); }
+  .lb-arg1{ background:var(--fr); }
+  .lb-arg2{ background:#2e7d32; }
+  .lb-arg3{ background:var(--purple); }
+  .lb-arg4{ background:#00695c; }
+  .lb-conc{ background:#b23c17; }
+  .tr-ptime{ font-size:12px; color:var(--gray); direction:rtl; }
+
+  .tr-flow{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:flex-end;
+            padding:18px; direction:ltr; }   /* segments flow left→right in French order */
+
+  /* each aligned pair: French on top, Persian directly below, both left-aligned (LTR flow) */
+  .tr-seg{ display:inline-flex; flex-direction:column; align-items:flex-start;
+           cursor:pointer; direction:ltr; }
+  .tr-fr{
+    display:block; background:var(--fr-bg); border:1px solid var(--fr-bd);
+    color:var(--fr); font-weight:700; font-size:15px; padding:4px 9px;
+    border-radius:7px; margin-bottom:4px; direction:ltr; text-align:left;
+    white-space:nowrap;
+  }
+  .tr-seg:not(.on) .tr-fr{ visibility:hidden; }        /* keep the slot, hide text */
+  .tr-fa{
+    display:block; background:var(--soft); border:1px dashed var(--line);
+    color:#222; font-size:14px; font-weight:600; padding:4px 9px; border-radius:7px;
+    direction:rtl; text-align:left; line-height:1.7;
+  }
+  .tr-seg:not(.on) .tr-fa{ border-color:#cdd3e6; background:#eef0f8; }
+  .tr-seg:hover .tr-fa{ border-color:var(--purple); color:var(--purple); }
+
+  .footer{ text-align:center; color:rgba(255,255,255,.75); padding:30px 20px 6px;
+           font-size:14px; }
+  .footer strong{ color:#fff; }
+
+  #top{ position:fixed; bottom:18px; left:18px; background:var(--navy); color:#fff;
+        border:none; width:44px; height:44px; border-radius:12px; cursor:pointer;
+        font-size:18px; box-shadow:0 6px 18px rgba(0,0,0,.4); display:none; }
+  #top.show{ display:block; }
+
+  @media(max-width:768px){
+    .header h1{ font-size:22px; }
+    .tr-fr{ white-space:normal; }
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">← بازگشت به خانه</a>
+    <span>TCF Avec Hoda KHEDMATI</span>
+  </div>
+
+  <div class="container">
+
+    <div class="header">
+      <div class="badge">🎯 تمرین ترجمه‌ی شفاهی · فارسی ← فرانسه</div>
+      <h1>Les relations à distance vs les relations directes</h1>
+      <p class="fa">آیا روابط از راه دور می‌توانند به اندازه روابط حضوری محکم باشند؟</p>
+      <div class="meta">موضع: NON — مخالف · سطح C1 · ⏱ ~4:30 · Intro + ۴ استدلال + نتیجه</div>
+    </div>
+
+    <!-- RAW PERSIAN ANSWER -->
+    <div class="card raw open" id="raw">
+      <div class="card-head" onclick="document.getElementById('raw').classList.toggle('open')">
+        <h2>📝 پاسخ فارسیِ من — متنِ خام</h2>
+        <span class="tog">▲</span>
+      </div>
+      <div class="card-body">
+        به نظر من روابط از راه دور نمی‌توانند به اندازه‌ی روابط حضوری محکم باشند. درست است که اینترنت و شبکه‌های اجتماعی ارتباط را خیلی راحت کرده‌اند، ولی هیچ‌وقت جای تماس واقعی و دیدنِ آدم‌ها را نمی‌گیرند. وقتی از راه دور با کسی در ارتباطی، نمی‌توانی چهره و احساسات واقعی‌اش را ببینی و خیلی وقت‌ها پیام‌ها باعث سوءتفاهم می‌شوند. از طرف دیگر، این لحظه‌های مشترک — بیرون رفتن، سفر، خندیدن با هم — است که رابطه را قوی می‌کند و این‌ها از راه دور تقریباً غیرممکن است. در نهایت هم نگه داشتنِ یک رابطه‌ی از راه دور انرژی و صبرِ زیادی می‌خواهد و آدم خسته می‌شود. برای همین فکر می‌کنم تماس انسانی و حضور فیزیکی برای یک رابطه‌ی واقعی ضروری است.
+      </div>
+    </div>
+
+    <!-- GUIDE -->
+    <div class="guide">
+      <strong>🎯 روشِ تمرین:</strong> فارسی را از چپ به راست دنبال کن و بلند به فرانسه بگو.
+      هر جا گیر کردی، روی همان عبارتِ فارسی بزن تا فرانسه‌ی آن و عبارت‌های قبلش نمایش داده شود؛
+      دوباره بزن تا پنهان شود.
+      <div class="hint">فرانسه بالا، ترجمه‌ی فارسی دقیقاً زیرِ آن (چپ‌چین، هم‌ترازِ فرانسه). ترتیبِ فارسی عمداً از ساختارِ فرانسه پیروی می‌کند تا «عبارتِ بعدی» را نشانت دهد.</div>
+    </div>
+
+    <div class="toolbar">
+      <button class="tbtn" onclick="revealAll(true)">👁️ نمایش همه</button>
+      <button class="tbtn" onclick="revealAll(false)">🙈 مخفی کردن همه</button>
+    </div>
+
+    <div id="trainer"></div>
+
+  </div>
+
+  <div class="footer">
+    <p>👩‍🏫 <strong>TCF Avec Hoda KHEDMATI</strong> — تمرین ترجمه‌ی شفاهی</p>
+    <p style="margin-top:6px;font-size:12px;opacity:.7;">© 2025</p>
+  </div>
+
+  <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const TRAINER_DATA = { paragraphs:[
+  { label:'INTRODUCTION', cls:'lb-intro', time:'⏱ ~40 ثانیه', segments:[
+    {fr:"De nos jours,", fa:"امروزه،"},
+    {fr:"Internet joue un rôle essentiel", fa:"اینترنت نقشی اساسی ایفا می‌کند"},
+    {fr:"dans notre vie quotidienne.", fa:"در زندگی روزمره‌ی ما."},
+    {fr:"Grâce aux réseaux sociaux,", fa:"به‌لطفِ شبکه‌های اجتماعی،"},
+    {fr:"aux appels vidéo", fa:"تماس‌های تصویری"},
+    {fr:"et aux applications de messagerie,", fa:"و اپلیکیشن‌های پیام‌رسان،"},
+    {fr:"il est devenu très facile", fa:"بسیار آسان شده است"},
+    {fr:"de communiquer avec des personnes", fa:"ارتباط برقرار کردن با افرادی"},
+    {fr:"qui vivent loin de nous.", fa:"که دور از ما زندگی می‌کنند."},
+    {fr:"Ainsi, certaines personnes pensent", fa:"بنابراین، برخی افراد فکر می‌کنند"},
+    {fr:"que les relations à distance", fa:"که روابطِ از راه دور"},
+    {fr:"peuvent être aussi solides", fa:"می‌توانند به همان اندازه محکم باشند"},
+    {fr:"que les relations directes.", fa:"مثلِ روابطِ حضوری."},
+    {fr:"Cependant, même si ces outils", fa:"با این حال، حتی اگر این ابزارها"},
+    {fr:"facilitent les échanges,", fa:"تبادلات را آسان کنند،"},
+    {fr:"je ne partage pas cet avis.", fa:"من با این نظر موافق نیستم."},
+    {fr:"Selon moi,", fa:"به نظرِ من،"},
+    {fr:"rien ne peut remplacer", fa:"هیچ چیز نمی‌تواند جایگزینِ … شود"},
+    {fr:"le contact réel", fa:"تماسِ واقعی"},
+    {fr:"et la présence physique", fa:"و حضورِ فیزیکی"},
+    {fr:"dans une relation.", fa:"در یک رابطه."}
+  ]},
+  { label:'ARGUMENT 1 — contact humain', cls:'lb-arg1', time:'⏱ ~55 ثانیه', segments:[
+    {fr:"Tout d'abord,", fa:"اول از همه،"},
+    {fr:"les relations à distance", fa:"روابطِ از راه دور"},
+    {fr:"manquent de contact humain,", fa:"فاقدِ تماسِ انسانی هستند،"},
+    {fr:"ce qui est pourtant essentiel", fa:"چیزی که با این حال ضروری است"},
+    {fr:"pour créer des liens solides.", fa:"برای ایجادِ پیوندهای محکم."},
+    {fr:"En effet,", fa:"در واقع،"},
+    {fr:"dans une relation directe,", fa:"در یک رابطه‌ی حضوری،"},
+    {fr:"on peut voir les expressions du visage,", fa:"می‌توان حالاتِ چهره را دید،"},
+    {fr:"entendre le ton de la voix", fa:"لحنِ صدا را شنید"},
+    {fr:"et ressentir les émotions", fa:"و احساسات را حس کرد"},
+    {fr:"de l'autre personne.", fa:"ـِ طرفِ مقابل."},
+    {fr:"Ces éléments permettent", fa:"این عناصر امکان می‌دهند"},
+    {fr:"de mieux se comprendre", fa:"که یکدیگر را بهتر درک کنیم"},
+    {fr:"et de renforcer la relation.", fa:"و رابطه را تقویت کنیم."},
+    {fr:"En revanche,", fa:"در مقابل،"},
+    {fr:"derrière un écran,", fa:"پشتِ یک صفحه‌نمایش،"},
+    {fr:"ces aspects sont souvent absents ou limités,", fa:"این جنبه‌ها اغلب غایب یا محدودند،"},
+    {fr:"ce qui rend la relation moins profonde.", fa:"چیزی که رابطه را کم‌عمق‌تر می‌کند."}
+  ]},
+  { label:'ARGUMENT 2 — malentendus', cls:'lb-arg2', time:'⏱ ~55 ثانیه', segments:[
+    {fr:"Ensuite,", fa:"سپس،"},
+    {fr:"la communication à distance", fa:"ارتباطِ از راه دور"},
+    {fr:"peut facilement provoquer des malentendus.", fa:"به‌راحتی می‌تواند سوءتفاهم ایجاد کند."},
+    {fr:"Par exemple,", fa:"برای مثال،"},
+    {fr:"un simple message", fa:"یک پیامِ ساده"},
+    {fr:"peut être mal interprété,", fa:"می‌تواند بد تعبیر شود،"},
+    {fr:"car il n'y a ni intonation", fa:"چون نه لحنِ صدا هست"},
+    {fr:"ni langage corporel", fa:"و نه زبانِ بدن"},
+    {fr:"pour clarifier le sens.", fa:"برای روشن کردنِ معنا."},
+    {fr:"Par conséquent,", fa:"در نتیجه،"},
+    {fr:"cela peut créer des tensions", fa:"این می‌تواند تنش ایجاد کند"},
+    {fr:"ou des conflits inutiles", fa:"یا درگیری‌های بیهوده"},
+    {fr:"entre les personnes.", fa:"میانِ افراد."},
+    {fr:"À l'inverse,", fa:"برعکس،"},
+    {fr:"dans une discussion en face à face,", fa:"در یک گفت‌وگوی رو در رو،"},
+    {fr:"il est plus facile", fa:"آسان‌تر است"},
+    {fr:"d'expliquer ses intentions", fa:"که مقاصدِ خود را توضیح دهیم"},
+    {fr:"et d'éviter les incompréhensions.", fa:"و از سوءتفاهم‌ها جلوگیری کنیم."}
+  ]},
+  { label:'ARGUMENT 3 — moments partagés', cls:'lb-arg3', time:'⏱ ~55 ثانیه', segments:[
+    {fr:"De plus,", fa:"علاوه بر این،"},
+    {fr:"la distance empêche", fa:"فاصله مانع می‌شود"},
+    {fr:"de partager des moments de vie importants.", fa:"از سهیم شدن در لحظاتِ مهمِ زندگی."},
+    {fr:"Dans une relation directe,", fa:"در یک رابطه‌ی حضوری،"},
+    {fr:"les personnes peuvent se voir régulièrement,", fa:"افراد می‌توانند مرتب یکدیگر را ببینند،"},
+    {fr:"sortir ensemble,", fa:"با هم بیرون بروند،"},
+    {fr:"rire,", fa:"بخندند،"},
+    {fr:"voyager", fa:"سفر کنند"},
+    {fr:"ou simplement passer du temps ensemble.", fa:"یا فقط با هم وقت بگذرانند."},
+    {fr:"Ces moments renforcent la complicité", fa:"این لحظات صمیمیت را تقویت می‌کنند"},
+    {fr:"et créent des souvenirs communs.", fa:"و خاطراتِ مشترک می‌سازند."},
+    {fr:"En revanche,", fa:"در مقابل،"},
+    {fr:"dans une relation à distance,", fa:"در یک رابطه‌ی از راه دور،"},
+    {fr:"ces expériences sont rares,", fa:"این تجربه‌ها نادرند،"},
+    {fr:"voire impossibles,", fa:"یا حتی غیرممکن،"},
+    {fr:"ce qui peut affaiblir progressivement le lien.", fa:"چیزی که می‌تواند به‌تدریج پیوند را تضعیف کند."}
+  ]},
+  { label:'ARGUMENT 4 — efforts & épuisement', cls:'lb-arg4', time:'⏱ ~55 ثانیه', segments:[
+    {fr:"Enfin,", fa:"در نهایت،"},
+    {fr:"il est important de souligner", fa:"مهم است که تأکید کنیم"},
+    {fr:"que les relations à distance demandent", fa:"که روابطِ از راه دور نیازمندِ … هستند"},
+    {fr:"beaucoup d'efforts,", fa:"تلاشِ زیاد،"},
+    {fr:"de patience", fa:"صبر"},
+    {fr:"et de confiance.", fa:"و اعتماد."},
+    {fr:"En effet,", fa:"در واقع،"},
+    {fr:"il faut constamment faire des efforts", fa:"باید دائماً تلاش کرد"},
+    {fr:"pour maintenir le contact,", fa:"برای حفظِ ارتباط،"},
+    {fr:"organiser des appels", fa:"هماهنگ کردنِ تماس‌ها"},
+    {fr:"et surmonter le manque de présence.", fa:"و غلبه بر نبودِ حضور."},
+    {fr:"Avec le temps,", fa:"با گذرِ زمان،"},
+    {fr:"cela peut devenir difficile et fatigant", fa:"این می‌تواند دشوار و خسته‌کننده شود"},
+    {fr:"pour certaines personnes.", fa:"برای برخی افراد."},
+    {fr:"Ainsi,", fa:"بدین ترتیب،"},
+    {fr:"de nombreuses relations à distance", fa:"بسیاری از روابطِ از راه دور"},
+    {fr:"finissent par se détériorer ou disparaître.", fa:"سرانجام تباه می‌شوند یا از بین می‌روند."}
+  ]},
+  { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~30 ثانیه', segments:[
+    {fr:"En conclusion,", fa:"در پایان،"},
+    {fr:"même si Internet offre", fa:"حتی اگر اینترنت ارائه دهد"},
+    {fr:"de nombreuses possibilités", fa:"امکاناتِ فراوانی"},
+    {fr:"pour rester en contact,", fa:"برای در تماس ماندن،"},
+    {fr:"les relations à distance", fa:"روابطِ از راه دور"},
+    {fr:"ne peuvent pas être aussi solides", fa:"نمی‌توانند به همان اندازه محکم باشند"},
+    {fr:"que les relations directes.", fa:"مثلِ روابطِ حضوری."},
+    {fr:"Le contact humain,", fa:"تماسِ انسانی،"},
+    {fr:"les échanges réels", fa:"تبادلاتِ واقعی"},
+    {fr:"et les moments partagés", fa:"و لحظاتِ مشترک"},
+    {fr:"restent indispensables", fa:"همچنان ضروری‌اند"},
+    {fr:"pour construire une relation", fa:"برای ساختنِ رابطه‌ای"},
+    {fr:"sincère, stable et durable.", fa:"صادقانه، باثبات و پایدار."}
+  ]}
+]};
+
+function renderTrainer(root, data){
+  root.innerHTML = data.paragraphs.map((p,pi)=>{
+    const segs = p.segments.map((s,si)=>
+      `<span class="tr-seg" data-p="${pi}" data-i="${si}">
+         <span class="tr-fr">${s.fr}</span>
+         <span class="tr-fa">${s.fa}</span>
+       </span>`).join("");
+    return `<div class="tr-para" data-p="${pi}">
+      <div class="tr-phead">
+        <span class="tr-plabel ${p.cls}">${p.label}</span>
+        <span class="tr-ptime">${p.time}</span>
+      </div>
+      <div class="tr-flow">${segs}</div>
+    </div>`;
+  }).join("");
+
+  // per-paragraph reveal threshold (-1 = none)
+  const upto = data.paragraphs.map(()=>-1);
+
+  function apply(pi){
+    root.querySelectorAll(`.tr-seg[data-p="${pi}"]`).forEach(seg=>{
+      const i = +seg.dataset.i;
+      seg.classList.toggle("on", i <= upto[pi]);
+    });
+  }
+  root.querySelectorAll(".tr-seg").forEach(seg=>{
+    seg.addEventListener("click", ()=>{
+      const pi = +seg.dataset.p, i = +seg.dataset.i;
+      upto[pi] = (upto[pi] >= i) ? i-1 : i;   // toggle cumulative reveal
+      apply(pi);
+    });
+  });
+
+  window.revealAll = function(show){
+    data.paragraphs.forEach((p,pi)=>{ upto[pi] = show ? p.segments.length-1 : -1; apply(pi); });
+  };
+}
+
+renderTrainer(document.getElementById("trainer"), TRAINER_DATA);
+window.addEventListener("scroll", ()=>{
+  document.getElementById("top").classList.toggle("show", window.pageYOffset>320);
+});
+</script>
+</body>
+</html>

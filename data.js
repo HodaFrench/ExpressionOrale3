@@ -7,6 +7,7 @@
 // دسته‌بندی‌ها — برای اضافه کردن دسته‌ی جدید (ویدیو، آزمون، وبلاگ...) فقط اینجا یک خط اضافه کن
 const CATEGORIES = [
   { id: "oral",    label: "🗣️ بیان شفاهی (Tâche 3)", color: "#2196f3" },
+  { id: "trainer", label: "🎯 تمرین ترجمه",           color: "#9c27b0" },
   { id: "grammar", label: "📐 گرامر",                color: "#4caf50" },
   { id: "vocab",   label: "📚 لغت و واژگان",          color: "#ff9f43" },
   { id: "exercise",label: "✍️ تمرین",                color: "#e91e63" },
@@ -18,6 +19,15 @@ const CATEGORIES = [
 
 // لیست جزوه‌ها
 const LESSONS = [
+  {
+    file: "TRAINER_RELATIONS_DISTANCE.html",
+    title: "تمرین ترجمه — روابط از راه دور",
+    titleFr: "Entraînement à la traduction orale — Relations à distance",
+    category: "trainer",
+    score: null,
+    tags: ["C1", "فارسی ← فرانسه", "تعاملی"],
+    badge: "🎯"
+  },
   {
     file: "SUJET1_AIDE_PERSONNES.html",
     title: "کمک به افراد در وضعیت دشوار",
