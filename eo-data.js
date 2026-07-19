@@ -23,7 +23,7 @@ const EO_THEMES = [
 const EO_QUESTIONS = [
   { id:1,  theme:'travail',      done:true,  q:"Faire des études permet de réussir sa carrière professionnelle. Qu’en pensez-vous ?" },
   { id:2,  theme:'immigration',  done:true,  q:"Quel est l’intérêt d’avoir une expérience professionnelle ou universitaire à l’étranger ?" },
-  { id:3,  theme:'medias',       done:false, q:"Selon vous, quel rôle joue la télévision dans l’éducation des enfants ?" },
+  { id:3,  theme:'medias',       done:true,  q:"Selon vous, quel rôle joue la télévision dans l’éducation des enfants ?" },
   { id:4,  theme:'etudes',       done:false, q:"Pensez-vous que l’autorité soit indispensable dans l’éducation d’un enfant ? Pourquoi ?" },
   { id:5,  theme:'immigration',  done:false, q:"Est-ce que vous pensez qu'il est difficile de vivre dans un pays étranger ? Pourquoi ?" },
   { id:6,  theme:'immigration',  done:false, q:"D’après vous, vivre à l’étranger a-t-il plus d’avantages ou d’inconvénients ? Pourquoi ?" },

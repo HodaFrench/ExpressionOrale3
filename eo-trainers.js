@@ -6,6 +6,127 @@
 
 const EO_TRAINERS = {
 
+  3: {
+    level:'C1', time:'~4:20', position:'موضع: مثبت و مشروط — تلویزیون پنجره‌ی اولِ کودک به جهان است',
+    rawFa: "تحولِ ابزارهای رسانه‌ای در سال‌های اخیر هر روز سریع‌تر از قبل و به‌صورتِ تصاعدی رشد کرده و نقشِ تلویزیون در یادگیریِ نسلِ جدید را متأثر کرده است. با وجودِ اینکه من هم در بازه‌ای متفاوت به این موضوع نگاه می‌کردم، اما الان باور دارم که تلویزیون هنوز اولین نقطه‌ی اتصالِ فرزندان در خانواده با محیطِ فراتر از خانواده بوده و شناختِ بیشتری در جنبه‌های انسانی به افراد می‌دهد، علی‌رغمِ کاهشِ چشمگیرِ سهمش در زندگیِ روزمره‌ی خانواده‌ها. برای شروع باید گفت که اولین نقطه‌ی اطلاعِ جدیِ کودکان درباره‌ی جهانِ پیرامون که در فاصله‌ی جغرافیاییِ زیادی با ایشان است تلویزیون بوده و هست. در واقع این تلویزیون است که با داشتنِ کانال‌های متنوع از نقاطِ مختلفِ جهان اجازه می‌دهد فرزندان مرزهای ذهنی خود را فراتر از خانواده و اقوام و شهرشان ببرند. برای مثال مستندهایی که شبکه‌های خانوادگی از زندگیِ جوامع در کشورهای مختلف از هند تا کانادا نشان می‌دهند موجب می‌شود فضای ذهنیِ کودکان بزرگ‌تر شود؛ و آنچه اهمیت دارد چگونگیِ جهت‌دهی به سؤال‌های کنجکاوانه‌ی ناشی از همین شناخت‌های اولیه است. مضاف بر این، کاراکترهای شخصیتیِ تلویزیون درکِ کودکان از تکثرِ شخصیتیِ موجود در دنیا را افزایش می‌دهد؛ کودکان برای آموختنِ مسائلِ انسانی باید به‌صورتِ تنظیم‌شده در معرضِ مشاهده‌ی رفتار و سبکِ زندگیِ متنوع باشند و تلویزیون این را به‌خوبی محقق می‌کند. برای مثال کودکی که همراهِ خانواده سریال‌های خانوادگی مثلِ This Is Us را می‌بیند متوجه می‌شود که چطور داستان‌های زندگیِ افراد می‌توانند متفاوت و در عینِ حال درست باشند. موردی که در صدرِ اولویت قرار دارد این است که تربیتِ کودکان به‌گونه‌ای باشد که از معرضِ محتواهای غیراستاندارد که بدآموزی دارند دور باشند. البته نمی‌توان کاملاً انکار کرد که ابزارهای اخیرِ فناورانه سهمِ بلامنازعِ تلویزیون از سبدِ محتوای خانواده را تصاحب کرده‌اند؛ به معنای دیگر با افزایشِ آن‌اسکرین‌تایم روی گوشی‌ها، خانواده‌ها این روزها کمتر تلویزیون تماشا می‌کنند. اگرچه باور دارم که همین الان شبکه‌های تلویزیونی پخشِ آنلاین روی سایت‌ها را هم راه انداخته‌اند و همین موجب می‌شود هنوز اثرِ بسیار بالایی داشته باشند، اگرچه تلویزیون بازتعریف شده است.",
+    paragraphs:[
+
+      { label:'INTRODUCTION', cls:'lb-intro', time:'⏱ ~40 ثانیه', segments:[
+        {fr:"Ces dernières années,", fa:"این سال‌های اخیر،"},
+        {fr:"les outils médiatiques évoluent", fa:"ابزارهای رسانه‌ای پیش می‌روند"},
+        {fr:"à un rythme de plus en plus rapide,", fa:"با آهنگی هرچه سریع‌تر،"},
+        {fr:"et cela a beaucoup transformé", fa:"و این بسیار دگرگون کرده"},
+        {fr:"le rôle de la télévision", fa:"نقشِ تلویزیون را"},
+        {fr:"dans l’apprentissage des nouvelles générations.", fa:"در یادگیریِ نسل‌های جدید."},
+        {fr:"Même si, à une époque,", fa:"با آنکه، زمانی،"},
+        {fr:"je voyais les choses autrement,", fa:"جور دیگری فکر می‌کردم،"},
+        {fr:"je suis aujourd’hui convaincu", fa:"امروز متقاعدم"},
+        {fr:"que le petit écran reste,", fa:"که تلویزیون همچنان می‌ماند،"},
+        {fr:"pour l’enfant,", fa:"برای کودک،"},
+        {fr:"la première fenêtre ouverte sur un monde", fa:"نخستین پنجره‌ی گشوده به جهانی"},
+        {fr:"qui dépasse le cercle familial,", fa:"که از دایره‌ی خانواده فراتر می‌رود،"},
+        {fr:"et qu’il lui apporte", fa:"و به او می‌دهد"},
+        {fr:"une compréhension plus fine de la dimension humaine,", fa:"درکی ظریف‌تر از بُعدِ انسانی،"},
+        {fr:"et cela, malgré le net recul de sa place", fa:"و این، به‌رغمِ افتِ محسوسِ جایگاهش"},
+        {fr:"dans le quotidien des familles.", fa:"در زندگیِ روزمره‌ی خانواده‌ها."},
+        {fr:"C’est un média", fa:"رسانه‌ای است"},
+        {fr:"qu’on a pourtant enterré un peu trop vite.", fa:"که با این‌حال کمی زود دفنش کردند."}
+      ]},
+
+      { label:'ARGUMENT 1 — la première fenêtre sur le monde', cls:'lb-arg1', time:'⏱ ~1:00', segments:[
+        {fr:"Pour commencer,", fa:"برای شروع،"},
+        {fr:"la télévision est le premier vrai point de contact", fa:"تلویزیون نخستین نقطه‌ی تماسِ واقعی است"},
+        {fr:"de l’enfant", fa:"ـِ کودک"},
+        {fr:"avec un univers géographiquement lointain.", fa:"با جهانی از نظرِ جغرافیایی دور."},
+        {fr:"C’est elle qui,", fa:"همین تلویزیون است که،"},
+        {fr:"grâce à la variété de ses chaînes", fa:"به‌لطفِ تنوعِ کانال‌هایش"},
+        {fr:"venues des quatre coins du monde,", fa:"از چهارگوشه‌ی جهان،"},
+        {fr:"lui permet de repousser ses frontières mentales", fa:"به او امکان می‌دهد مرزهای ذهنی‌اش را بگسترد"},
+        {fr:"bien au-delà de sa famille,", fa:"بسیار فراتر از خانواده‌اش،"},
+        {fr:"de ses proches et de sa ville.", fa:"نزدیکان و شهرش."},
+        {fr:"Pensons aux documentaires", fa:"به مستندهایی فکر کنیم"},
+        {fr:"que les chaînes familiales consacrent", fa:"که شبکه‌های خانوادگی اختصاص می‌دهند"},
+        {fr:"à la vie de sociétés aussi différentes", fa:"به زندگیِ جوامعی به‌گوناگونیِ"},
+        {fr:"que l’Inde ou le Canada :", fa:"هند یا کانادا:"},
+        {fr:"ils élargissent vraiment l’horizon de l’enfant.", fa:"واقعاً افقِ کودک را گسترش می‌دهند."},
+        {fr:"Devant ces images, il comprend,", fa:"در برابرِ این تصاویر، او می‌فهمد،"},
+        {fr:"souvent pour la première fois,", fa:"اغلب برای نخستین‌بار،"},
+        {fr:"que sa propre façon de vivre", fa:"که شیوه‌ی زندگیِ خودش"},
+        {fr:"n’est qu’une possibilité parmi beaucoup d’autres.", fa:"تنها یکی از امکان‌های بسیار است."},
+        {fr:"Ce qui compte, alors,", fa:"آنچه آنگاه مهم است،"},
+        {fr:"c’est la manière d’orienter la curiosité", fa:"نحوه‌ی جهت‌دادن به کنجکاوی است"},
+        {fr:"que font naître ces premières découvertes,", fa:"که این کشف‌های نخستین برمی‌انگیزند،"},
+        {fr:"pour en faire les bases d’un vrai esprit critique.", fa:"تا پایه‌های یک تفکرِ نقادِ واقعی شود."}
+      ]},
+
+      { label:'ARGUMENT 2 — la diversité des caractères', cls:'lb-arg2', time:'⏱ ~1:00', segments:[
+        {fr:"Ensuite,", fa:"سپس،"},
+        {fr:"les personnages de fiction", fa:"شخصیت‌های داستانی"},
+        {fr:"aident l’enfant à mieux percevoir", fa:"به کودک کمک می‌کنند بهتر دریابد"},
+        {fr:"la diversité des caractères", fa:"تنوعِ خُلق‌وخوها را"},
+        {fr:"qui peuplent le monde.", fa:"که جهان را پر کرده‌اند."},
+        {fr:"Plus précisément,", fa:"دقیق‌تر بگوییم،"},
+        {fr:"pour comprendre les réalités humaines,", fa:"برای فهمِ واقعیت‌های انسانی،"},
+        {fr:"l’enfant a besoin d’observer,", fa:"کودک نیاز دارد ببیند،"},
+        {fr:"de façon encadrée,", fa:"به‌شکلی هدایت‌شده،"},
+        {fr:"des comportements et des modes de vie variés,", fa:"رفتارها و سبک‌های زندگیِ متنوع را،"},
+        {fr:"et la télévision le fait très bien.", fa:"و تلویزیون این را خیلی خوب انجام می‌دهد."},
+        {fr:"Ainsi, l’enfant qui regarde en famille", fa:"بدین‌سان، کودکی که با خانواده می‌بیند"},
+        {fr:"une série comme This Is Us", fa:"سریالی مثلِ This Is Us"},
+        {fr:"saisit à quel point les trajectoires de vie", fa:"درمی‌یابد که مسیرهای زندگی چقدر"},
+        {fr:"peuvent être différentes", fa:"می‌توانند متفاوت باشند"},
+        {fr:"et, en même temps, tout aussi légitimes ;", fa:"و، در عینِ حال، به یک اندازه موجه؛"},
+        {fr:"en s’identifiant tour à tour", fa:"با همذات‌پنداریِ نوبتی"},
+        {fr:"à des personnages très différents,", fa:"با شخصیت‌های بسیار متفاوت،"},
+        {fr:"il apprend l’empathie", fa:"همدلی می‌آموزد"},
+        {fr:"et se débarrasse peu à peu de ses préjugés.", fa:"و کم‌کم از پیش‌داوری‌هایش رها می‌شود."},
+        {fr:"Reste une priorité absolue :", fa:"یک اولویتِ مطلق باقی می‌ماند:"},
+        {fr:"veiller, grâce à une médiation parentale attentive,", fa:"مراقبت، با میانجیگریِ آگاهانه‌ی والدین،"},
+        {fr:"à le tenir à l’écart des contenus inappropriés,", fa:"برای دورنگه‌داشتنش از محتوای نامناسب،"},
+        {fr:"qui risquent de mal l’influencer.", fa:"که ممکن است بد تأثیرش بگذارد."}
+      ]},
+
+      { label:'ARGUMENT 3 — la télévision redéfinie', cls:'lb-arg3', time:'⏱ ~55 ثانیه', segments:[
+        {fr:"Cela dit,", fa:"با این‌حال،"},
+        {fr:"on ne peut pas nier", fa:"نمی‌توان انکار کرد"},
+        {fr:"que les nouveaux outils technologiques", fa:"که ابزارهای فناورانه‌ی جدید"},
+        {fr:"ont pris à la télévision la place", fa:"جای تلویزیون را گرفته‌اند"},
+        {fr:"qu’elle occupait sans partage depuis longtemps", fa:"که دیرزمانْ بی‌رقیب داشت"},
+        {fr:"dans la consommation des familles.", fa:"در مصرفِ خانواده‌ها."},
+        {fr:"Autrement dit,", fa:"به بیانِ دیگر،"},
+        {fr:"avec l’explosion du temps d’écran", fa:"با انفجارِ زمانِ صفحه"},
+        {fr:"sur les téléphones portables,", fa:"روی تلفن‌های همراه،"},
+        {fr:"on regarde aujourd’hui beaucoup moins la télévision.", fa:"امروز خیلی کمتر تلویزیون تماشا می‌کنیم."},
+        {fr:"Pourtant, je reste persuadé", fa:"بااین‌حال، همچنان متقاعدم"},
+        {fr:"que les chaînes,", fa:"که شبکه‌ها،"},
+        {fr:"en lançant leurs propres plateformes de diffusion en ligne,", fa:"با راه‌اندازیِ پلتفرم‌های پخشِ آنلاینِ خود،"},
+        {fr:"gardent une influence importante ;", fa:"نفوذِ مهمی حفظ می‌کنند؛"},
+        {fr:"car regarder un programme ensemble, le soir,", fa:"چون تماشای یک برنامه با هم، شبانگاه،"},
+        {fr:"reste un moment de partage", fa:"لحظه‌ای از هم‌رسانی می‌ماند"},
+        {fr:"que l’écran individuel du téléphone", fa:"که صفحه‌ی شخصیِ گوشی"},
+        {fr:"ne remplacera jamais.", fa:"هرگز جایش را نمی‌گیرد."},
+        {fr:"La télévision n’a pas disparu :", fa:"تلویزیون از میان نرفته:"},
+        {fr:"elle s’est simplement redéfinie.", fa:"فقط بازتعریف شده است."}
+      ]},
+
+      { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~30 ثانیه', segments:[
+        {fr:"En définitive,", fa:"در نهایت،"},
+        {fr:"il me semble que la télévision,", fa:"به نظرم می‌رسد که تلویزیون،"},
+        {fr:"même si elle est concurrencée", fa:"حتی اگر رقیب پیدا کرده"},
+        {fr:"et qu’elle a beaucoup changé,", fa:"و بسیار تغییر کرده باشد،"},
+        {fr:"reste un précieux outil d’ouverture :", fa:"همچنان ابزاری ارزشمند برای گشودگی است:"},
+        {fr:"à condition de bien choisir", fa:"به‌شرطِ خوب انتخاب کردن"},
+        {fr:"et d’accompagner les contenus,", fa:"و همراهی‌کردنِ محتواها،"},
+        {fr:"elle continue d’élargir l’horizon des enfants", fa:"همچنان افقِ کودکان را گسترش می‌دهد"},
+        {fr:"et de nourrir leur ouverture aux autres.", fa:"و گشودگی‌شان به دیگران را می‌پرورد."},
+        {fr:"Loin d’être un simple divertissement passif,", fa:"به‌دور از یک سرگرمیِ منفعلِ صِرف،"},
+        {fr:"elle peut, bien encadrée,", fa:"می‌تواند، اگر خوب هدایت شود،"},
+        {fr:"devenir un vrai tremplin vers la compréhension du monde.", fa:"سکوی پرشی واقعی به‌سوی درکِ جهان شود."}
+      ]}
+
+    ]
+  },
+
   1: {
     level:'C1', time:'~4:20', position:'موضع: موافق — تحصیلِ باکیفیت و هدفمند',
     rawFa: "موفقیت در مسیرِ شغلی به‌قدری موضوعِ مهمی بوده که در طیِ پنجاه سالِ گذشته همگان به‌دنبالِ راهکاری برای ارتقا در آن بوده‌اند، از جمله از طریقِ تحصیل. اگرچه من هم سابقاً مانندِ بسیاری بر این باور بودم که تحصیل نقشِ مستقیمِ قابل‌توجهی در موفقیت‌های کاری ندارد، اما الان پذیرفته‌ام که تحصیلاتِ باکیفیت دو اثرِ مستقیمِ حیاتی دارد: اثرِ سیگنالینگ و اثرِ قابل‌انتقال‌کردنِ دانش، با وجودِ هزینه‌های مالی و زمانیِ غیرقابلِ‌انکارِ آن. برای شروع، باورِ من این است که اثرِ سیگنالینگی که یک تحصیلاتِ باکیفیت به کارفرماها می‌فرستد تا به‌حال دستِ‌کم گرفته شده است؛ مدیران برای کشف و ارزیابیِ استعدادهای هنوز اثبات‌نشده ناچارند به یک فاکتور تکیه کنند، و درجه‌ی آموزشی همیشه سهمِ بالایی داشته است. مثلاً وقتی یک شرکتِ بین‌المللی واردِ یک بازارِ محلی می‌شود، با گزینه‌های متعددی از افرادِ محلی روبه‌رو می‌شود و ترجیح می‌دهد به‌جای شانس و اصولِ اثبات‌نشده، به تحصیل در دانشگاه‌های شناخته‌شده وزنِ بیشتری دهد. برای همین آنچه اهمیت پیدا می‌کند نه صرفاً یک تحصیلِ ساده، بلکه تحصیل در دانشگاه‌ها و مراکزِ واقعاً برتر و سرآمد است. مضاف بر این، تحصیل کمک می‌کند افراد از طریقِ قابلیتِ انتقالِ دانش به فرصت‌های شغلی در بازارهای جدید دسترسی پیدا کنند؛ بسیاری از افراد دانشِ ضمنیِ تجربیِ بالایی دارند اما چون به‌صورتِ اصولی با ادبیاتِ آن مسلط نیستند نمی‌توانند دانششان را به حوزه‌های جدید منتقل کنند. برای مثال، تأثیرگذار است که کسی با تجربه‌ی ضمنی در مارکتینگ، ارشدِ همان رشته را بخواند تا با اصولِ آن به‌صورتِ قابل‌انتقال آشنا شود و بتواند به مارکتینگ در حوزه‌ای جدید ورود کند. البته نباید نادیده گرفت که تحصیل هزینه‌های مستقیم و غیرمستقیمِ جدی دارد؛ در دو سالِ تحصیل در مدیریتِ کسب‌وکار، یک فردِ حرفه‌ای نه‌تنها باید بیش از ۱۰۰ هزار دلار خرج کند، بلکه چون تمرکزش روی تحصیل است، درآمدِ متعارفِ همیشگی‌اش را هم برای دو سال نخواهد داشت. با این وجود، اگر پس‌اندازِ حساب‌شده‌ای کرده باشد، در صورتِ موفقیت می‌تواند بسیاری از این هزینه‌ها را جبران کند؛ آنچه اهمیت دارد برنامه‌ریزیِ مالیِ هوشمندانه است. روی‌هم‌رفته، تحصیل مشروط به هدفمند و برنامه‌ریزیِ مالی، می‌تواند منافعِ قابل‌توجهی در ارتقای شغلی ایجاد کند، از طریقِ اثرِ سیگنالینگ و اثرِ قابل‌انتقال‌کردن. کارمندان و مدیرانِ جوان هر زمان بتوانند این مراحل را اصولی پشتِ‌سر بگذارند، به مسیرهای شغلیِ باپتانسیل‌تری دسترسی پیدا می‌کنند که بدونِ تحصیل و فقط با استعداد هیچ‌وقت باز نخواهند شد.",
