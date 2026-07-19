@@ -21,7 +21,7 @@ const EO_THEMES = [
 ];
 
 const EO_QUESTIONS = [
-  { id:1,  theme:'travail',      done:false, q:"Faire des études permet de réussir sa carrière professionnelle. Qu’en pensez-vous ?" },
+  { id:1,  theme:'travail',      done:true,  q:"Faire des études permet de réussir sa carrière professionnelle. Qu’en pensez-vous ?" },
   { id:2,  theme:'immigration',  done:true,  q:"Quel est l’intérêt d’avoir une expérience professionnelle ou universitaire à l’étranger ?" },
   { id:3,  theme:'medias',       done:false, q:"Selon vous, quel rôle joue la télévision dans l’éducation des enfants ?" },
   { id:4,  theme:'etudes',       done:false, q:"Pensez-vous que l’autorité soit indispensable dans l’éducation d’un enfant ? Pourquoi ?" },
