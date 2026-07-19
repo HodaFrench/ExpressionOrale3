@@ -1,22 +1,161 @@
 // ═══════════════════════════════════════════════════════════
 //  Expression Orale — داده‌ی تمرین‌های ترجمه (interlinear FR↔FA)
 //  هر ورودی با آیدیِ سؤال در eo-data.js مطابقت دارد.
-//  وقتی یک تمرین ساخته شد، بلوکش را این‌جا اضافه می‌کنیم و در
-//  eo-data.js آن سؤال را done:true می‌کنیم.
-//
-//  شمای هر ورودی:
-//  ID: {
-//    level:'C1', time:'~4:30', position:'موضع به فارسی',
-//    rawFa:'متنِ خامِ فارسیِ کاربر…',
-//    paragraphs:[
-//      { label:'INTRODUCTION', cls:'lb-intro', time:'⏱ ~40 ثانیه', segments:[
-//        {fr:"De nos jours,", fa:"امروزه،"}, …
-//      ]}, …
-//    ]
-//  }
 //  cls ها: lb-intro · lb-arg1 · lb-arg2 · lb-arg3 · lb-arg4 · lb-conc
 // ═══════════════════════════════════════════════════════════
 
 const EO_TRAINERS = {
-  // هنوز خالی — با اولین سؤال پر می‌شود.
+
+  2: {
+    level:'C1', time:'~4:30', position:'موضع: موافق — تجربه‌ی خارج ارزشمند است',
+    rawFa: "این سؤال موضوعِ جالبی را هدف می‌گیرد که واقعاً ارزشِ بررسی دارد. در طیِ پنجاه سالِ گذشته، خانواده‌های طبقه‌ی متوسط همیشه سؤالشان این بوده که آیا تحصیل و کار در خارج می‌تواند ارزش‌هایی جدی را برای مهاجران نمایندگی کند؟ اگرچه افرادی هستند که متفاوت‌تر یا حتی مخالفِ من فکر می‌کنند، اما باورِ من این است که دلایلِ غیرقابلِ‌انکاری وجود دارد که گذراندنِ جدیِ یک تجربه‌ی تحصیلی یا کاری در بیرون از کشور را ارزشمند می‌کند. مهم‌ترین محورِ نظرِ من اهمیتِ تشکیلِ شبکه و فرهنگِ کاری و تحصیلیِ مترقی در کشوری توسعه‌یافته است؛ تجربه‌ی دستِ‌اول از زندگیِ حرفه‌ای و آموزشی در کنارِ افرادی از کشورهای مختلف با استانداردی بالا، مثلِ یک توشه‌ی ارزشمند برای ادامه‌ی مسیرِ حرفه‌ای است. مضاف بر این، این‌گونه تجربه‌های بین‌المللی، شرایطِ دسترسی به دانش و فنونِ به‌روز را مهیا می‌کند که در کشورِ مادر وجود ندارد؛ چون امروزه دانش و تکنولوژی مستلزمِ زیرساخت‌هایی است که فقط در چند کشورِ انگشت‌شمار پیدا می‌شود. البته نباید چشم‌پوشی کرد که هر موهبتِ ارزشمندی هزینه‌های روحی و مالیِ خودش را دارد؛ کم نیستند افرادی که علاقه‌مند بوده‌اند پا در مسیرِ مهاجرت بگذارند، اما افرادِ کمتری تا پایانِ مسیر ثابت‌قدم بوده‌اند. آن چیزی که در درجه‌ی اول اهمیت دارد همت و استقامت و اطمینان از تصمیم است. روی‌هم‌رفته، مشروط به روشن‌بودنِ افقی که به سمتش حرکت می‌کنند، افرادی که مهاجرتِ تحصیلی یا کاری می‌کنند این فرصت را به خودشان می‌دهند که خود را با فرهنگِ استانداردِ توسعه‌یافته و تکنیک‌های به‌روزِ دنیا تطبیق و ارتقا دهند. اگر بخواهم کسی را توصیه کنم، جوابم این است: اگر تصمیم گرفتی و بهایش را پرداختی، بدان که آینده‌ی روشنی با احتمالِ بالا برایت قابلِ‌تصور خواهد بود.",
+    paragraphs:[
+
+      { label:'INTRODUCTION', cls:'lb-intro', time:'⏱ ~40 ثانیه', segments:[
+        {fr:"Cette question touche", fa:"این پرسش می‌پردازد به"},
+        {fr:"à un sujet particulièrement stimulant,", fa:"موضوعی به‌راستی جذاب،"},
+        {fr:"qui mérite qu’on s’y attarde.", fa:"که ارزشِ درنگ دارد."},
+        {fr:"En effet,", fa:"در واقع،"},
+        {fr:"depuis une cinquantaine d’années,", fa:"طیِ حدودِ پنجاه سالِ گذشته،"},
+        {fr:"les familles de la classe moyenne", fa:"خانواده‌های طبقه‌ی متوسط"},
+        {fr:"se posent la même question :", fa:"همین پرسش را می‌پرسند:"},
+        {fr:"une expérience d’études ou de travail", fa:"یک تجربه‌ی تحصیل یا کار"},
+        {fr:"à l’étranger", fa:"در خارج"},
+        {fr:"représente-t-elle une véritable valeur ajoutée ?", fa:"آیا ارزشِ افزوده‌ای واقعی دارد؟"},
+        {fr:"Certes,", fa:"البته،"},
+        {fr:"certains s’opposent frontalement", fa:"برخی رودررو مخالف‌اند"},
+        {fr:"à mon point de vue ;", fa:"با نظرِ من؛"},
+        {fr:"néanmoins,", fa:"با این‌حال،"},
+        {fr:"je suis convaincu", fa:"من متقاعدم"},
+        {fr:"qu’il existe des raisons indéniables", fa:"که دلایلی انکارناپذیر وجود دارد"},
+        {fr:"de vivre pleinement", fa:"برای کاملاً زیستنِ"},
+        {fr:"une telle expérience,", fa:"چنین تجربه‌ای،"},
+        {fr:"universitaire ou professionnelle,", fa:"دانشگاهی یا حرفه‌ای،"},
+        {fr:"hors de son pays.", fa:"بیرون از کشور."}
+      ]},
+
+      { label:'ARGUMENT 1 — réseau & culture de pointe', cls:'lb-arg1', time:'⏱ ~1:05', segments:[
+        {fr:"Pour commencer,", fa:"برای شروع،"},
+        {fr:"l’axe central de ma réflexion", fa:"محورِ اصلیِ نظرِ من"},
+        {fr:"tient à l’importance", fa:"به اهمیتِ … برمی‌گردد"},
+        {fr:"de se constituer un réseau", fa:"ساختنِ یک شبکه"},
+        {fr:"et de s’immerger", fa:"و غوطه‌ور شدن"},
+        {fr:"dans une culture de travail", fa:"در یک فرهنگِ کاری"},
+        {fr:"résolument avant-gardiste,", fa:"کاملاً پیشرو،"},
+        {fr:"propre à un pays développé.", fa:"خاصِ یک کشورِ توسعه‌یافته."},
+        {fr:"L’expérience de première main", fa:"تجربه‌ی دستِ‌اول"},
+        {fr:"d’une vie professionnelle et académique,", fa:"از یک زندگیِ حرفه‌ای و دانشگاهی،"},
+        {fr:"aux côtés de personnes", fa:"در کنارِ افرادی"},
+        {fr:"soumises à des standards élevés,", fa:"مقیّد به استانداردهای بالا،"},
+        {fr:"constitue un précieux bagage.", fa:"توشه‌ای گران‌بهاست."},
+        {fr:"Il suffirait d’examiner", fa:"کافی است بررسی کنیم"},
+        {fr:"un rapport de la Banque mondiale :", fa:"یک گزارشِ بانکِ جهانی را:"},
+        {fr:"en moyenne,", fa:"به‌طورِ میانگین،"},
+        {fr:"les pays qui entretiennent", fa:"کشورهایی که دارند"},
+        {fr:"un fort taux d’échange", fa:"نرخِ بالایی از تبادلِ"},
+        {fr:"de main-d’œuvre qualifiée", fa:"نیرویِ کارِ متخصص"},
+        {fr:"avec l’étranger", fa:"با خارج"},
+        {fr:"occupent,", fa:"قرار دارند،"},
+        {fr:"du point de vue des relations sociales", fa:"از منظرِ روابطِ اجتماعی"},
+        {fr:"au sein de l’entreprise,", fa:"درونِ کسب‌وکار،"},
+        {fr:"une position nettement supérieure.", fa:"در جایگاهی به‌مراتب بالاتر."},
+        {fr:"Aussi,", fa:"از این‌رو،"},
+        {fr:"pour toute personne ambitieuse,", fa:"برای هر فردِ بلندپرواز،"},
+        {fr:"il est impératif", fa:"ضروری است"},
+        {fr:"de tout mettre en œuvre", fa:"که همه‌ی تلاش را به‌کار بندد"},
+        {fr:"afin d’accéder à un poste", fa:"تا به یک جایگاه دست یابد"},
+        {fr:"dans un pays parmi les plus avancés,", fa:"در یکی از پیشرفته‌ترین کشورها،"},
+        {fr:"en dépit des difficultés.", fa:"به‌رغمِ دشواری‌ها."}
+      ]},
+
+      { label:'ARGUMENT 2 — savoirs de pointe', cls:'lb-arg2', time:'⏱ ~1:00', segments:[
+        {fr:"À cela s’ajoute que", fa:"به این افزوده می‌شود که"},
+        {fr:"ce type d’expérience", fa:"این نوع تجربه"},
+        {fr:"ouvre l’accès", fa:"دسترسی را می‌گشاید"},
+        {fr:"à des savoirs", fa:"به دانش‌ها"},
+        {fr:"et à des techniques de pointe", fa:"و فنونِ پیشرفته"},
+        {fr:"qui font défaut", fa:"که وجود ندارند"},
+        {fr:"dans le pays d’origine.", fa:"در کشورِ مبدأ."},
+        {fr:"De nos jours,", fa:"امروزه،"},
+        {fr:"la technologie exige", fa:"فناوری می‌طلبد"},
+        {fr:"des infrastructures", fa:"زیرساخت‌هایی"},
+        {fr:"que l’on ne trouve", fa:"که یافت نمی‌شوند"},
+        {fr:"que dans une poignée de pays,", fa:"جز در انگشت‌شماری کشور،"},
+        {fr:"et la plupart des nations", fa:"و بیشترِ ملت‌ها"},
+        {fr:"n’accèdent au cœur d’une technologie", fa:"به هسته‌ی یک فناوری می‌رسند"},
+        {fr:"qu’avec un retard considérable.", fa:"تنها با تأخیری چشمگیر."},
+        {fr:"Par conséquent,", fa:"در نتیجه،"},
+        {fr:"les spécialistes qui visent", fa:"متخصصانی که هدف گرفته‌اند"},
+        {fr:"une progression de haut niveau", fa:"پیشرفتی سطح‌بالا"},
+        {fr:"se doivent de faire", fa:"ناگزیرند انجام دهند"},
+        {fr:"un choix mûrement réfléchi :", fa:"انتخابی سنجیده:"},
+        {fr:"s’engager sur la voie", fa:"پا نهادن در مسیرِ"},
+        {fr:"d’une migration temporaire.", fa:"یک مهاجرتِ موقت."},
+        {fr:"Songeons à l’intelligence artificielle :", fa:"به هوشِ مصنوعی بیندیشیم:"},
+        {fr:"aux États-Unis,", fa:"در آمریکا،"},
+        {fr:"les avancées sont sans commune mesure.", fa:"پیشرفت‌ها بی‌قیاس‌اند."},
+        {fr:"Or,", fa:"و اما،"},
+        {fr:"se former dans des pays aussi pionniers", fa:"آموزش‌دیدن در کشورهایی چنین پیشرو"},
+        {fr:"augmente considérablement les chances", fa:"شانس را به‌شدت بالا می‌برد"},
+        {fr:"d’assimiler ces innovations émergentes.", fa:"برای فراگیریِ این نوآوری‌های نوظهور."}
+      ]},
+
+      { label:'ARGUMENT 3 — le prix à payer', cls:'lb-arg3', time:'⏱ ~1:00', segments:[
+        {fr:"Cela dit,", fa:"با این‌حال،"},
+        {fr:"il ne faut jamais perdre de vue", fa:"هرگز نباید از نظر دور داشت"},
+        {fr:"que tout privilège de valeur", fa:"که هر امتیازِ ارزشمندی"},
+        {fr:"a son coût,", fa:"هزینه‌ی خود را دارد،"},
+        {fr:"tant sur le plan affectif que financier.", fa:"هم عاطفی و هم مالی."},
+        {fr:"Nombreux sont ceux", fa:"بسیارند کسانی"},
+        {fr:"qui ont rêvé de se lancer", fa:"که رؤیای پا گذاشتن داشته‌اند"},
+        {fr:"dans cette aventure,", fa:"به این ماجرا،"},
+        {fr:"mais bien rares sont ceux", fa:"اما بسیار اندک‌اند آنان"},
+        {fr:"qui ont tenu bon jusqu’au bout.", fa:"که تا پایان پایداری کرده‌اند."},
+        {fr:"Une large part des communautés d’immigrés,", fa:"بخشِ بزرگی از جوامعِ مهاجر،"},
+        {fr:"étudiants comme travailleurs,", fa:"چه دانشجو چه کارگر،"},
+        {fr:"ne parvient pas à surmonter", fa:"نمی‌تواند فائق آید بر"},
+        {fr:"la solitude,", fa:"تنهایی،"},
+        {fr:"la difficulté de s’adapter", fa:"دشواریِ تطبیق"},
+        {fr:"à un environnement exigeant,", fa:"با محیطی سخت‌گیر،"},
+        {fr:"ou les privations financières consenties", fa:"یا محرومیت‌های مالیِ پذیرفته‌شده"},
+        {fr:"en vue d’un bénéfice à long terme.", fa:"به‌امیدِ سودی بلندمدت."},
+        {fr:"Ce qui importe avant tout,", fa:"آنچه بیش از همه اهمیت دارد،"},
+        {fr:"c’est la persévérance", fa:"پشتکار است"},
+        {fr:"et la confiance dans la décision prise,", fa:"و اطمینان به تصمیمِ گرفته‌شده،"},
+        {fr:"afin de sortir victorieux des épreuves.", fa:"تا از آزمون‌ها پیروز بیرون آییم."},
+        {fr:"À vrai dire,", fa:"راستش را بخواهی،"},
+        {fr:"c’est précisément là que réside la racine", fa:"ریشه دقیقاً همین‌جاست"},
+        {fr:"des arguments de ceux", fa:"استدلال‌های کسانی"},
+        {fr:"qui ne partagent pas mon avis.", fa:"که با من هم‌عقیده نیستند."}
+      ]},
+
+      { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~35 ثانیه', segments:[
+        {fr:"En définitive,", fa:"در نهایت،"},
+        {fr:"il me semble que,", fa:"به نظرم می‌رسد که،"},
+        {fr:"à condition d’avoir un horizon clair", fa:"به‌شرطِ داشتنِ افقی روشن"},
+        {fr:"vers lequel avancer,", fa:"که به‌سویش پیش روند،"},
+        {fr:"ceux qui choisissent", fa:"کسانی که برمی‌گزینند"},
+        {fr:"une migration d’études ou de travail,", fa:"مهاجرتِ تحصیلی یا کاری،"},
+        {fr:"temporaire ou définitive,", fa:"موقت یا دائمی،"},
+        {fr:"s’offrent la possibilité", fa:"این امکان را به خود می‌دهند"},
+        {fr:"de se hisser au niveau", fa:"که خود را بالا بکشند تا سطحِ"},
+        {fr:"d’une culture développée,", fa:"یک فرهنگِ توسعه‌یافته،"},
+        {fr:"et de se familiariser", fa:"و آشنا شوند"},
+        {fr:"avec les outils les plus modernes du monde.", fa:"با مدرن‌ترین ابزارهای جهان."},
+        {fr:"Si je devais conseiller quelqu’un", fa:"اگر قرار بود کسی را راهنمایی کنم"},
+        {fr:"sur ce choix,", fa:"در این انتخاب،"},
+        {fr:"ma réponse,", fa:"پاسخِ من،"},
+        {fr:"bien qu’elle dépende", fa:"هرچند بستگی دارد"},
+        {fr:"de la situation de chacun,", fa:"به موقعیتِ هر کس،"},
+        {fr:"serait la suivante :", fa:"چنین می‌بود:"},
+        {fr:"dès lors que tu as pris ta décision", fa:"همین که تصمیمت را گرفتی"},
+        {fr:"et que tu en as payé le prix,", fa:"و بهایش را پرداختی،"},
+        {fr:"sache qu’un avenir prometteur", fa:"بدان که آینده‌ای امیدبخش"},
+        {fr:"t’est, selon toute probabilité,", fa:"به‌احتمالِ زیاد برایت،"},
+        {fr:"tout à fait envisageable.", fa:"کاملاً قابلِ‌تصور است."}
+      ]},
+
+    ]
+  },
+
 };
