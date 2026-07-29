@@ -119,13 +119,13 @@ const EO_TRAINERS = {
 ## 5) Repos, hosting & privacy
 - **Live/web home = `HodaFrench/ExpressionOrale3` (PRIVATE).** This is where the finished work
   lives and where a Claude-with-GitHub session should read/write. Keep pushing here.
-- `alimalekieu-lab/TCF_Avec_Hoda` (PUBLIC) is the user's other repo; the older SUJET site was
-  built there. Do **not** push private/EO work there unless the user asks (they want it private).
+- The user also has a separate **public** repo where the older SUJET site was originally built.
+  Do **not** push private/EO work to any public repo unless the user asks (they want it private).
 - The user wants a **viewable site but private source**. GitHub Pages on a public repo exposes
   the repo; on a private repo it needs a paid plan. So for a live link prefer **Netlify /
   Cloudflare Pages / Vercel** (drag-drop the folder, or deploy from the private repo).
-- Do not expose the user's email in public commits (a past commit already leaked a gmail in the
-  public repo; advise enabling "Keep my email private" on GitHub if they care).
+- Do not expose the user's real name/email in commits; use a neutral git identity and advise
+  enabling "Keep my email private" on GitHub.
 - If pushing to `ExpressionOrale3` from a machine authed as a different GitHub user, you need
   the HodaFrench account's auth. From a Claude-with-GitHub session, just use the connected repo.
 

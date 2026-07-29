@@ -76,5 +76,4 @@ ID: {
 ## Hosting & privacy (user preference)
 The user wants the **source private** but a viewable site. GitHub Pages public exposes the repo,
 so prefer **Netlify / Cloudflare Pages / Vercel** (drag-drop or deploy from a private repo) for
-any live link. Repos in play: `alimalekieu-lab/TCF_Avec_Hoda` (public) and
-`HodaFrench/ExpressionOrale3` (private).
+any live link. Private source repo: `HodaFrench/ExpressionOrale3`.
