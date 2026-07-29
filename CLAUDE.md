@@ -6,14 +6,22 @@ Continue the work described below; the chat that produced this does NOT transfer
 file is the source of truth.
 
 ## Two systems in this repo (keep separate)
-1. **Existing SUJET system** (do NOT modify): `index.html` (homepage, data-driven from
-   `data.js`), `data.js` (CATEGORIES + LESSONS), `SUJET1..7_*.html` (standalone analysis
-   pages: French + full Persian block). Theme vars: navy `#0f3460`, purple `#533483`.
+0. **Homepage** `index.html` — rebuilt 2026-07-30. Data-driven shell: reads `data.js` +
+   `eo-data.js`, computes progress from the `done` flags, lists ready exercises, the 7
+   analyses and the 12 themes. **Adding an exercise needs no edit here** — flipping
+   `done:true` in `eo-data.js` is enough. Signature element: the hero is a live
+   interlinear demo (real segments from trainer #3) so the method teaches itself.
+   Fonts: Vazirmatn (fa/UI) + Newsreader (fr). Type-size control persisted in
+   `localStorage['hk-scale']`. Previous homepage kept as `index-classic.html`.
+1. **Existing SUJET system** (do NOT modify): `data.js` (CATEGORIES + LESSONS),
+   `SUJET1..7_*.html` (standalone analysis pages: French + full Persian block).
+   Theme vars: navy `#0f3460`, purple `#533483`.
 2. **NEW EO sight-translation trainer** (the active work):
    - `eo-data.js` — 120 Tâche-3 questions classées en **12 thèmes** (`EO_THEMES` + `EO_QUESTIONS`,
      each `{id, theme, done, q}`). The list order = **fréquence/importance** (top = plus important).
    - `EO_trainer.html` — hub: recherche + filtres par thème + barre de progression. Lit
      `eo-data.js` + `eo-trainers.js`; une question est "done" si `EO_TRAINERS[id]` existe.
+     Accepte `?theme=<id>` (deep-link depuis l'accueil) et met l'URL à jour au filtrage.
    - `EO_practice.html?id=N` — lecteur générique d'un trainer (rend l'interlinéaire depuis les données).
    - `eo-trainers.js` — `EO_TRAINERS = { id: {...} }`, les données interlinéaires par question.
 
@@ -73,7 +81,18 @@ ID: {
 ## Run / verify locally
 `python3 -m http.server 8000` then open `http://localhost:8000/EO_trainer.html`.
 
-## Hosting & privacy (user preference)
-The user wants the **source private** but a viewable site. GitHub Pages public exposes the repo,
-so prefer **Netlify / Cloudflare Pages / Vercel** (drag-drop or deploy from a private repo) for
-any live link. Private source repo: `HodaFrench/ExpressionOrale3`.
+## Hosting (changed 2026-07-30)
+The repo `HodaFrench/ExpressionOrale3` is now **public** and served by **GitHub Pages**
+from `main` / root → https://hodafrench.github.io/ExpressionOrale3/
+
+Note this reverses the earlier preference (private source + Netlify/Cloudflare). The
+consequence: everything in the repo is publicly readable, including `rawFa` (the user's
+raw Persian answers), `CLAUDE.md`, `HANDOFF.md` and the full commit history. If the user
+ever wants the source hidden again while keeping a live site, deploy from a private repo
+via Netlify or Cloudflare Pages instead.
+
+## Accessibility bar (user requirement: ADHD-friendly)
+Hold new pages to this: everything visible on load (no search/tab gates), one primary
+action per screen, contrast ≥ 4.5:1 for body text, identical card shapes, visible numeric
+progress, `prefers-reduced-motion` honoured, visible keyboard focus, tap targets ≥ 44px.
+Do not hide content behind progressive disclosure.

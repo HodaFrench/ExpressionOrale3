@@ -105,7 +105,9 @@
   <script src="eo-data.js"></script>
   <script src="eo-trainers.js"></script>
   <script>
-    let activeTheme = 'all';
+    // موضوع می‌تواند از آدرس بیاید: EO_trainer.html?theme=famille
+    const wantedTheme = new URLSearchParams(location.search).get('theme');
+    let activeTheme = (wantedTheme && EO_THEMES.some(t => t.id === wantedTheme)) ? wantedTheme : 'all';
     const isDone = q => (typeof EO_TRAINERS !== 'undefined') && !!EO_TRAINERS[q.id];
     const theme = id => EO_THEMES.find(t => t.id === id) || { fa:id, fr:id, color:'#999' };
 
@@ -118,7 +120,12 @@
       });
       document.getElementById('tabs').innerHTML = html;
     }
-    function setTheme(t){ activeTheme=t; buildTabs(); render(); }
+    function setTheme(t){
+      activeTheme=t; buildTabs(); render();
+      const u = new URL(location.href);
+      if(t==='all') u.searchParams.delete('theme'); else u.searchParams.set('theme', t);
+      history.replaceState(null,'',u);
+    }
 
     function render(){
       const q = document.getElementById('search').value.trim().toLowerCase();

@@ -1,368 +1,599 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCF avec Hoda KHEDMATI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCF avec Hoda KHEDMATI — Expression Orale · Tâche 3</title>
+<meta name="description" content="سایت آماده‌سازی TCF کانادا — بیان شفاهی، تَسک ۳. تمرین ترجمه‌ی شفاهی فارسی به فرانسه و تحلیل کامل موضوع‌ها.">
 
-        :root {
-            --ink: #1a1a2e;
-            --accent: #533483;
-            --accent2: #0f3460;
-            --soft: #f4f4f8;
-            --line: #e8e8ef;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Tahoma', Arial, sans-serif;
-            background: #fbfbfd;
-            color: var(--ink);
-            line-height: 1.9;
-            min-height: 100vh;
-        }
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-        /* هدر مینیمال */
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 22px;
-            border-bottom: 1px solid var(--line);
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .topbar .logo {
-            width: 40px; height: 40px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent2), var(--accent));
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
-        }
-        .topbar h1 { font-size: 19px; font-weight: 700; }
-        .topbar span { font-size: 13px; color: #999; }
+  :root{
+    /* --- couleurs --- */
+    --ink:#14142B;
+    --ink-2:#474765;
+    --ink-3:#63637F;   /* 5.7:1 sur le fond — lisible en petit corps */
+    --navy:#0F3460;
+    --violet:#533483;
+    --amber:#A05C0A;   /* pour le texte : 5.1:1 */
+    --amber-2:#C9801B; /* pour les traits et la barre, non textuels */
+    --green:#1F6B4E;
+    --green-soft:#EAF4EF;
+    --paper:#FBFBFE;
+    --card:#FFFFFF;
+    --line:#E3E3F0;
+    --line-2:#CFCFE4;
+    --soft:#F3F3F9;
 
-        /* بخش معرفی — تمام‌صفحه و آرام */
-        .hero {
-            min-height: calc(100vh - 85px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 24px;
-            transition: min-height 0.5s ease;
-        }
-        .hero.shrink {
-            min-height: auto;
-            padding: 50px 24px 30px;
-        }
+    /* --- échelle de texte, réglable par l'utilisateur --- */
+    --scale:1;
+    --fs-body:calc(17px * var(--scale));
+    --fs-sm:calc(14px * var(--scale));
+    --fs-xs:calc(12.5px * var(--scale));
+    --fs-lg:calc(20px * var(--scale));
+    --fs-h2:calc(27px * var(--scale));
+    --fs-h1:calc(40px * var(--scale));
 
-        .hero h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--accent2), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero .sub {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-            max-width: 520px;
-        }
+    --maxw:1120px;
+    --radius:14px;
+  }
 
-        /* جستجو */
-        .search-box {
-            width: 100%;
-            max-width: 540px;
-            position: relative;
-            margin-bottom: 26px;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 18px 56px 18px 22px;
-            font-size: 17px;
-            border: 2px solid var(--line);
-            border-radius: 16px;
-            font-family: inherit;
-            background: white;
-            transition: all 0.25s;
-        }
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 8px 30px rgba(83,52,131,0.12);
-        }
-        .search-box::before {
-            content: "🔍";
-            position: absolute;
-            left: 20px; top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            opacity: 0.5;
-        }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Vazirmatn', Tahoma, sans-serif;
+    font-size:var(--fs-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        /* تب‌های دسته */
-        .tabs {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 760px;
-        }
-        .tab {
-            background: white;
-            color: #555;
-            border: 2px solid var(--line);
-            padding: 11px 22px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all 0.25s;
-        }
-        .tab:hover { border-color: var(--accent); color: var(--accent); }
-        .tab.active {
-            background: var(--ink);
-            color: white;
-            border-color: var(--ink);
-        }
+  a{ color:inherit; }
+  :focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:4px; }
 
-        /* بخش نتایج — اولش مخفی */
-        .results {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 24px 80px;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.4s ease;
-        }
-        .results.show {
-            opacity: 1;
-            max-height: none;
-            overflow: visible;
-        }
+  .shell{ max-width:var(--maxw); margin:0 auto; padding:0 22px; }
 
-        .count {
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-            margin: 10px 0 30px;
-        }
+  /* ═══════════ barre supérieure ═══════════ */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    background:rgba(251,251,254,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .row{
+    max-width:var(--maxw); margin:0 auto; padding:12px 22px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .brand .mark{
+    width:38px; height:38px; border-radius:11px; flex:none;
+    background:var(--navy); color:#fff;
+    display:grid; place-items:center;
+    font-family:'Newsreader', Georgia, serif; font-size:19px; font-weight:500;
+    letter-spacing:.5px;
+  }
+  .brand .txt strong{ display:block; font-size:var(--fs-sm); font-weight:800; line-height:1.5; }
+  .brand .txt span{ display:block; font-size:var(--fs-xs); color:var(--ink-3); line-height:1.5; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 22px;
-        }
-        .card {
-            background: white;
-            padding: 26px;
-            border-radius: 18px;
-            border: 1px solid var(--line);
-            transition: all 0.25s;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 40px rgba(26,26,46,0.10);
-            border-color: transparent;
-        }
-        .card-cat {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 700;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 14px;
-            align-self: flex-start;
-        }
-        .card h3 { font-size: 20px; margin-bottom: 6px; }
-        .card .fr {
-            font-size: 13px; color: #999;
-            direction: ltr; text-align: left;
-            margin-bottom: 16px; line-height: 1.5;
-        }
-        .card-tags { margin-bottom: 14px; }
-        .card-tags span {
-            display: inline-block;
-            background: var(--soft);
-            color: #666;
-            font-size: 12px;
-            padding: 4px 11px;
-            border-radius: 14px;
-            margin: 3px 3px 3px 0;
-        }
-        .card-score {
-            font-size: 13px; color: #2e9e5b;
-            font-weight: 700; margin-bottom: 16px;
-        }
-        .card .btn {
-            display: block; text-align: center;
-            background: var(--ink);
-            color: white; padding: 13px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700; font-size: 16px;
-            margin-top: auto;
-            transition: all 0.25s;
-        }
-        .card .btn:hover { background: var(--accent); }
+  .topnav{ margin-inline-start:auto; display:flex; align-items:center; gap:6px; }
+  .topnav a{
+    text-decoration:none; font-size:var(--fs-sm); font-weight:600; color:var(--ink-2);
+    padding:7px 13px; border-radius:9px;
+  }
+  .topnav a:hover{ background:var(--soft); color:var(--navy); }
 
-        .empty {
-            grid-column: 1 / -1;
-            text-align: center; color: #aaa;
-            font-size: 18px; padding: 50px;
-        }
+  /* réglage de la taille du texte */
+  .typectl{ display:flex; align-items:center; gap:4px; margin-inline-start:8px;
+            padding-inline-start:12px; border-inline-start:1px solid var(--line); }
+  .typectl button{
+    font-family:inherit; cursor:pointer;
+    background:var(--card); border:1px solid var(--line-2); color:var(--ink-2);
+    width:34px; height:32px; border-radius:8px; font-weight:700; line-height:1;
+  }
+  .typectl button:hover{ border-color:var(--violet); color:var(--violet); }
+  .typectl .lbl{ font-size:var(--fs-xs); color:var(--ink-3); margin-inline-end:2px; }
 
-        .footer {
-            text-align: center;
-            padding: 36px 20px;
-            border-top: 1px solid var(--line);
-            color: #aaa;
-            font-size: 14px;
-        }
-        .footer strong { color: #666; }
+  /* ═══════════ héros — la méthode, montrée ═══════════ */
+  .hero{ padding:54px 0 10px; }
+  .eyebrow{
+    font-family:'Newsreader', Georgia, serif; direction:ltr; display:inline-block;
+    font-size:var(--fs-xs); letter-spacing:.22em; text-transform:uppercase;
+    color:var(--amber); font-weight:500;
+  }
+  .hero h1{
+    font-size:var(--fs-h1); font-weight:800; line-height:1.35;
+    margin:10px 0 12px; letter-spacing:-.4px; max-width:22ch;
+  }
+  .hero .lede{ font-size:var(--fs-lg); color:var(--ink-2); max-width:52ch; }
 
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 30px; }
-            .hero .sub { font-size: 16px; }
-        }
-    </style>
+  .demo{
+    margin:30px 0 0; background:var(--card);
+    border:1px solid var(--line); border-radius:var(--radius);
+    border-top:3px solid var(--amber-2);
+    box-shadow:0 1px 2px rgba(20,20,43,.04), 0 12px 32px -18px rgba(20,20,43,.22);
+    overflow:hidden;
+  }
+  .demo-head{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:11px 18px; border-bottom:1px solid var(--line); background:var(--soft);
+  }
+  .demo-head .t{ font-size:var(--fs-xs); font-weight:700; color:var(--ink-2); }
+  .demo-head button{
+    font-family:inherit; font-size:var(--fs-xs); font-weight:700; cursor:pointer;
+    background:var(--card); border:1px solid var(--line-2); color:var(--ink-2);
+    padding:5px 12px; border-radius:20px; white-space:nowrap;
+  }
+  .demo-head button:hover{ border-color:var(--amber); color:var(--amber); }
+
+  /* le flux interlinéaire est en LTR même dans une page RTL */
+  .flow{ display:flex; flex-wrap:wrap; gap:10px 11px; align-items:flex-end;
+         padding:22px 18px; direction:ltr; }
+  .seg{ display:inline-flex; flex-direction:column; align-items:flex-start;
+        cursor:pointer; direction:ltr; }
+  .seg .fr{
+    font-family:'Newsreader', Georgia, serif; font-size:calc(17px * var(--scale));
+    color:var(--navy); background:#EEF4FC; border:1px solid #C9DDF4;
+    padding:3px 9px; border-radius:7px; margin-bottom:5px;
+    white-space:nowrap; direction:ltr;
+  }
+  .seg:not(.on) .fr{ visibility:hidden; }
+  .seg .fa{
+    font-size:calc(15px * var(--scale)); font-weight:500; color:var(--ink);
+    background:var(--soft); border:1px dashed var(--line-2);
+    padding:3px 9px; border-radius:7px;
+    direction:rtl; text-align:left; line-height:1.75;
+  }
+  .seg:hover .fa{ border-color:var(--violet); color:var(--violet); }
+  .demo-foot{
+    padding:0 18px 16px; direction:rtl;
+    font-size:var(--fs-xs); color:var(--ink-3);
+  }
+
+  /* ═══════════ action unique ═══════════ */
+  .next{
+    display:flex; flex-wrap:wrap; align-items:center; gap:16px;
+    margin:26px 0 0;
+  }
+  .cta{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--navy); color:#fff; text-decoration:none;
+    padding:15px 26px; border-radius:11px;
+    font-size:var(--fs-body); font-weight:700;
+    box-shadow:0 10px 26px -14px rgba(15,52,96,.7);
+    transition:background .18s;
+  }
+  .cta:hover{ background:#0B294C; }
+  .cta .arw{ font-size:1.1em; }
+  .next .aside{ font-size:var(--fs-sm); color:var(--ink-3); max-width:36ch; }
+
+  /* ═══════════ barre de progression ═══════════ */
+  .prog{ margin:44px 0 0; padding:20px 0 0; border-top:1px solid var(--line); }
+  .prog .top{ display:flex; align-items:baseline; justify-content:space-between;
+              gap:12px; margin-bottom:11px; flex-wrap:wrap; }
+  .prog .num{ font-size:var(--fs-lg); font-weight:800; }
+  .prog .num b{ color:var(--amber); font-size:1.3em; }
+  .prog .cap{ font-size:var(--fs-sm); color:var(--ink-3); }
+  .prog .track{ height:9px; background:var(--soft); border:1px solid var(--line);
+                border-radius:99px; overflow:hidden; }
+  .prog .fill{ height:100%; background:var(--amber-2); border-radius:99px; transition:width .5s; }
+
+  /* ═══════════ sections ═══════════ */
+  section{ padding:52px 0 0; }
+  .sec-head{ margin-bottom:22px; }
+  .sec-head h2{ font-size:var(--fs-h2); font-weight:800; margin:8px 0 8px; letter-spacing:-.3px; }
+  .sec-head p{ font-size:var(--fs-sm); color:var(--ink-2); max-width:62ch; }
+  .sec-head .fr-sub{
+    font-family:'Newsreader', Georgia, serif; font-style:italic; direction:ltr;
+    text-align:right; font-size:var(--fs-sm); color:var(--ink-3); margin-top:4px;
+  }
+
+  .grid{ display:grid; gap:16px; }
+  .g-3{ grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); }
+  .g-4{ grid-template-columns:repeat(auto-fill, minmax(215px,1fr)); }
+
+  /* carte d'exercice */
+  .qcard{
+    display:flex; flex-direction:column;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius); overflow:hidden;
+    text-decoration:none; color:inherit;
+    transition:border-color .18s, box-shadow .18s;
+  }
+  a.qcard:hover{ border-color:var(--line-2); box-shadow:0 10px 28px -18px rgba(20,20,43,.3); }
+  .qcard .edge{ height:4px; flex:none; }
+  .qcard .in{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:11px; flex:1; }
+  .qcard .meta{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .rank{
+    font-family:ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    font-size:var(--fs-xs); font-weight:700; color:var(--ink-3);
+    background:var(--soft); border:1px solid var(--line);
+    padding:2px 8px; border-radius:6px; direction:ltr;
+  }
+  .theme-tag{ font-size:var(--fs-xs); font-weight:700; color:#fff;
+              padding:3px 11px; border-radius:20px; }
+  .qcard .q{
+    font-family:'Newsreader', Georgia, serif; direction:ltr; text-align:left;
+    font-size:calc(16.5px * var(--scale)); line-height:1.5; color:var(--ink); flex:1;
+  }
+  .chip{ align-self:flex-start; font-size:var(--fs-xs); font-weight:700;
+         padding:4px 12px; border-radius:8px; }
+  .chip.ready{ background:var(--green-soft); color:var(--green); }
+
+  /* carte d'analyse */
+  .acard{
+    display:flex; flex-direction:column; gap:10px;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px 20px; text-decoration:none; color:inherit;
+    transition:border-color .18s, box-shadow .18s;
+  }
+  .acard:hover{ border-color:var(--line-2); box-shadow:0 10px 28px -18px rgba(20,20,43,.3); }
+  .acard h3{ font-size:var(--fs-body); font-weight:700; line-height:1.6; }
+  .acard .fr{
+    font-family:'Newsreader', Georgia, serif; font-style:italic;
+    direction:ltr; text-align:left; font-size:var(--fs-sm); color:var(--ink-3); line-height:1.5;
+  }
+  .acard .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+  .acard .tags span{ font-size:var(--fs-xs); background:var(--soft); color:var(--ink-2);
+                     padding:3px 10px; border-radius:7px; }
+  .acard .foot{ display:flex; align-items:center; justify-content:space-between;
+                gap:10px; margin-top:auto; padding-top:6px; }
+  .acard .score{ font-size:var(--fs-xs); font-weight:700; color:var(--green); }
+  .acard .go{ font-size:var(--fs-sm); font-weight:700; color:var(--navy); }
+
+  /* carte de thème */
+  .tcard{
+    display:flex; align-items:center; gap:12px;
+    background:var(--card); border:1px solid var(--line); border-radius:11px;
+    padding:13px 15px; text-decoration:none; color:inherit;
+    transition:border-color .18s;
+  }
+  .tcard:hover{ border-color:var(--line-2); }
+  .tcard .dot{ width:11px; height:11px; border-radius:50%; flex:none; }
+  .tcard .nm{ font-size:var(--fs-sm); font-weight:600; line-height:1.5; }
+  .tcard .ct{ margin-inline-start:auto; font-size:var(--fs-xs); color:var(--ink-3);
+              font-family:ui-monospace, Menlo, monospace; }
+
+  .more{
+    display:inline-flex; align-items:center; gap:9px; margin-top:20px;
+    background:var(--card); border:1px solid var(--line-2); color:var(--navy);
+    text-decoration:none; font-weight:700; font-size:var(--fs-sm);
+    padding:12px 22px; border-radius:10px;
+    transition:border-color .18s;
+  }
+  .more:hover{ border-color:var(--navy); }
+
+  /* ═══════════ méthode ═══════════ */
+  .steps{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+  .step{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+         padding:18px 20px; }
+  .step .n{
+    font-family:'Newsreader', Georgia, serif; direction:ltr;
+    font-size:calc(15px * var(--scale)); color:var(--amber); font-weight:500;
+    display:block; margin-bottom:6px;
+  }
+  .step p{ font-size:var(--fs-sm); color:var(--ink-2); line-height:1.8; }
+  .step strong{ color:var(--ink); font-weight:700; }
+
+  /* ═══════════ pied ═══════════ */
+  footer{ margin-top:64px; border-top:1px solid var(--line); background:var(--card); }
+  footer .row{ max-width:var(--maxw); margin:0 auto; padding:32px 22px;
+               display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+  footer .who strong{ font-size:var(--fs-sm); display:block; }
+  footer .who span{ font-size:var(--fs-xs); color:var(--ink-3); }
+  footer .cp{ margin-inline-start:auto; font-size:var(--fs-xs); color:var(--ink-3); }
+
+  /* ═══════════ adaptatif ═══════════ */
+  @media (max-width:760px){
+    :root{ --fs-h1:calc(29px * var(--scale)); --fs-h2:calc(22px * var(--scale)); }
+    .hero{ padding-top:36px; }
+    .brand .txt span{ display:none; }
+    .topnav a{ padding:7px 9px; }
+    .seg .fr{ white-space:normal; }
+    .typectl{ margin-inline-start:4px; padding-inline-start:8px; }
+    .typectl .lbl{ display:none; }
+  }
+  @media (max-width:430px){
+    /* on garde l'accès aux exercices, on cache seulement les ancres internes */
+    .topnav a[href^="#"]{ display:none; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ transition-duration:.01ms !important; animation-duration:.01ms !important; }
+  }
+</style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="logo">👩‍🏫</div>
-        <div>
-            <h1>TCF avec Hoda KHEDMATI</h1>
-            <span>مدرس رسمی TCF کانادا</span>
-        </div>
+
+<div class="topbar">
+  <div class="row">
+    <a class="brand" href="index.html">
+      <span class="mark">H</span>
+      <span class="txt">
+        <strong>TCF avec Hoda KHEDMATI</strong>
+        <span>مدرس رسمی TCF کانادا · بیان شفاهی</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="EO_trainer.html">تمرین ترجمه</a>
+      <a href="#analyses">تحلیل‌ها</a>
+      <a href="#themes">موضوع‌ها</a>
+    </nav>
+    <span class="typectl">
+      <span class="lbl">اندازه‌ی متن</span>
+      <button type="button" id="tdown" aria-label="کوچک‌تر کردن متن">A−</button>
+      <button type="button" id="tup" aria-label="بزرگ‌تر کردن متن">A+</button>
+    </span>
+  </div>
+</div>
+
+<main class="shell">
+
+  <!-- ═══ HÉROS ═══ -->
+  <div class="hero">
+    <span class="eyebrow">Expression Orale · Tâche 3</span>
+    <h1>فرانسه را عبارت‌به‌عبارت بساز، نه کلمه‌به‌کلمه.</h1>
+    <p class="lede">
+      فارسی را از چپ به راست می‌خوانی و بلند به فرانسه می‌گویی.
+      هر جا گیر کردی، روی همان عبارت می‌زنی تا فرانسه‌اش را ببینی.
+    </p>
+
+    <div class="demo">
+      <div class="demo-head">
+        <span class="t">همین‌جا امتحان کن — روی یک عبارت فارسی بزن</span>
+        <button type="button" id="demoAll">نمایش همه</button>
+      </div>
+      <div class="flow" id="demoFlow"></div>
+      <div class="demo-foot">
+        فرانسه بالا، فارسی دقیقاً زیرش. ترتیب فارسی عمداً از ساختار فرانسه پیروی می‌کند
+        تا عبارتِ بعدی را به تو یادآوری کند.
+      </div>
     </div>
 
-    <div class="hero" id="hero">
-        <h2>یادگیری فرانسه، ساده‌تر</h2>
-        <p class="sub">جزوه‌ها و تحلیل‌های TCF — برای پیدا کردن، جستجو کن یا یک دسته را انتخاب کن</p>
-
-        <div class="search-box">
-            <input type="text" id="search" placeholder="جستجو در جزوه‌ها..." oninput="onSearch()">
-        </div>
-
-        <div class="tabs" id="tabs"></div>
+    <div class="next">
+      <a class="cta" href="EO_trainer.html" id="ctaNext"><span id="ctaLabel">شروع تمرین</span><span class="arw">←</span></a>
+      <p class="aside" id="ctaAside">تمرین‌ها به‌ترتیب احتمال تکرار در آزمون مرتب شده‌اند.</p>
     </div>
 
-    <div class="results" id="results">
-        <div class="count" id="count"></div>
-        <div class="grid" id="grid"></div>
+    <div class="prog">
+      <div class="top">
+        <span class="num"><b id="pDone">۰</b> از <span id="pTotal">۱۲۰</span> تمرین آماده است</span>
+        <span class="cap">بانک سؤال کامل است — تمرین‌ها یکی‌یکی اضافه می‌شوند</span>
+      </div>
+      <div class="track"><div class="fill" id="pFill" style="width:0%"></div></div>
     </div>
+  </div>
 
-    <div class="footer">
-        <p>👩‍🏫 <strong>Hoda KHEDMATI</strong> — مدرس رسمی TCF کانادا</p>
-        <p style="margin-top:6px; font-size:12px;">© 2025 — همه‌ی حقوق محفوظ است</p>
+  <!-- ═══ EXERCICES ═══ -->
+  <section id="trainer">
+    <div class="sec-head">
+      <span class="eyebrow">Entraînement</span>
+      <h2>تمرین ترجمه‌ی شفاهی</h2>
+      <p>
+        سؤال‌ها به ترتیب <strong>احتمال تکرار در آزمون</strong> چیده شده‌اند — شماره‌ی کوچک‌تر یعنی مهم‌تر.
+        این‌ها تمرین‌هایی است که تا امروز آماده شده:
+      </p>
     </div>
+    <div class="grid g-3" id="readyGrid"></div>
+    <a class="more" href="EO_trainer.html">همه‌ی <span id="allCount">۱۲۰</span> سؤال <span>←</span></a>
+  </section>
 
-    <script src="data.js"></script>
-    <script>
-        let activeCat = null;   // اولش هیچ دسته‌ای فعال نیست
-        let isOpen = false;     // اولش لیست بسته است
+  <!-- ═══ ANALYSES ═══ -->
+  <section id="analyses">
+    <div class="sec-head">
+      <span class="eyebrow">Analyses</span>
+      <h2>تحلیل کامل موضوع‌ها</h2>
+      <p>
+        برای هر موضوع یک پاسخ کامل با استدلال‌ها، کلمات ربط و ترجمه‌ی فارسی.
+        مناسب وقتی می‌خواهی ساختار یک جوابِ خوب را ببینی.
+      </p>
+      <p class="fr-sub">Réponses modèles, connecteurs analysés, traduction persane</p>
+    </div>
+    <div class="grid g-3" id="lessonGrid"></div>
+  </section>
 
-        function buildTabs() {
-            const tabs = document.getElementById("tabs");
-            let html = `<button class="tab ${activeCat==='all'?'active':''}" onclick="setCat('all')">🌟 همه جزوه‌ها</button>`;
-            CATEGORIES.forEach(cat => {
-                if (LESSONS.some(l => l.category === cat.id)) {
-                    html += `<button class="tab ${activeCat===cat.id?'active':''}" onclick="setCat('${cat.id}')">${cat.label}</button>`;
-                }
-            });
-            tabs.innerHTML = html;
-        }
+  <!-- ═══ THÈMES ═══ -->
+  <section id="themes">
+    <div class="sec-head">
+      <span class="eyebrow">Thèmes</span>
+      <h2>۱۲ موضوع آزمون</h2>
+      <p>سؤال‌های تَسک ۳ در این ۱۲ موضوع می‌گنجد. روی هرکدام بزن تا سؤال‌های همان موضوع را ببینی.</p>
+    </div>
+    <div class="grid g-4" id="themeGrid"></div>
+  </section>
 
-        function setCat(cat) {
-            activeCat = cat;
-            document.getElementById("search").value = "";
-            openResults();
-            buildTabs();
-            render();
-        }
+  <!-- ═══ MÉTHODE ═══ -->
+  <section id="method">
+    <div class="sec-head">
+      <span class="eyebrow">Méthode</span>
+      <h2>روش کار، در چهار قدم</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <p><strong>جوابت را فارسی بنویس.</strong> با منطق و کلمات خودت — همان چیزی که واقعاً فکر می‌کنی.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <p><strong>به فرانسه‌ی سطح C1 برگردانده می‌شود</strong>، طبیعی و گفتاری، در ۵۰۰ تا ۵۴۰ کلمه.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <p><strong>متن به عبارت‌های کوچک تکه می‌شود</strong> و فارسی هر عبارت، زیرش می‌نشیند.</p>
+      </div>
+      <div class="step">
+        <span class="n">04</span>
+        <p><strong>بلند تمرین می‌کنی.</strong> فارسی را می‌خوانی، فرانسه را می‌گویی، تا روان شود.</p>
+      </div>
+    </div>
+  </section>
 
-        function onSearch() {
-            const q = document.getElementById("search").value.trim();
-            if (q) {
-                activeCat = null;
-                buildTabs();
-                openResults();
-                render();
-            } else if (!activeCat) {
-                closeResults();
-            }
-        }
+</main>
 
-        function openResults() {
-            isOpen = true;
-            document.getElementById("results").classList.add("show");
-            document.getElementById("hero").classList.add("shrink");
-            // اسکرول نرم به نتایج
-            setTimeout(() => {
-                document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
-            }, 250);
-        }
+<footer>
+  <div class="row">
+    <div class="who">
+      <strong>Hoda KHEDMATI</strong>
+      <span>Formatrice agréée TCF Canada · Expression Orale, Tâche 3</span>
+    </div>
+    <span class="cp">© 2026</span>
+  </div>
+</footer>
 
-        function closeResults() {
-            isOpen = false;
-            document.getElementById("results").classList.remove("show");
-            document.getElementById("hero").classList.remove("shrink");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+<script src="data.js"></script>
+<script src="eo-data.js"></script>
+<script>
+/* ═════════ utilitaires ═════════ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
 
-        function catInfo(id) {
-            return CATEGORIES.find(c => c.id === id) || { label: id, color: "#999" };
-        }
+/* ═════════ réglage de la taille du texte (persisté) ═════════ */
+(function(){
+  const STEPS = [0.9, 1, 1.15, 1.3, 1.5];
+  let i = 1;
+  try {
+    const s = localStorage.getItem('hk-scale');
+    if (s !== null) i = Math.min(STEPS.length - 1, Math.max(0, +s));
+  } catch(e){}
+  const apply = () => {
+    document.documentElement.style.setProperty('--scale', STEPS[i]);
+    try { localStorage.setItem('hk-scale', i); } catch(e){}
+  };
+  $('#tup').onclick   = () => { if (i < STEPS.length - 1) { i++; apply(); } };
+  $('#tdown').onclick = () => { if (i > 0) { i--; apply(); } };
+  apply();
+})();
 
-        function render() {
-            const q = document.getElementById("search").value.trim().toLowerCase();
-            const grid = document.getElementById("grid");
+/* ═════════ héros interlinéaire — extrait réel du trainer #3 ═════════ */
+const DEMO = [
+  { fr:"Ces dernières années,",               fa:"این سال‌های اخیر،" },
+  { fr:"les outils médiatiques évoluent",     fa:"ابزارهای رسانه‌ای پیش می‌روند" },
+  { fr:"à un rythme de plus en plus rapide,", fa:"با آهنگی هرچه سریع‌تر،" },
+  { fr:"et cela a beaucoup transformé",       fa:"و این بسیار دگرگون کرده" },
+  { fr:"le rôle de la télévision.",           fa:"نقشِ تلویزیون را." },
+];
+(function(){
+  const flow = $('#demoFlow');
+  flow.innerHTML = DEMO.map((s, i) =>
+    `<span class="seg" data-i="${i}" role="button" tabindex="0" aria-label="نمایش فرانسه‌ی این عبارت"><span class="fr">${esc(s.fr)}</span><span class="fa">${esc(s.fa)}</span></span>`
+  ).join('');
 
-            let filtered = LESSONS.filter(l => {
-                const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
-                const matchSearch = !q ||
-                    l.title.toLowerCase().includes(q) ||
-                    l.titleFr.toLowerCase().includes(q) ||
-                    l.tags.join(" ").toLowerCase().includes(q);
-                return matchCat && matchSearch;
-            });
+  let upto = -1;
+  const paint = () => flow.querySelectorAll('.seg')
+    .forEach(el => el.classList.toggle('on', +el.dataset.i <= upto));
+  const hit = el => { const i = +el.dataset.i; upto = (upto >= i) ? i - 1 : i; paint(); };
 
-            document.getElementById("count").textContent = filtered.length + " جزوه پیدا شد";
+  flow.querySelectorAll('.seg').forEach(el => {
+    el.addEventListener('click', () => hit(el));
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hit(el); }
+    });
+  });
 
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="empty">😕 جزوه‌ای پیدا نشد</div>`;
-                return;
-            }
+  let shown = false;
+  $('#demoAll').onclick = () => {
+    shown = !shown;
+    upto = shown ? DEMO.length - 1 : -1;
+    paint();
+    $('#demoAll').textContent = shown ? 'مخفی کردن همه' : 'نمایش همه';
+  };
+})();
 
-            grid.innerHTML = filtered.map(l => {
-                const cat = catInfo(l.category);
-                return `
-                <div class="card">
-                    <span class="card-cat" style="background:${cat.color}">${cat.label}</span>
-                    <h3>${l.badge} ${l.title}</h3>
-                    <div class="fr">${l.titleFr}</div>
-                    <div class="card-tags">${l.tags.map(t => `<span>${t}</span>`).join("")}</div>
-                    ${l.score ? `<div class="card-score">📊 امتیاز: ${l.score}/100</div>` : ""}
-                    <a href="${l.file}" class="btn">باز کردن جزوه ←</a>
-                </div>`;
-            }).join("");
-        }
+/* ═════════ progression, action unique, exercices, thèmes ═════════ */
+const themeOf = id => (typeof EO_THEMES !== 'undefined')
+  ? (EO_THEMES.find(t => t.id === id) || { fa:id, fr:id, color:'#8A8A99' })
+  : { fa:id, fr:id, color:'#8A8A99' };
 
-        buildTabs();
-    </script>
+(function(){
+  if (typeof EO_QUESTIONS === 'undefined') return;
+
+  const total = EO_QUESTIONS.length;
+  const ready = EO_QUESTIONS.filter(q => q.done);
+  const next  = EO_QUESTIONS.find(q => !q.done);
+
+  $('#pDone').textContent    = faNum(ready.length);
+  $('#pTotal').textContent   = faNum(total);
+  $('#pFill').style.width    = (ready.length / total * 100).toFixed(1) + '%';
+  $('#allCount').textContent = faNum(total);
+
+  /* une seule action principale : le dernier exercice prêt */
+  if (ready.length) {
+    const last = ready[ready.length - 1];
+    $('#ctaLabel').textContent = 'تمرین شماره ' + faNum(last.id);
+    $('#ctaNext').href = 'EO_practice.html?id=' + last.id;
+    $('#ctaAside').innerHTML = next
+      ? 'سؤال بعدی که ساخته می‌شود: <strong>شماره ' + faNum(next.id) + '</strong> — ' + esc(themeOf(next.theme).fa)
+      : 'همه‌ی تمرین‌ها آماده است.';
+  } else {
+    $('#ctaLabel').textContent = 'دیدن همه‌ی سؤال‌ها';
+  }
+
+  /* les exercices prêts */
+  $('#readyGrid').innerHTML = ready.map(q => {
+    const t = themeOf(q.theme);
+    return `<a class="qcard" href="EO_practice.html?id=${q.id}">
+      <span class="edge" style="background:${t.color}"></span>
+      <span class="in">
+        <span class="meta">
+          <span class="rank" title="رتبه‌ی تکرار در آزمون">#${q.id}</span>
+          <span class="theme-tag" style="background:${t.color}">${esc(t.fa)}</span>
+        </span>
+        <span class="q">${esc(q.q)}</span>
+        <span class="chip ready">آماده — تمرین کن ←</span>
+      </span>
+    </a>`;
+  }).join('') || '<p style="color:var(--ink-3)">هنوز تمرینی آماده نیست.</p>';
+
+  /* les trainers autonomes (hors des 120) rejoignent la même section */
+  if (typeof LESSONS !== 'undefined') {
+    const extra = LESSONS.filter(l => l.category === 'trainer' && l.file !== 'EO_trainer.html');
+    $('#readyGrid').insertAdjacentHTML('beforeend', extra.map(l => `
+      <a class="qcard" href="${l.file}">
+        <span class="edge" style="background:var(--violet)"></span>
+        <span class="in">
+          <span class="meta">
+            <span class="rank">·</span>
+            <span class="theme-tag" style="background:var(--violet)">خارج از ۱۲۰ سؤال</span>
+          </span>
+          <span class="q">${esc(l.titleFr)}</span>
+          <span class="chip ready">آماده — تمرین کن ←</span>
+        </span>
+      </a>`).join(''));
+  }
+
+  /* les thèmes */
+  $('#themeGrid').innerHTML = EO_THEMES.map(t => {
+    const n = EO_QUESTIONS.filter(q => q.theme === t.id).length;
+    return `<a class="tcard" href="EO_trainer.html?theme=${t.id}">
+      <span class="dot" style="background:${t.color}"></span>
+      <span class="nm">${esc(t.fa)}</span>
+      <span class="ct">${faNum(n)}</span>
+    </a>`;
+  }).join('');
+})();
+
+/* ═════════ analyses complètes ═════════ */
+(function(){
+  if (typeof LESSONS === 'undefined') return;
+  /* seules les analyses ; les trainers vivent dans la section « تمرین » */
+  const items = LESSONS.filter(l => l.category !== 'trainer');
+  $('#lessonGrid').innerHTML = items.map(l => `
+    <a class="acard" href="${l.file}">
+      <h3>${esc(l.title)}</h3>
+      <span class="fr">${esc(l.titleFr)}</span>
+      <span class="tags">${l.tags.map(t => `<span>${esc(t)}</span>`).join('')}</span>
+      <span class="foot">
+        <span class="score">${l.score ? 'امتیاز ' + faNum(l.score) + '/۱۰۰' : ''}</span>
+        <span class="go">باز کن ←</span>
+      </span>
+    </a>`).join('');
+})();
+</script>
 </body>
 </html>
