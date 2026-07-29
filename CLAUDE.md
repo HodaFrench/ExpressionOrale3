@@ -52,9 +52,12 @@ ID: {
    cumulative reveal on click), and the hub progress increments. Then commit.
 9. Move on to the next question (Claude's pick, by frequency).
 
-## Progress
-- ✅ `#2` "Quel est l’intérêt d’avoir une expérience … à l’étranger ?" — done (C1, 536 mots).
-- ⏭️ Next: `#1` "Faire des études permet de réussir sa carrière professionnelle."
+## Progress (3 / 120 done)
+- ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1, 504 mots).
+- ✅ `#2` "Quel est l’intérêt d’avoir une expérience … à l’étranger ?" (C1, 536 mots).
+- ✅ `#3` "…quel rôle joue la télévision dans l’éducation des enfants ?" (C1, 516 mots, registre parlé).
+- ⏭️ Next: `#4` "Pensez-vous que l’autorité soit indispensable dans l’éducation d’un enfant ?" (waiting for the user's raw Persian answer).
+- Style note: the user prefers a **natural, spoken** C1 register (not overly literary) with precise idioms/terms.
 - The reference demo `TRAINER_RELATIONS_DISTANCE.html` (relations à distance) is a standalone
   page NOT part of the 120 list — leave it as a working example.
 
