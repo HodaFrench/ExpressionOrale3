@@ -174,13 +174,27 @@ She chains claim + mechanism with «؛» constantly. In French this becomes: a d
 sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
 — that short sentence is where the podcast register lives.
 
-## Progress (5 / 120 done)
-- ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1, 504 mots).
-- ✅ `#2` "Quel est l’intérêt d’avoir une expérience … à l’étranger ?" (C1, 536 mots).
-- ✅ `#3` "…quel rôle joue la télévision dans l’éducation des enfants ?" (C1, 516 mots, registre parlé).
-- ⏭️ Next: `#4` "Pensez-vous que l’autorité soit indispensable dans l’éducation d’un enfant ?" (waiting for the user's raw Persian answer).
-- Style note: natural, **spoken** C1 (not literary), precise idioms — now governed by the
-  REGISTER section above. `#1`–`#3` were written before that rule and are NOT yet rewritten to it.
+## Progress (6 / 120 done)
+- ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1 seul, 504 mots).
+- ✅ `#2` "Quel est l'intérêt d'avoir une expérience … à l'étranger ?" (C1 seul, 536 mots).
+- ✅ `#3` "…quel rôle joue la télévision dans l'éducation des enfants ?" (C1 seul, 516 mots).
+- ✅ `#4` "Pensez-vous que l'autorité soit indispensable dans l'éducation d'un enfant ?" —
+  **premier à deux niveaux** (C1 531 / B2+ 539), premier écrit sous REGISTER + IDIOLECTE.
+- ✅ `#5` "Est-ce qu'il est difficile de vivre dans un pays étranger ?" (C1 537 / B2+ 538).
+  Bloc d'objection réel — visa, permis, diplôme non reconnu — réfuté avec son propre principe :
+  ces obstacles se connaissent **avant** le départ, d'où préparation et pas seulement motivation.
+- ✅ `#6` "vivre à l'étranger : plus d'avantages ou d'inconvénients ?" (C1 509 / B2+ 531).
+  Écrite depuis un **squelette de cinq lignes**, pas un texte complet. Format plus rapide pour
+  elle mais qui oblige à déplier : cinq formulations sont de Claude, signalées avant validation.
+- ⏭️ Next: `#7` (thème خانواده و روابط) — waiting for her raw Persian answer or skeleton.
+
+⚠️ **Recouvrement du thème migration.** `#2`, `#5` et `#6` sont faites et s'appuient toutes les
+trois sur les Émirats — c'est sa seule grande expérience, donc légitime, mais le cadrage doit
+différer : `#5` = l'arrivée et l'absence de réseau, `#6` = les années sur place et ce qu'elles
+ont apporté. Ne pas laisser les trois converger.
+
+- `#1`–`#3` datent d'avant REGISTER et n'ont **pas** de version B2+. Deux dettes distinctes :
+  les réécrire au registre, et leur ajouter le second niveau.
 - The reference demo `TRAINER_RELATIONS_DISTANCE.html` (relations à distance) is a standalone
   page NOT part of the 120 list — leave it as a working example.
 
