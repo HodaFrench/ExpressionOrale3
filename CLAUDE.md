@@ -99,11 +99,66 @@ Could she rebuild this monologue from a five-line Persian outline of her own rea
 If any sentence depends on a clever turn she would never have produced herself, it fails —
 because then she has to memorise it, which is the exact outcome she is trying to avoid.
 
-### Calibration
+### Calibration — Obama **in a podcast**, not Obama at a podium (user's words)
 Tâche 3 addresses a **specific interlocutor in a defined situation** (a friend, a colleague,
-a neighbour). Keep the rhetorical structure, but tune solemnity to the situation: podium
-register applied to "convince your friend to sort his rubbish" reads as parody and as
-memorised. Over-polish is itself a scoring risk.
+a neighbour). The target is the register of a thoughtful interview: eloquent but relaxed,
+thinking aloud, qualifying itself, warm. Podium solemnity applied to "convince your friend to
+sort his rubbish" reads as parody and as memorised. Over-polish is itself a scoring risk.
+
+## HER IDIOLECT — derived from the `rawFa` of #1, #2, #3 (2026-07-30)
+The user asked that her *thinking model, her way of connecting sentences and her ordering* be
+preserved. Below is what those three texts actually show. **Finding: she already uses
+concession, antithesis and tricolon natively in Persian.** The Obama brief is therefore not
+about importing a foreign structure — it is about not flattening, in French, the rhetoric that
+is already in the Persian. Earlier drafts lost it in translation.
+
+### Her fixed macro-structure (reproduce this order)
+1. **Temporal framing.** She opens by placing the question in a span of time — *«در طیِ پنجاه
+   سالِ گذشته…»*, *«در سال‌های اخیر…»*. All three do this. Never open cold on the thesis.
+2. **Reversal / concession, then thesis.** *«اگرچه من هم سابقاً بر این باور بودم که… اما الان
+   پذیرفته‌ام که…»* — she concedes her own former view, or an opposing one, *before* asserting.
+3. **The thesis names its own arguments as labels**, announced up front: *«دو اثرِ مستقیمِ
+   حیاتی دارد: اثرِ سیگنالینگ و اثرِ قابل‌انتقال‌کردنِ دانش»*. Keep the labels; they are her
+   memory hooks.
+4. **The thesis sentence carries its own counterweight**, appended: *«…با وجودِ هزینه‌های…»*,
+   *«…علی‌رغمِ کاهشِ چشمگیرِ سهمش…»*. Do not split this off into a later paragraph.
+5. **Argument → mechanism → concrete example.** Always that order. Her examples are specific
+   and checkable (This Is Us, هند تا کانادا, ۱۰۰ هزار دلار, ارشدِ مارکتینگ).
+6. **The conditional pivot** — her signature. After each argument she narrows it:
+   *«آنچه اهمیت دارد… است»*, *«موردی که در صدرِ اولویت قرار دارد…»*. In #1 it is already a
+   pure antithesis: *«نه صرفاً یک تحصیلِ ساده، بلکه تحصیل در دانشگاه‌های برتر»*.
+7. **Explicit concession block**, then rebuttal: *«البته نباید نادیده گرفت که…»* → *«با این
+   وجود…»* / *«اگرچه…»*.
+8. **Close on a person, not a summary.** #1 projects onto *«کارمندان و مدیرانِ جوان»*; #2
+   switches to direct address: *«اگر تصمیم گرفتی و بهایش را پرداختی، بدان که…»*. Warm,
+   forward-looking, second person. This is very close to podcast-Obama already — keep it.
+
+### Her stance is never absolute
+It is always a **conditional yes** — *«مشروط به…»* appears explicitly in #1 and #2. Never
+render her position as a flat oui. Render it as *oui, à une condition*.
+
+### Her connectors → French equivalents (spoken register)
+| فارسی | français |
+|---|---|
+| برای شروع باید گفت که | Déjà, il faut dire que… / Commençons par le plus simple : |
+| مضاف بر این | Et puis il y a autre chose. / À cela s'ajoute que… |
+| در واقع | En réalité, / En fait, |
+| برای مثال | **Je prends un exemple.** (phrase courte autonome — rythme de podcast) |
+| البته نباید نادیده گرفت که | Alors bien sûr, on ne peut pas faire comme si… |
+| به معنای دیگر | Autrement dit, |
+| با این وجود / اگرچه | Et pourtant, / Malgré tout, |
+| روی‌هم‌رفته | Au fond, / Tout bien pesé, |
+| آنچه اهمیت دارد X است | **Ce qui compte, ce n'est pas X — c'est Y.** |
+| مشروط به… | à une condition : … |
+
+### Register of her vocabulary
+Educated professional, not folksy: she reaches for precise terms (*اثرِ سیگنالینگ*, *دانشِ
+ضمنی*, *تکثرِ شخصیتی*, *بلامنازع*). French should match that — precise, but still spoken.
+
+### Her sentence rhythm
+She chains claim + mechanism with «؛» constantly. In French this becomes: a developed
+sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
+— that short sentence is where the podcast register lives.
 
 ## Progress (3 / 120 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1, 504 mots).
