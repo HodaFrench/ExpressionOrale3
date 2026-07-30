@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>تمرین ترجمه — Relations à Distance | TCF Avec Hoda</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -22,7 +22,7 @@
     position:sticky; top:0; z-index:100; display:flex; align-items:center;
     justify-content:center; gap:18px;
   }
-  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; display:inline-flex; align-items:center; min-height:44px; padding:0 6px; -webkit-tap-highlight-color:rgba(255,255,255,.2); touch-action:manipulation; }
   .navbar a:hover{ color:#00d4ff; }
   .navbar span{ color:#00d4ff; font-size:14px; }
 
@@ -79,8 +79,8 @@
   .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
   .tbtn{
     background:#fff; color:var(--ink); border:2px solid var(--line);
-    padding:9px 18px; border-radius:24px; font-family:inherit; font-size:14px;
-    font-weight:700; cursor:pointer; transition:.2s;
+    min-height:44px; padding:9px 20px; border-radius:24px; font-family:inherit; font-size:14px;
+    font-weight:700; cursor:pointer; transition:.2s; touch-action:manipulation;
   }
   .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
 

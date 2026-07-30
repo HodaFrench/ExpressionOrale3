@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>تمرین ترجمه — Expression Orale · TCF Avec Hoda</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -13,18 +13,18 @@
   }
   body{ font-family:'Tahoma',Arial,sans-serif; background:linear-gradient(135deg,#1a1a2e,#16213e); color:var(--ink); line-height:1.9; min-height:100vh; padding-bottom:60px; }
   .navbar{ background:rgba(0,0,0,.5); padding:14px 18px; display:flex; align-items:center; justify-content:center; gap:18px; position:sticky; top:0; z-index:100; }
-  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; display:inline-flex; align-items:center; min-height:44px; padding:0 6px; -webkit-tap-highlight-color:rgba(255,255,255,.2); touch-action:manipulation; }
   .navbar a:hover{ color:#00d4ff; }
   .navbar span{ color:#00d4ff; font-size:14px; }
 
   .container{ max-width:1000px; margin:0 auto; padding:34px 18px; }
   .header{ background:linear-gradient(135deg,var(--navy),var(--purple)); color:#fff; padding:32px 28px; border-radius:20px; margin-bottom:24px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45); }
-  .header .badge{ display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); font-size:12px; font-weight:700; padding:5px 14px; border-radius:20px; margin-bottom:14px; }
+  .header .badge{ display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); font-size:13.5px; font-weight:700; padding:5px 14px; border-radius:20px; margin-bottom:14px; }
   .header h1{ font-size:24px; font-weight:800; margin-bottom:12px; direction:ltr; line-height:1.35; }
   .header .meta{ font-size:14px; opacity:.9; }
 
   .card{ background:#fff; border-radius:18px; margin-bottom:22px; box-shadow:0 10px 30px rgba(0,0,0,.18); overflow:hidden; }
-  .card-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 20px; cursor:pointer; user-select:none; background:var(--navy); color:#fff; }
+  .card-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:44px; padding:14px 20px; cursor:pointer; user-select:none; background:var(--navy); color:#fff; }
   .card-head h2{ font-size:15px; font-weight:800; }
   .card-head .tog{ font-size:13px; opacity:.7; transition:.2s; }
   .raw .card-body{ padding:18px 22px; font-size:16px; line-height:2.05; color:#333; direction:rtl; text-align:right; border-top:4px solid var(--amber); }
@@ -36,16 +36,16 @@
   .guide .hint{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); font-size:13.5px; color:var(--gray); }
 
   .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
-  .tbtn{ background:#fff; color:var(--ink); border:2px solid var(--line); padding:9px 18px; border-radius:24px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; transition:.2s; }
+  .tbtn{ background:#fff; color:var(--ink); border:2px solid var(--line); min-height:44px; padding:9px 20px; border-radius:24px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; transition:.2s; }
   .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
 
   .levelbar{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; background:#fff; border:2px solid var(--line); border-radius:14px; padding:10px 14px; margin-bottom:14px; }
   .lvl-label{ font-size:13px; font-weight:800; color:var(--ink); }
-  .lvl{ background:var(--soft); color:var(--ink); border:2px solid var(--line); padding:7px 20px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; transition:.2s; }
+  .lvl{ background:var(--soft); color:var(--ink); border:2px solid var(--line); min-height:44px; padding:7px 22px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; transition:.2s; }
   .lvl:hover{ border-color:var(--purple); color:var(--purple); }
   .lvl.on{ background:var(--navy,#0f3460); border-color:var(--navy,#0f3460); color:#fff; }
-  .lvl-note{ font-size:12px; color:#6b6b88; margin-inline-start:auto; }
-  @media (max-width:520px){ .lvl-note{ display:none; } }
+  .lvl-note{ display:none; font-size:13px; color:#5E5E7A; margin-inline-start:auto; }
+  @media (min-width:560px){ .lvl-note{ display:inline; } }
 
   .tr-para{ background:#fff; border-radius:16px; margin-bottom:18px; box-shadow:0 8px 24px rgba(0,0,0,.14); overflow:hidden; }
   .tr-phead{ display:flex; align-items:center; justify-content:space-between; padding:11px 18px; background:var(--soft); border-bottom:1px solid var(--line); }
@@ -55,7 +55,7 @@
   .tr-ptime{ font-size:12px; color:var(--gray); }
 
   .tr-flow{ display:flex; flex-wrap:wrap; gap:8px 10px; align-items:flex-end; padding:18px; direction:ltr; }
-  .tr-seg{ display:inline-flex; flex-direction:column; align-items:flex-start; cursor:pointer; direction:ltr; }
+  .tr-seg{ display:inline-flex; flex-direction:column; align-items:flex-start; cursor:pointer; direction:ltr; min-height:44px; justify-content:flex-end; -webkit-tap-highlight-color:rgba(83,52,131,.15); touch-action:manipulation; }
   .tr-fr{ display:block; background:var(--fr-bg); border:1px solid var(--fr-bd); color:var(--fr); font-weight:700; font-size:15px; padding:4px 9px; border-radius:7px; margin-bottom:4px; direction:ltr; text-align:left; white-space:nowrap; }
   .tr-seg:not(.on) .tr-fr{ visibility:hidden; }
   .tr-fa{ display:block; background:var(--soft); border:1px dashed var(--line); color:#222; font-size:14px; font-weight:600; padding:4px 9px; border-radius:7px; direction:rtl; text-align:left; line-height:1.7; }

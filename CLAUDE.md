@@ -211,3 +211,22 @@ Hold new pages to this: everything visible on load (no search/tab gates), one pr
 action per screen, contrast ≥ 4.5:1 for body text, identical card shapes, visible numeric
 progress, `prefers-reduced-motion` honoured, visible keyboard focus, tap targets ≥ 44px.
 Do not hide content behind progressive disclosure.
+
+## Mobile-first (set 2026-07-30)
+The phone is the reference, not the fallback. Rules for any new or edited CSS:
+
+- **`min-width` only.** Base styles target the phone; breakpoints add as the screen grows.
+  `index.html` has zero `max-width` media queries — keep it that way.
+  Breakpoints: **640px** (tablet, 2 columns) and **1024px** (desktop, 3–4 columns).
+- **Tap targets ≥ 44×44px.** Includes `.tr-seg` — the interlinear segments are the main
+  interaction of the whole site and are tapped hundreds of times per session.
+- **No text below 13px.** 11–12px was in use and is unreadable on a phone.
+- **Hover only behind `@media (hover:hover) and (pointer:fine)`.** On touch, `:hover` latches
+  after a tap. `EO_trainer.html` had the "go" arrow revealed on hover only — invisible to a
+  finger. It is now always visible on touch, hover-revealed on mouse.
+- **`viewport-fit=cover`** on every page, with `env(safe-area-inset-*)` in the gutters and the
+  footer so nothing hides under a notch or a home indicator.
+- **`touch-action:manipulation`** on interactive elements to kill the 300ms tap delay.
+
+Audit script pattern (Playwright, `is_mobile=True`) — check at 360px and 390px:
+horizontal overflow, count of targets under 44px, smallest rendered font.

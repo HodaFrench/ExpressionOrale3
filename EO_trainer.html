@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>تمرین ترجمه‌ی شفاهی — Expression Orale · TCF Avec Hoda</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -37,29 +37,29 @@
   .search-box::before{ content:"🔍"; position:absolute; left:18px; top:50%; transform:translateY(-50%); opacity:.5; }
 
   .tabs{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; max-width:920px; margin:14px auto 6px; padding:0 16px; }
-  .tab{ background:#fff; color:#555; border:2px solid var(--line); padding:8px 15px; border-radius:22px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; transition:.2s; }
-  .tab:hover{ border-color:var(--accent); color:var(--accent); }
+  .tab{ background:#fff; color:#555; border:2px solid var(--line); min-height:44px; padding:8px 16px; border-radius:22px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; transition:.2s; }
+  @media (hover:hover) and (pointer:fine){ .tab:hover{ border-color:var(--accent); color:var(--accent); } }
   .tab.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
-  .tab .n{ opacity:.6; font-size:11px; }
+  .tab .n{ opacity:.65; font-size:13px; }
 
   .wrap{ max-width:1180px; margin:0 auto; padding:16px 20px 80px; }
   .count{ text-align:center; color:var(--muted); font-size:13px; margin:10px 0 20px; }
   .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
 
   .qcard{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:0; overflow:hidden; display:flex; flex-direction:column; transition:.2s; text-decoration:none; color:inherit; position:relative; }
-  .qcard.done:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(26,26,46,.10); border-color:transparent; }
+  @media (hover:hover) and (pointer:fine){ .qcard.done:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(26,26,46,.10); border-color:transparent; } }
   .qcard .strip{ height:6px; }
   .qcard .body{ padding:16px 18px; display:flex; flex-direction:column; height:100%; }
   .qcard .top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
-  .qcard .num{ font-family:'Courier New',monospace; font-size:12px; font-weight:800; color:var(--muted); }
-  .qcard .cat{ font-size:11px; font-weight:700; color:#fff; padding:3px 10px; border-radius:12px; }
+  .qcard .num{ font-family:'Courier New',monospace; font-size:13px; font-weight:800; color:var(--muted); }
+  .qcard .cat{ font-size:13px; font-weight:700; color:#fff; padding:3px 10px; border-radius:12px; }
   .qcard .q{ direction:ltr; text-align:left; font-family:Georgia,serif; font-size:15px; line-height:1.5; color:var(--ink); flex:1; }
   .qcard .status{ margin-top:14px; }
   .chip{ display:inline-block; font-size:12px; font-weight:700; padding:5px 12px; border-radius:10px; }
   .chip.todo{ background:var(--soft); color:var(--muted); }
   .chip.ready{ background:#e8f5e9; color:#2e7d32; }
-  .qcard.done .go{ position:absolute; bottom:14px; left:16px; color:var(--accent); font-size:15px; opacity:0; transition:.2s; }
-  .qcard.done:hover .go{ opacity:1; }
+  .qcard.done .go{ position:absolute; bottom:14px; left:16px; color:var(--accent); font-size:15px; opacity:1; transition:.2s; }
+  @media (hover:hover) and (pointer:fine){ .qcard.done .go{ opacity:0; } .qcard.done:hover .go{ opacity:1; } }
   .qcard:not(.done){ opacity:.72; }
 
   .empty{ grid-column:1/-1; text-align:center; color:#aaa; padding:50px; font-size:17px; }
@@ -99,7 +99,7 @@
 
   <div class="footer">
     <p>👩‍🏫 <strong>TCF Avec Hoda KHEDMATI</strong> — Expression Orale · Tâche 3</p>
-    <p style="margin-top:5px;font-size:11px;">© 2025</p>
+    <p style="margin-top:5px;font-size:13px;">© 2026</p>
   </div>
 
   <script src="eo-data.js"></script>
