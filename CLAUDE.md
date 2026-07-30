@@ -174,7 +174,7 @@ She chains claim + mechanism with «؛» constantly. In French this becomes: a d
 sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
 — that short sentence is where the podcast register lives.
 
-## Progress (4 / 120 done)
+## Progress (5 / 120 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1, 504 mots).
 - ✅ `#2` "Quel est l’intérêt d’avoir une expérience … à l’étranger ?" (C1, 536 mots).
 - ✅ `#3` "…quel rôle joue la télévision dans l’éducation des enfants ?" (C1, 516 mots, registre parlé).
