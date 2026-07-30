@@ -25,19 +25,30 @@ file is the source of truth.
    - `EO_practice.html?id=N` — lecteur générique d'un trainer (rend l'interlinéaire depuis les données).
    - `eo-trainers.js` — `EO_TRAINERS = { id: {...} }`, les données interlinéaires par question.
 
-A trainer entry shape (in `eo-trainers.js`):
+A trainer entry shape (in `eo-trainers.js`) — **two levels per question since #4**:
 ```js
 ID: {
-  level:'C1', time:'~4:30', position:'موضع… (Persian)',
+  position:'موضع… (Persian)',
   rawFa:"the learner's raw Persian answer, verbatim…",
-  paragraphs:[
-    { label:'INTRODUCTION', cls:'lb-intro', time:'⏱ ~40 ثانیه', segments:[
-      {fr:"De nos jours,", fa:"امروزه،"}, …
-    ]}, …
+  versions:[
+    { id:"c1", level:"C1",  time:"~4:00", paragraphs:[ … ] },
+    { id:"b2", level:"B2+", time:"~4:10", paragraphs:[ … ] },
   ]
 }
 ```
-`cls`: `lb-intro` · `lb-arg1` · `lb-arg2` · `lb-arg3` · `lb-arg4` · `lb-conc`.
+Each `paragraphs` entry:
+```js
+{ label:"INTRODUCTION", cls:"lb-intro", time:"⏱ ~45 ثانیه", segments:[
+  {fr:"De nos jours,", fa:"امروزه،"}, …
+]}
+```
+`cls` réellement stylé dans `EO_practice.html` : **`lb-intro` · `lb-arg` · `lb-conc`** — pas
+`lb-arg1..4`, qui n'existent pas.
+
+**Backward compatibility — do not break it.** Entries `#1`–`#3` predate `versions[]` and keep
+the flat shape (`level` + `paragraphs` at the top level). `EO_practice.html` normalises both
+into a `VERSIONS` array and only shows the level selector when there is more than one version.
+Chosen level persists in `localStorage['hk-level']`.
 
 ## THE WORKFLOW — one question at a time (follow exactly)
 1. **Claude picks the next question** from the TOP of the remaining list in `eo-data.js`
@@ -45,8 +56,11 @@ ID: {
    question wording from `eo-data.js`.
 2. **The user writes their raw Persian answer** word-by-word (their own logic and words).
    Claude does NOT invent the opinion — it comes from the user.
-3. Claude converts the user's ideas into a **genuinely high-level C1, truly natural French**
-   monologue. **Length MUST be 500–540 words** — verify with `wc -w` before presenting.
+3. Claude writes **two versions** of the same monologue: **C1** and **B2+**. Same argument
+   chain, same order, same examples — only the linguistic level differs (see the table under
+   REGISTER). **Each MUST be 500–540 words.**
+   ⚠️ Count with Python, not `wc -w`: the container has no UTF-8 locale and `wc -w` miscounts
+   em-dashes. Use `len([w for w in text.split() if re.search(r'[A-Za-zÀ-ÿ0-9]', w)])`.
    Register and rhetoric: see the section below. It is not optional.
 
 4. Present the French + a faithful Persian rendering; **iterate until the user approves**
@@ -160,7 +174,7 @@ She chains claim + mechanism with «؛» constantly. In French this becomes: a d
 sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
 — that short sentence is where the podcast register lives.
 
-## Progress (3 / 120 done)
+## Progress (4 / 120 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1, 504 mots).
 - ✅ `#2` "Quel est l’intérêt d’avoir une expérience … à l’étranger ?" (C1, 536 mots).
 - ✅ `#3` "…quel rôle joue la télévision dans l’éducation des enfants ?" (C1, 516 mots, registre parlé).

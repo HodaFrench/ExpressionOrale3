@@ -39,6 +39,14 @@
   .tbtn{ background:#fff; color:var(--ink); border:2px solid var(--line); padding:9px 18px; border-radius:24px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; transition:.2s; }
   .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
 
+  .levelbar{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; background:#fff; border:2px solid var(--line); border-radius:14px; padding:10px 14px; margin-bottom:14px; }
+  .lvl-label{ font-size:13px; font-weight:800; color:var(--ink); }
+  .lvl{ background:var(--soft); color:var(--ink); border:2px solid var(--line); padding:7px 20px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; transition:.2s; }
+  .lvl:hover{ border-color:var(--purple); color:var(--purple); }
+  .lvl.on{ background:var(--navy,#0f3460); border-color:var(--navy,#0f3460); color:#fff; }
+  .lvl-note{ font-size:12px; color:#6b6b88; margin-inline-start:auto; }
+  @media (max-width:520px){ .lvl-note{ display:none; } }
+
   .tr-para{ background:#fff; border-radius:16px; margin-bottom:18px; box-shadow:0 8px 24px rgba(0,0,0,.14); overflow:hidden; }
   .tr-phead{ display:flex; align-items:center; justify-content:space-between; padding:11px 18px; background:var(--soft); border-bottom:1px solid var(--line); }
   .tr-plabel{ font-size:13px; font-weight:800; color:#fff; padding:4px 12px; border-radius:8px; }
@@ -80,6 +88,20 @@
     const data = (typeof EO_TRAINERS!=='undefined') ? EO_TRAINERS[id] : null;
     const root = document.getElementById('root');
 
+    // Deux formats coexistent : les anciennes entrées ont paragraphs/level à plat,
+    // les nouvelles ont un tableau versions[]. On ramène tout à une liste de versions.
+    const VERSIONS = !data ? []
+      : (Array.isArray(data.versions) && data.versions.length
+          ? data.versions
+          : [{ id:'c1', level:data.level||'C1', time:data.time, paragraphs:data.paragraphs }]);
+    let vIdx = 0;
+    try {
+      const saved = localStorage.getItem('hk-level');
+      const i = VERSIONS.findIndex(v => v.id === saved);
+      if (i >= 0) vIdx = i;
+    } catch(e){}
+    const V = () => VERSIONS[vIdx];
+
     function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
     if(!question){
@@ -94,8 +116,17 @@
       renderPractice();
     }
 
+    // Changer de niveau : on re-rend la page et on garde le choix pour la prochaine fois.
+    window.setLevel = i => {
+      if (i === vIdx || !VERSIONS[i]) return;
+      vIdx = i;
+      try { localStorage.setItem('hk-level', VERSIONS[i].id); } catch(e){}
+      renderPractice();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    };
+
     function renderPractice(){
-      const parasHtml = data.paragraphs.map((p,pi)=>{
+      const parasHtml = V().paragraphs.map((p,pi)=>{
         const segs = p.segments.map((s,si)=>
           `<span class="tr-seg" data-p="${pi}" data-i="${si}"><span class="tr-fr">${esc(s.fr)}</span><span class="tr-fa">${esc(s.fa)}</span></span>`
         ).join('');
@@ -104,9 +135,9 @@
 
       root.innerHTML = `
         <div class="header">
-          <div class="badge">🎯 تمرین ترجمه · #${id} · ${esc(data.level||'C1')}</div>
+          <div class="badge">🎯 تمرین ترجمه · #${id} · ${esc(V().level||'C1')}</div>
           <h1>${esc(question.q)}</h1>
-          <div class="meta">${esc(data.position||'')} ${data.time?('· ⏱ '+esc(data.time)):''}</div>
+          <div class="meta">${esc(data.position||'')} ${V().time?('· ⏱ '+esc(V().time)):''}</div>
         </div>
         ${data.rawFa ? `
         <div class="card raw open" id="raw">
@@ -119,13 +150,19 @@
           <strong>🎯 روشِ تمرین:</strong> فارسی را از چپ به راست دنبال کن و بلند به فرانسه بگو. هر جا گیر کردی، روی همان عبارتِ فارسی بزن تا فرانسه‌اش و عبارت‌های قبلش نمایش داده شود؛ دوباره بزن تا پنهان شود.
           <div class="hint">فرانسه بالا، فارسیِ چپ‌چین دقیقاً زیرش. ترتیبِ فارسی عمداً از ساختارِ فرانسه پیروی می‌کند.</div>
         </div>
+        ${VERSIONS.length > 1 ? `
+        <div class="levelbar">
+          <span class="lvl-label">سطح متن:</span>
+          ${VERSIONS.map((v,i)=>`<button class="lvl${i===vIdx?' on':''}" onclick="setLevel(${i})">${esc(v.level)}</button>`).join('')}
+          <span class="lvl-note">همان استدلال‌ها، دو سطح زبانی</span>
+        </div>` : ''}
         <div class="toolbar">
           <button class="tbtn" onclick="revealAll(true)">👁️ نمایش همه</button>
           <button class="tbtn" onclick="revealAll(false)">🙈 مخفی کردن همه</button>
         </div>
         <div id="trainer">${parasHtml}</div>`;
 
-      const upto = data.paragraphs.map(()=>-1);
+      const upto = V().paragraphs.map(()=>-1);
       function apply(pi){
         document.querySelectorAll(`.tr-seg[data-p="${pi}"]`).forEach(seg=>{
           seg.classList.toggle('on', (+seg.dataset.i) <= upto[pi]);
@@ -138,7 +175,7 @@
           apply(pi);
         });
       });
-      window.revealAll = show => data.paragraphs.forEach((p,pi)=>{ upto[pi]=show?p.segments.length-1:-1; apply(pi); });
+      window.revealAll = show => V().paragraphs.forEach((p,pi)=>{ upto[pi]=show?p.segments.length-1:-1; apply(pi); });
     }
 
     window.addEventListener('scroll', ()=> document.getElementById('top').classList.toggle('show', window.pageYOffset>320));
