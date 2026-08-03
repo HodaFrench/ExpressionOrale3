@@ -174,7 +174,7 @@ She chains claim + mechanism with «؛» constantly. In French this becomes: a d
 sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
 — that short sentence is where the podcast register lives.
 
-## Progress (6 / 120 done)
+## Progress (7 / 120 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1 seul, 504 mots).
 - ✅ `#2` "Quel est l'intérêt d'avoir une expérience … à l'étranger ?" (C1 seul, 536 mots).
 - ✅ `#3` "…quel rôle joue la télévision dans l'éducation des enfants ?" (C1 seul, 516 mots).
@@ -186,7 +186,17 @@ sentence, then a colon or a dash, then the mechanism. Alternate with a short lan
 - ✅ `#6` "vivre à l'étranger : plus d'avantages ou d'inconvénients ?" (C1 509 / B2+ 531).
   Écrite depuis un **squelette de cinq lignes**, pas un texte complet. Format plus rapide pour
   elle mais qui oblige à déplier : cinq formulations sont de Claude, signalées avant validation.
-- ⏭️ Next: `#7` (thème خانواده و روابط) — waiting for her raw Persian answer or skeleton.
+- ✅ `#7` "peut-on être épanoui en vivant seul ?" (C1 523 / B2+ 537). Sa réponse était très
+  autobiographique (son appartement, ses parents, ses réunions nocturnes) ; **à sa demande,
+  transposée à la 3e personne** — les `je` restants portent la position, pas les exemples.
+  Elle a aussi validé un ajout : les rencontres choisies sont de meilleure qualité que les
+  rencontres subies, ce qui retourne l'objection au lieu de seulement la concéder.
+- ⏭️ Next: `#8` (thème فرهنگ و اوقات فراغت) — waiting for her raw Persian answer or skeleton.
+
+💡 **Le format squelette marche mieux.** Depuis `#6` elle peut envoyer six lignes — موضع /
+دلیل اول / دلیل دوم / مثال / مخالف‌ها / جواب تو — au lieu d'un texte complet. C'est plus rapide
+pour elle. En contrepartie il faut déplier davantage, donc **lister explicitement les
+formulations ajoutées** avant qu'elle valide.
 
 ⚠️ **Recouvrement du thème migration.** `#2`, `#5` et `#6` sont faites et s'appuient toutes les
 trois sur les Émirats — c'est sa seule grande expérience, donc légitime, mais le cadrage doit

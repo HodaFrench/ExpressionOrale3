@@ -27,7 +27,7 @@ const EO_QUESTIONS = [
   { id:4,  theme:'etudes',       done:true, q:"Pensez-vous que l’autorité soit indispensable dans l’éducation d’un enfant ? Pourquoi ?" },
   { id:5,  theme:'immigration',  done:true, q:"Est-ce que vous pensez qu'il est difficile de vivre dans un pays étranger ? Pourquoi ?" },
   { id:6,  theme:'immigration',  done:true, q:"D’après vous, vivre à l’étranger a-t-il plus d’avantages ou d’inconvénients ? Pourquoi ?" },
-  { id:7,  theme:'famille',      done:false, q:"À votre avis, peut-on être épanoui en vivant seul ?" },
+  { id:7,  theme:'famille',      done:true, q:"À votre avis, peut-on être épanoui en vivant seul ?" },
   { id:8,  theme:'culture',      done:false, q:"Les loisirs culturels (musées, théâtres, etc.) devraient être gratuits. Qu’en pensez-vous ?" },
   { id:9,  theme:'culture',      done:false, q:"D’après vous, le style vestimentaire a-t-il une importance dans la vie quotidienne ? Pourquoi ?" },
   { id:10, theme:'immigration',  done:false, q:"Apprendre la langue du pays où l’on vit est essentiel pour s’intégrer. Êtes-vous d’accord ? Pourquoi ?" },
