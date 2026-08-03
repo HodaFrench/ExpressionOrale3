@@ -94,7 +94,10 @@
       : (Array.isArray(data.versions) && data.versions.length
           ? data.versions
           : [{ id:'c1', level:data.level||'C1', time:data.time, paragraphs:data.paragraphs }]);
-    let vIdx = 0;
+    // Les versions sont rangées du plus accessible au plus exigeant.
+    // Par défaut on ouvre sur C1 (le comportement d'avant), sauf choix mémorisé.
+    let vIdx = VERSIONS.findIndex(v => v.id === 'c1');
+    if (vIdx < 0) vIdx = VERSIONS.length - 1;
     try {
       const saved = localStorage.getItem('hk-level');
       const i = VERSIONS.findIndex(v => v.id === saved);
@@ -154,7 +157,7 @@
         <div class="levelbar">
           <span class="lvl-label">سطح متن:</span>
           ${VERSIONS.map((v,i)=>`<button class="lvl${i===vIdx?' on':''}" onclick="setLevel(${i})">${esc(v.level)}</button>`).join('')}
-          <span class="lvl-note">همان استدلال‌ها، دو سطح زبانی</span>
+          <span class="lvl-note">همان استدلال‌ها، سطح زبانیِ متفاوت</span>
         </div>` : ''}
         <div class="toolbar">
           <button class="tbtn" onclick="revealAll(true)">👁️ نمایش همه</button>

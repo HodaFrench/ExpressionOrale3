@@ -30,9 +30,10 @@ A trainer entry shape (in `eo-trainers.js`) — **two levels per question since 
 ID: {
   position:'موضع… (Persian)',
   rawFa:"the learner's raw Persian answer, verbatim…",
-  versions:[
-    { id:"c1", level:"C1",  time:"~4:00", paragraphs:[ … ] },
-    { id:"b2", level:"B2+", time:"~4:10", paragraphs:[ … ] },
+  versions:[                       // ordre croissant, obligatoire
+    { id:"n7", level:"11/20", time:"~3:40", paragraphs:[ … ] },
+    { id:"b2", level:"B2+",   time:"~4:05", paragraphs:[ … ] },
+    { id:"c1", level:"C1",    time:"~4:00", paragraphs:[ … ] },
   ]
 }
 ```
@@ -56,9 +57,9 @@ Chosen level persists in `localStorage['hk-level']`.
    question wording from `eo-data.js`.
 2. **The user writes their raw Persian answer** word-by-word (their own logic and words).
    Claude does NOT invent the opinion — it comes from the user.
-3. Claude writes **two versions** of the same monologue: **C1** and **B2+**. Same argument
-   chain, same order, same examples — only the linguistic level differs (see the table under
-   REGISTER). **Each MUST be 500–540 words.**
+3. Claude writes **three versions** of the same monologue: **11/20**, **B2+** and **C1**.
+   Same argument chain, same order, same examples — only the linguistic level differs.
+   Length: **500–540 words** for B2+ and C1; **430–470 words** for 11/20 (see below).
    ⚠️ Count with Python, not `wc -w`: the container has no UTF-8 locale and `wc -w` miscounts
    em-dashes. Use `len([w for w in text.split() if re.search(r'[A-Za-zÀ-ÿ0-9]', w)])`.
    Register and rhetoric: see the section below. It is not optional.
@@ -118,6 +119,38 @@ Tâche 3 addresses a **specific interlocutor in a defined situation** (a friend,
 a neighbour). The target is the register of a thoughtful interview: eloquent but relaxed,
 thinking aloud, qualifying itself, warm. Podium solemnity applied to "convince your friend to
 sort his rubbish" reads as parody and as memorised. Over-polish is itself a scoring risk.
+
+## THE THREE LEVELS (11/20 added 2026-07-31)
+The user asked for a third version aimed at **11/20 in TCF Canada Expression Orale**. Context
+she and Claude established: on the official scale, **10–11/20 = NCLC 7**, the minimum for most
+federal programmes; 12–13 = NCLC 8; 14–15 = NCLC 9. So 11 sits at the *top of the entry band* —
+one point below a full level jump.
+
+**Ordering in `versions[]` is ascending: `n7` → `b2` → `c1`.** `EO_practice.html` defaults to
+`c1` when nothing is stored, so the previous behaviour is unchanged.
+
+### What actually distinguishes the 11/20 version
+Not "worse French" — *simpler* French, delivered cleanly. Concretely:
+- **Short sentences.** Target ~12 words average, against ~17 for B2+/C1. Measure it.
+- **Main clauses.** Avoid stacked relatives, avoid `dont`, avoid participial constructions
+  (`enfermés dans…`, `venus de…`). Use `si on…, on…` instead.
+- **Plain connectors only**: *et, mais, parce que, aussi, donc, par exemple, alors, bien sûr*.
+  Drop *or, en revanche, quant à, cela dit* (keep `cela dit` only as `mais`).
+- **No nominalisation**: `le fait d'accepter un cadre`, not `l'acceptation d'un cadre`.
+- **Repetition is allowed.** Reusing a word is normal at this level and costs nothing.
+- **Shorter overall — 430–470 words.** A candidate at this level speaks more slowly, so the
+  same ~4 minutes carries fewer words. Writing 530 words here would be unrealistic to deliver.
+
+### What must NOT be lowered
+The **structure** is what earns marks: opening frame, thesis with its two named reasons,
+argument → example, counter-argument, verdict. Keep all five paragraphs and keep her tricolons.
+A simply-worded but well-organised answer scores better than an ornate but shapeless one.
+
+### Point to make to the user when relevant
+The level of the text does not set the score — delivery does (fluency, pronunciation,
+hesitation, actually answering the question). A C1 text delivered haltingly can score below a
+11/20 text delivered fluently. The three versions exist so she can pick what she can say
+*smoothly*, not what looks hardest.
 
 ## HER IDIOLECT — derived from the `rawFa` of #1, #2, #3 (2026-07-30)
 The user asked that her *thinking model, her way of connecting sentences and her ordering* be
@@ -186,7 +219,8 @@ sentence, then a colon or a dash, then the mechanism. Alternate with a short lan
 - ✅ `#6` "vivre à l'étranger : plus d'avantages ou d'inconvénients ?" (C1 509 / B2+ 531).
   Écrite depuis un **squelette de cinq lignes**, pas un texte complet. Format plus rapide pour
   elle mais qui oblige à déplier : cinq formulations sont de Claude, signalées avant validation.
-- ✅ `#7` "peut-on être épanoui en vivant seul ?" (C1 523 / B2+ 537). Sa réponse était très
+- ✅ `#7` "peut-on être épanoui en vivant seul ?" (11/20 450 · B2+ 537 · C1 523) —
+  **première question à trois niveaux**. Sa réponse était très
   autobiographique (son appartement, ses parents, ses réunions nocturnes) ; **à sa demande,
   transposée à la 3e personne** — les `je` restants portent la position, pas les exemples.
   Elle a aussi validé un ajout : les rencontres choisies sont de meilleure qualité que les
@@ -203,8 +237,10 @@ trois sur les Émirats — c'est sa seule grande expérience, donc légitime, ma
 différer : `#5` = l'arrivée et l'absence de réseau, `#6` = les années sur place et ce qu'elles
 ont apporté. Ne pas laisser les trois converger.
 
-- `#1`–`#3` datent d'avant REGISTER et n'ont **pas** de version B2+. Deux dettes distinctes :
-  les réécrire au registre, et leur ajouter le second niveau.
+**Dettes de niveaux** (état au 2026-07-31) :
+- `#1`–`#3` : un seul niveau (C1), et écrits avant REGISTER. Deux chantiers distincts.
+- `#4`–`#6` : deux niveaux, il leur manque le **11/20**.
+- `#7` : les trois. C'est la cible pour toute nouvelle question.
 - The reference demo `TRAINER_RELATIONS_DISTANCE.html` (relations à distance) is a standalone
   page NOT part of the 120 list — leave it as a working example.
 
