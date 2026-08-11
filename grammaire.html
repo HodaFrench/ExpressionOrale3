@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>پوشش گرامر B2 — TCF Avec Hoda KHEDMATI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#1a1a2e; --gray:#6b6b88; --line:#e3e3f0; --soft:#f3f3f9;
+    --navy:#0f3460; --purple:#533483; --accent:#00d4ff;
+    --fr:#0f3460; --fr-bg:#eef4fc; --fr-bd:#c9ddf4;
+    --hit:#eaf4ef; --hit-bd:#1f6b4e; --miss:#fceeed;
+    --tap:44px; --gut:18px; --maxw:1000px;
+  }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:16.5px; line-height:1.8;
+        background:#fbfbfe; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a,button{ -webkit-tap-highlight-color:rgba(83,52,131,.15); touch-action:manipulation; }
+  :focus-visible{ outline:3px solid var(--purple); outline-offset:3px; }
+
+  .navbar{ background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
+  .navbar .in{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:14px;
+    padding:6px max(var(--gut),env(safe-area-inset-right)) 6px max(var(--gut),env(safe-area-inset-left)); }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px;
+             display:inline-flex; align-items:center; min-height:var(--tap); padding:0 6px; }
+  .navbar .brand{ margin-inline-start:auto; font-size:13px; opacity:.85; font-weight:600; }
+
+  .shell{ max-width:var(--maxw); margin:0 auto;
+    padding:0 max(var(--gut),env(safe-area-inset-right)) 60px max(var(--gut),env(safe-area-inset-left)); }
+
+  .header{ background:linear-gradient(135deg,var(--navy),var(--purple)); color:#fff;
+           border-radius:16px; padding:22px 20px; margin:18px 0 0; }
+  .header h1{ font-size:22px; font-weight:800; }
+  .header p{ font-size:14.5px; opacity:.92; margin-top:8px; }
+  .score{ display:flex; align-items:baseline; gap:10px; margin-top:14px;
+          padding-top:12px; border-top:1px solid rgba(255,255,255,.2); }
+  .score b{ font-size:34px; font-weight:800; line-height:1; }
+  .score span{ font-size:14px; opacity:.9; }
+
+  .guide{ background:#fff8e9; border:1px solid #f0dfb8; border-inline-start:4px solid #b8860b;
+          border-radius:12px; padding:14px 16px; margin-top:16px; font-size:14.5px; color:#5c4413; }
+
+  h2{ font-size:20px; font-weight:800; margin:30px 0 6px; }
+  .sub{ font-size:14px; color:var(--gray); margin-bottom:14px; }
+
+  /* ── matrice ── */
+  .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch;
+         border:1px solid var(--line); border-radius:14px; background:#fff; }
+  table{ border-collapse:collapse; width:100%; min-width:560px; }
+  th,td{ border-bottom:1px solid var(--line); padding:9px 10px; text-align:center; font-size:13.5px; }
+  th{ background:var(--soft); font-weight:800; position:sticky; top:0; }
+  td.name,th.name{ text-align:right; font-weight:600; white-space:normal; min-width:210px; }
+  td.name .fr{ direction:ltr; text-align:left; font-family:'Newsreader',Georgia,serif; font-size:14.5px; }
+  td.name .fa{ font-size:12px; color:var(--gray); }
+  td.y{ background:var(--hit); color:var(--hit-bd); font-weight:800; }
+  td.n{ color:#c9c9d8; }
+  tr:last-child td{ border-bottom:0; }
+
+  /* ── textes ── */
+  .tsel{ display:flex; gap:8px; flex-wrap:wrap; margin:14px 0; }
+  .tbtn{ background:#fff; color:var(--ink); border:2px solid var(--line); min-height:var(--tap);
+         padding:8px 16px; border-radius:22px; font-family:inherit; font-size:14px;
+         font-weight:700; cursor:pointer; }
+  .tbtn.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
+
+  .qhead{ background:#fff; border:1px solid var(--line); border-radius:12px;
+          padding:14px 16px; margin-bottom:14px; }
+  .qhead .fr{ direction:ltr; text-align:left; font-family:'Newsreader',Georgia,serif;
+              font-size:17px; line-height:1.5; }
+  .qhead .fa{ font-size:14px; color:var(--gray); margin-top:6px; }
+  .qhead .n{ font-family:'Courier New',monospace; font-size:13px; color:var(--purple); font-weight:800; }
+
+  .para{ background:#fff; border:1px solid var(--line); border-radius:12px;
+         margin-bottom:12px; overflow:hidden; }
+  .para .lb{ background:var(--soft); padding:8px 16px; font-size:12.5px; font-weight:800; color:var(--gray); }
+  .para p{ direction:ltr; text-align:left; font-family:'Newsreader',Georgia,serif;
+           font-size:17px; line-height:1.85; padding:14px 16px 18px; }
+  mark{ background:var(--fr-bg); border-bottom:2px solid var(--fr-bd); color:inherit;
+        padding:1px 2px; border-radius:3px; cursor:help; }
+
+  .legend{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 16px; }
+  .legend span{ font-size:12.5px; background:var(--soft); border:1px solid var(--line);
+                padding:3px 10px; border-radius:20px; direction:ltr; }
+
+  footer{ margin-top:44px; padding:22px 0 calc(22px + env(safe-area-inset-bottom));
+          border-top:1px solid var(--line); font-size:13px; color:var(--gray); text-align:center; }
+
+  @media (hover:hover) and (pointer:fine){
+    .navbar a:hover{ text-decoration:underline; }
+    .tbtn:hover{ border-color:var(--purple); color:var(--purple); }
+    .tbtn.on:hover{ color:#fff; }
+  }
+  @media (min-width:640px){ :root{ --gut:22px; } body{ font-size:17px; } .header h1{ font-size:26px; } }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<div class="navbar"><div class="in">
+  <a href="index.html">← خانه</a>
+  <a href="EO_trainer.html">تمرین‌ها</a>
+  <a href="blocs.html?id=1">بلوک‌ها</a>
+  <span class="brand">TCF Avec Hoda KHEDMATI</span>
+</div></div>
+
+<div class="shell" id="root"></div>
+<footer>Hoda KHEDMATI — Expression Orale · Tâche 3</footer>
+
+<script src="grammaire-data.js"></script>
+<script>
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+const full = t => t.paras.map(p => p.p).join(' ');
+const rx = s => new RegExp(s.re, 'gi');
+
+let cur = 0;
+
+/* quelles structures apparaissent dans quel texte */
+const hits = B2_CORPUS.map(t => new Set(
+  B2_STRUCTURES.filter(s => new RegExp(s.re, 'i').test(full(t))).map(s => s.id)
+));
+const covered = new Set([].concat(...hits.map(h => [...h])));
+
+/* surligne dans un paragraphe toutes les structures détectées */
+function highlight(txt){
+  const marks = [];
+  for (const s of B2_STRUCTURES){
+    let m, r = rx(s);
+    while ((m = r.exec(txt)) !== null){
+      if (m[0].trim()) marks.push({ a: m.index, b: m.index + m[0].length, t: s.fr });
+      if (m.index === r.lastIndex) r.lastIndex++;
+    }
+  }
+  marks.sort((x, y) => x.a - y.a || y.b - x.b);
+  // on garde les segments non chevauchants, le plus long d'abord
+  const keep = [];
+  let end = -1;
+  for (const m of marks){ if (m.a >= end){ keep.push(m); end = m.b; } }
+  let out = '', pos = 0;
+  for (const m of keep){
+    out += esc(txt.slice(pos, m.a)) + `<mark title="${esc(m.t)}">` + esc(txt.slice(m.a, m.b)) + '</mark>';
+    pos = m.b;
+  }
+  return out + esc(txt.slice(pos));
+}
+
+function render(){
+  const t = B2_CORPUS[cur];
+  const mine = B2_STRUCTURES.filter(s => hits[cur].has(s.id));
+  document.getElementById('root').innerHTML = `
+    <div class="header">
+      <h1>پوشش گرامر B2</h1>
+      <p>هدف این نیست که همه‌ی ساختارها در یک متن جمع شود — آن‌وقت متن بوی نمایش می‌دهد.
+         هدف این است که روی <b>کلِ مجموعه</b> هیچ ساختاری جا نماند، و هر کدام جایی بیاید که استدلال واقعاً می‌خواهدش.</p>
+      <div class="score">
+        <b>${faNum(covered.size)}/${faNum(B2_STRUCTURES.length)}</b>
+        <span>ساختار پوشش داده شده · در ${faNum(B2_CORPUS.length)} متن</span>
+      </div>
+    </div>
+
+    <div class="guide">
+      <b>چطور بخوانی.</b> در جدول ببین هر ساختار در کدام متن‌ها آمده. بعد متن را باز کن —
+      هرچه <mark>هایلایت</mark> شده یک ساختار B2 است؛ انگشتت را رویش نگه دار تا اسمش را ببینی.
+    </div>
+
+    <h2>جدول پوشش</h2>
+    <p class="sub">ستون‌ها شماره‌ی سؤال‌اند. سبز یعنی آن ساختار در آن متن به کار رفته.</p>
+    <div class="wrap"><table>
+      <thead><tr><th class="name">ساختار</th>
+        ${B2_CORPUS.map(x => `<th>#${faNum(x.id)}</th>`).join('')}
+        <th>جمع</th></tr></thead>
+      <tbody>${B2_STRUCTURES.map(s => {
+        const n = hits.filter(h => h.has(s.id)).length;
+        return `<tr>
+          <td class="name"><span class="fr">${esc(s.fr)}</span><br><span class="fa">${esc(s.fa)}</span></td>
+          ${hits.map(h => h.has(s.id) ? '<td class="y">✓</td>' : '<td class="n">·</td>').join('')}
+          <td class="${n ? 'y' : 'n'}">${faNum(n)}</td></tr>`;
+      }).join('')}</tbody>
+    </table></div>
+
+    <h2>متن‌ها</h2>
+    <p class="sub">روی هر شماره بزن تا متنش با ساختارهای هایلایت‌شده باز شود.</p>
+    <div class="tsel">
+      ${B2_CORPUS.map((x, i) => `<button class="tbtn${i === cur ? ' on' : ''}" onclick="go(${i})">#${faNum(x.id)}</button>`).join('')}
+    </div>
+
+    <div class="qhead">
+      <span class="n">#${faNum(t.id)} · ${faNum(mine.length)} ساختار</span>
+      <div class="fr">${esc(t.q)}</div>
+      ${t.qFa ? `<div class="fa">${esc(t.qFa)}</div>` : ''}
+    </div>
+
+    <div class="legend">${mine.map(s => `<span>${esc(s.fr)}</span>`).join('')}</div>
+
+    ${t.paras.map(p => `<div class="para">
+      <div class="lb">${esc(p.label)}</div>
+      <p>${highlight(p.p)}</p>
+    </div>`).join('')}`;
+}
+
+window.go = i => { cur = i; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+render();
+</script>
+</body>
+</html>
