@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>بلوک‌های زبانی — TCF Avec Hoda KHEDMATI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#14142B; --ink-2:#474765; --ink-3:#5E5E7A;
+    --navy:#0F3460; --violet:#533483; --amber:#A05C0A;
+    --green:#1F6B4E; --green-soft:#EAF4EF; --red:#B3261E; --red-soft:#FCEEED;
+    --paper:#FBFBFE; --card:#FFF; --line:#E3E3F0; --line-2:#CFCFE4; --soft:#F3F3F9;
+    --tap:44px; --gut:18px; --maxw:940px;
+  }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:16.5px; line-height:1.8;
+        background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a,button{ -webkit-tap-highlight-color:rgba(83,52,131,.15); touch-action:manipulation; }
+  :focus-visible{ outline:3px solid var(--violet); outline-offset:3px; border-radius:4px; }
+
+  .navbar{ background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
+  .navbar .in{ max-width:var(--maxw); margin:0 auto; padding:6px max(var(--gut),env(safe-area-inset-right)) 6px max(var(--gut),env(safe-area-inset-left));
+               display:flex; align-items:center; gap:14px; }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px;
+             display:inline-flex; align-items:center; min-height:var(--tap); padding:0 6px; }
+  .navbar .brand{ margin-inline-start:auto; font-size:13px; opacity:.85; font-weight:600; }
+
+  .shell{ max-width:var(--maxw); margin:0 auto;
+          padding:0 max(var(--gut),env(safe-area-inset-right)) 60px max(var(--gut),env(safe-area-inset-left)); }
+
+  /* ── en-tête du sujet ── */
+  .head{ background:linear-gradient(135deg,var(--navy),var(--violet)); color:#fff;
+         border-radius:16px; padding:22px 20px; margin:18px 0 0; }
+  .head .tag{ display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+              font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:10px; }
+  .head h1{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+            font-size:23px; line-height:1.4; font-weight:500; }
+  .head .fa{ font-size:14px; opacity:.9; margin-top:8px; }
+  .head .these{ margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.2); font-size:14px; }
+  .head .these b{ font-weight:800; }
+
+  /* ── avertissement méthode ── */
+  .method{ background:#FFF8E9; border:1px solid #F0DFB8; border-inline-start:4px solid var(--amber);
+           border-radius:12px; padding:14px 16px; margin-top:16px; font-size:14.5px; color:#5C4413; }
+  .method b{ font-weight:800; }
+
+  /* ── sections ── */
+  section{ margin-top:32px; }
+  h2{ font-size:20px; font-weight:800; margin-bottom:4px; display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  h2 .fr{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-style:italic;
+          font-size:15px; font-weight:400; color:var(--ink-3); }
+  .sub{ font-size:14px; color:var(--ink-3); margin-bottom:14px; }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+
+  /* ── le texte modèle ── */
+  .lvlbar{ display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+           background:var(--card); border:2px solid var(--line); border-radius:14px;
+           padding:10px 14px; margin-bottom:14px; }
+  .lvlbar .lbl{ font-size:13px; font-weight:800; }
+  .lvl{ background:var(--soft); color:var(--ink); border:2px solid var(--line); min-height:var(--tap);
+        padding:7px 22px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; }
+  .lvl.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
+  .para{ border-bottom:1px solid var(--line); }
+  .para:last-child{ border-bottom:0; }
+  .para .lb{ background:var(--soft); padding:8px 16px; font-size:12.5px; font-weight:800;
+             color:var(--ink-2); letter-spacing:.03em; }
+  .para p{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+           font-size:17.5px; line-height:1.75; padding:14px 16px 18px; }
+
+  /* ── blocs ── */
+  .bgrid{ display:grid; gap:10px; grid-template-columns:1fr; }
+  .b{ background:var(--card); border:1px solid var(--line); border-radius:11px; padding:12px 14px; }
+  .b .fr{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:17px; font-weight:500; color:var(--navy); }
+  .b .ex{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:14.5px; color:var(--ink-2); font-style:italic; margin-top:3px; }
+  .b .role{ display:inline-block; font-size:12px; background:var(--soft); color:var(--ink-2);
+            padding:2px 9px; border-radius:6px; margin-top:6px; }
+  .b .fa{ font-size:13.5px; color:var(--ink-3); margin-top:5px; }
+  .b .fa.hidden{ visibility:hidden; }
+
+  .toggle{ display:inline-flex; align-items:center; gap:8px; min-height:var(--tap);
+           background:var(--card); border:1px solid var(--line-2); color:var(--navy);
+           padding:8px 18px; border-radius:10px; font-family:inherit; font-size:13.5px;
+           font-weight:700; cursor:pointer; margin-bottom:12px; }
+
+  /* ── échelle ── */
+  .ech{ background:var(--card); border:1px solid var(--line); border-radius:12px;
+        padding:14px 16px; margin-bottom:10px; }
+  .ech .idea{ font-size:14px; color:var(--ink-3); margin-bottom:9px; }
+  .ech .row{ display:flex; gap:9px; align-items:flex-start; padding:5px 0; }
+  .ech .k{ flex:none; font-size:11.5px; font-weight:800; padding:2px 8px; border-radius:5px; margin-top:4px; }
+  .ech .k.s{ background:#FCEEED; color:var(--red); }
+  .ech .k.a{ background:#EEF4FC; color:var(--navy); }
+  .ech .k.b{ background:var(--green-soft); color:var(--green); }
+  .ech .t{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+           font-size:16px; line-height:1.5; }
+
+  /* ── anti-traduction ── */
+  .at{ background:var(--card); border:1px solid var(--line); border-radius:12px;
+       padding:14px 16px; margin-bottom:10px; }
+  .at .l{ display:flex; gap:9px; align-items:flex-start; padding:4px 0; }
+  .at .m{ flex:none; font-size:15px; margin-top:2px; }
+  .at .x{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left; font-size:16px; line-height:1.5; }
+  .at .x.bad{ color:var(--red); text-decoration:line-through; text-decoration-thickness:1px; }
+  .at .x.good{ color:var(--green); font-weight:500; }
+  .at .why{ font-size:13.5px; color:var(--ink-2); margin-top:9px; padding-top:9px; border-top:1px dashed var(--line-2); }
+
+  /* ── réseau ── */
+  .net{ display:grid; gap:12px; grid-template-columns:1fr; }
+  .nb{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; }
+  .nb h3{ font-size:13px; font-weight:800; color:var(--ink-2); margin-bottom:8px; }
+  .nb .chips{ display:flex; flex-wrap:wrap; gap:6px; direction:ltr; }
+  .nb .chips span{ font-family:'Newsreader',Georgia,serif; font-size:14.5px;
+                   background:var(--soft); border:1px solid var(--line); padding:3px 10px; border-radius:7px; }
+
+  .tr{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:10px; }
+  .tr .b0{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+           font-size:16.5px; font-weight:500; color:var(--navy); }
+  .tr ul{ margin:8px 12px 0; }
+  .tr li{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:14.5px; color:var(--ink-2); line-height:1.6; }
+
+  .gr{ background:var(--card); border:1px solid var(--line); border-radius:11px; padding:11px 14px; margin-bottom:8px; }
+  .gr .s{ font-size:14px; font-weight:700; }
+  .gr .e{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:15.5px; color:var(--ink-2); font-style:italic; margin-top:3px; }
+
+  footer{ margin-top:48px; padding:22px 0 calc(22px + env(safe-area-inset-bottom));
+          border-top:1px solid var(--line); font-size:13px; color:var(--ink-3); text-align:center; }
+
+  @media (hover:hover) and (pointer:fine){
+    .navbar a:hover{ text-decoration:underline; }
+    .lvl:hover{ border-color:var(--violet); color:var(--violet); }
+    .lvl.on:hover{ color:#fff; }
+    .toggle:hover{ border-color:var(--navy); }
+  }
+  @media (min-width:640px){
+    :root{ --gut:22px; }
+    body{ font-size:17px; }
+    .head h1{ font-size:27px; }
+    .bgrid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .net{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    h2{ font-size:22px; }
+  }
+  @media (min-width:1024px){
+    .net{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
+</style>
+</head>
+<body>
+
+<div class="navbar"><div class="in">
+  <a href="index.html">← خانه</a>
+  <a href="EO_trainer.html">تمرین‌ها</a>
+  <span class="brand">TCF Avec Hoda KHEDMATI</span>
+</div></div>
+
+<div class="shell" id="root"></div>
+
+<footer>Hoda KHEDMATI — Expression Orale · Tâche 3</footer>
+
+<script src="blocs-data.js"></script>
+<script>
+const $  = s => document.querySelector(s);
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const id = +(new URLSearchParams(location.search).get('id') || 1);
+const S  = (typeof BLOCS_SUJETS !== 'undefined') ? BLOCS_SUJETS.find(x => x.id === id) : null;
+
+let lvl = 'b2';
+let showFa = false;
+
+function textes(){
+  return S.textes[lvl].map(p => `
+    <div class="para">
+      <div class="lb">${esc(p.label)}</div>
+      <p>${esc(p.p)}</p>
+    </div>`).join('');
+}
+
+function blocs(){
+  const cell = (fr, ex, role, fa) => `
+    <div class="b">
+      <div class="fr">${esc(fr)}</div>
+      ${ex   ? `<div class="ex">${esc(ex)}</div>` : ''}
+      ${role ? `<div class="role">${esc(role)}</div>` : ''}
+      <div class="fa${showFa ? '' : ' hidden'}">${esc(fa)}</div>
+    </div>`;
+  const O = S.outils;
+  return `
+    <h2>افعال و ساخت‌ها <span class="fr">verbes et constructions</span></h2>
+    <p class="sub">فعل را تنها حفظ نکن — با آنچه بعدش می‌آید حفظ کن.</p>
+    <div class="bgrid">${O.verbes.map(v => cell(v.bloc, v.ex, '', v.fa)).join('')}</div>
+
+    <h2 style="margin-top:28px">کالوکیشن‌ها <span class="fr">collocations</span></h2>
+    <p class="sub">این ترکیب‌ها ثابت‌اند. کلمه‌هایشان را عوض نکن.</p>
+    <div class="bgrid">${O.collocations.map(v => cell(v.bloc, '', '', v.fa)).join('')}</div>
+
+    <h2 style="margin-top:28px">صفت + اسم <span class="fr">adjectifs</span></h2>
+    <div class="bgrid">${O.adjectifs.map(v => cell(v.bloc, '', '', v.fa)).join('')}</div>
+
+    <h2 style="margin-top:28px">عبارت‌های استدلالی <span class="fr">expressions argumentatives</span></h2>
+    <p class="sub">هرکدام یک کار مشخص می‌کند. با کارش یاد بگیر، نه با معنی‌اش.</p>
+    <div class="bgrid">${O.expressions.map(v => cell(v.bloc, '', v.role, v.fa)).join('')}</div>`;
+}
+
+function render(){
+  if (!S){ $('#root').innerHTML = '<p style="padding:40px 0">این موضوع پیدا نشد.</p>'; return; }
+  $('#root').innerHTML = `
+    <div class="head">
+      <span class="tag">Blocs &amp; collocations · B2 / C1</span>
+      <h1>${esc(S.q)}</h1>
+      <div class="fa">${esc(S.qFa)}</div>
+      <div class="these"><b>Thèse :</b> ${esc(S.these)}<br>${esc(S.theseFa)}</div>
+    </div>
+
+    <div class="method">
+      <b>روش کار.</b> فرانسه را از فارسی نساز. اول متن را بخوان، بعد بلوک‌ها را بردار.
+      فارسی اینجا فقط برای این است که یک بار بفهمی — موقع حرف زدن باید خاموش باشد.
+      دکمه‌ی «نمایش فارسی» را تا جای ممکن نزن.
+    </div>
+
+    <section>
+      <h2>متن مدل <span class="fr">le texte</span></h2>
+      <div class="lvlbar">
+        <span class="lbl">سطح:</span>
+        <button class="lvl${lvl==='b2'?' on':''}" onclick="setLvl('b2')">B2</button>
+        <button class="lvl${lvl==='c1'?' on':''}" onclick="setLvl('c1')">C1</button>
+      </div>
+      <div class="card">${textes()}</div>
+    </section>
+
+    <section>
+      <button class="toggle" onclick="toggleFa()">${showFa ? '🙈 مخفی کردن فارسی' : '👁️ نمایش فارسی'}</button>
+      ${blocs()}
+    </section>
+
+    <section>
+      <h2>یک ایده، سه ارتفاع <span class="fr">reformulation</span></h2>
+      <p class="sub">جمله‌ی قرمز همان چیزی است که ترجمه‌ی مستقیم تولید می‌کند. هدف، سبز است.</p>
+      ${S.echelle.map(e => `
+        <div class="ech">
+          <div class="idea">${esc(e.fa)}</div>
+          <div class="row"><span class="k s">simple</span><span class="t">${esc(e.simple)}</span></div>
+          <div class="row"><span class="k a">B2</span><span class="t">${esc(e.b2)}</span></div>
+          <div class="row"><span class="k b">B2+</span><span class="t">${esc(e.b2plus)}</span></div>
+        </div>`).join('')}
+    </section>
+
+    <section>
+      <h2>دام ترجمه <span class="fr">ne traduisez pas</span></h2>
+      <p class="sub">این‌ها همان جمله‌هایی است که از فارسی یا انگلیسی مستقیم می‌آید.</p>
+      ${S.antiTrad.map(a => `
+        <div class="at">
+          <div class="l"><span class="m">❌</span><span class="x bad">${esc(a.faux)}</span></div>
+          <div class="l"><span class="m">✅</span><span class="x good">${esc(a.juste)}</span></div>
+          <div class="why">${esc(a.pourquoi)}</div>
+        </div>`).join('')}
+    </section>
+
+    <section>
+      <h2>جاهای دیگری که به کار می‌آید <span class="fr">phrases transférables</span></h2>
+      ${S.transferables.map(t => `
+        <div class="tr">
+          <div class="b0">${esc(t.bloc)}</div>
+          <ul>${t.ailleurs.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>`).join('')}
+    </section>
+
+    <section>
+      <h2>نقشه‌ی موضوع <span class="fr">réseau sémantique</span></h2>
+      <div class="net">
+        ${[['اسم‌ها','noms'],['فعل‌ها','verbes'],['صفت‌ها','adjectifs'],
+           ['پیامدها','consequences'],['علت‌ها','causes'],['راه‌حل‌ها','solutions']]
+          .map(([fa,k]) => `
+          <div class="nb"><h3>${fa}</h3>
+            <div class="chips">${S.reseau[k].map(x => `<span>${esc(x)}</span>`).join('')}</div>
+          </div>`).join('')}
+      </div>
+    </section>
+
+    <section>
+      <h2>گرامری که به کار رفته <span class="fr">grammaire</span></h2>
+      ${S.grammaire.map(g => `
+        <div class="gr"><div class="s">${esc(g.structure)}</div><div class="e">${esc(g.ex)}</div></div>`).join('')}
+    </section>`;
+}
+
+window.setLvl = v => { if (v !== lvl){ lvl = v; render(); } };
+window.toggleFa = () => { showFa = !showFa; render(); };
+render();
+</script>
+</body>
+</html>

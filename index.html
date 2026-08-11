@@ -356,6 +356,7 @@
     </a>
     <nav class="topnav">
       <a href="EO_trainer.html">تمرین ترجمه</a>
+      <a href="blocs.html">بلوک‌ها</a>
       <a href="#analyses">تحلیل‌ها</a>
       <a href="#themes">موضوع‌ها</a>
     </nav>
@@ -442,6 +443,20 @@
     <div class="grid g-4" id="themeGrid"></div>
   </section>
 
+  <!-- ═══ BLOCS ═══ -->
+  <section id="blocs">
+    <div class="sec-head">
+      <span class="eyebrow">Blocs &amp; collocations</span>
+      <h2>بلوک‌های زبانی — برای زبان‌آموزان</h2>
+      <p>
+        بخشی جدا برای شاگردها. هدفش یک چیز است: <strong>ترک عادتِ ترجمه از فارسی به فرانسه.</strong>
+        به‌جای کلمه، بلوک یاد می‌گیری — فعل با آنچه بعدش می‌آید، صفت با اسمش.
+      </p>
+      <p class="fr-sub">Collocations, verbes, expressions argumentatives — B2 / C1</p>
+    </div>
+    <div class="grid g-3" id="blocsGrid"></div>
+  </section>
+
   <!-- ═══ MÉTHODE ═══ -->
   <section id="method">
     <div class="sec-head">
@@ -482,6 +497,7 @@
 
 <script src="data.js"></script>
 <script src="eo-data.js"></script>
+<script src="blocs-data.js"></script>
 <script>
 /* ═════════ utilitaires ═════════ */
 const $ = s => document.querySelector(s);
@@ -609,6 +625,25 @@ const themeOf = id => (typeof EO_THEMES !== 'undefined')
       <span class="dot" style="background:${t.color}"></span>
       <span class="nm">${esc(t.fa)}</span>
       <span class="ct">${faNum(n)}</span>
+    </a>`;
+  }).join('');
+})();
+
+/* ═════════ fiches blocs & collocations ═════════ */
+(function(){
+  if (typeof BLOCS_SUJETS === 'undefined') return;
+  $('#blocsGrid').innerHTML = BLOCS_SUJETS.map(b => {
+    const t = themeOf(b.theme);
+    return `<a class="qcard" href="blocs.html?id=${b.id}">
+      <span class="edge" style="background:${t.color}"></span>
+      <span class="in">
+        <span class="meta">
+          <span class="rank">B2 · C1</span>
+          <span class="theme-tag" style="background:${t.color}">${esc(t.fa)}</span>
+        </span>
+        <span class="q">${esc(b.q)}</span>
+        <span class="chip ready">بلوک‌ها و کالوکیشن‌ها ←</span>
+      </span>
     </a>`;
   }).join('');
 })();

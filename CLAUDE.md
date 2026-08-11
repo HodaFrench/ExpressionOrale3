@@ -207,6 +207,31 @@ She chains claim + mechanism with «؛» constantly. In French this becomes: a d
 sentence, then a colon or a dash, then the mechanism. Alternate with a short landing sentence
 — that short sentence is where the podcast register lives.
 
+## THIRD SYSTEM — « Blocs & collocations » (added 2026-07-31, for her STUDENTS)
+Files: `blocs-data.js` + `blocs.html?id=N`. Linked from the homepage (`#blocsGrid`).
+
+**Different audience, opposite method.** The 120-question trainer is built for *her*: it renders
+her own reasoning, and its core interaction — read Persian, say French — is a translation
+exercise. That is fine for her, because the ideas are already hers.
+
+For a student whose problem is **translating literally from Persian or English**, that same
+interaction would reinforce the disease. So this section works the other way round:
+- **French first.** The model text is read before anything else.
+- **Persian is hidden by default** on every block, behind one toggle, and the page says
+  explicitly not to use it while speaking. It exists to understand once, not to produce.
+- **Blocks, never isolated words.** A verb is always stored with what follows it
+  (`favoriser l'accès à…`), an adjective with its noun (`un obstacle réel`).
+- **Expressions are learned by function**, not by meaning — « nuancer », « conclure », etc.
+
+Structure of a sheet: model text (B2 + C1 toggle) · verbs & constructions · collocations ·
+adjective+noun · argumentative expressions · reformulation ladder (simple → B2 → B2+, where the
+« simple » line is deliberately what literal translation produces) · anti-translation traps with
+the reason · transferable phrases · semantic map · grammar used.
+
+**Her spec for this section:** 3 arguments + 1 counter-argument (not the 2+1 of her own
+trainer), B2 and C1 levels, and above all: no formulation that a real B2 candidate could not
+actually say aloud in a Tâche 3. Never invent a collocation because it "seems possible".
+
 ## Progress (7 / 120 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1 seul, 504 mots).
 - ✅ `#2` "Quel est l'intérêt d'avoir une expérience … à l'étranger ?" (C1 seul, 536 mots).
