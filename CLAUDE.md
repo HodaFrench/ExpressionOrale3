@@ -246,6 +246,30 @@ the reference for this: her text arrived with three usable arguments but with id
 where they did no logical work, and with a « contre-argument » that was not one. Both were
 fixed and the fix was reported to her.
 
+### ⚠️ Le gabarit qu'elle utilise produit toujours les trois mêmes défauts
+Les textes qu'elle envoie sortent visiblement d'un même modèle. Trois défauts reviennent
+**mot pour mot** d'un texte à l'autre — les corriger fait partie du travail, à chaque fois :
+
+1. **Deux idiomes en pilote automatique dans le contre-argument** :
+   « Ce qui nous met la puce à l'oreille, c'est que… » et « On ne peut pas avoir le beurre et
+   l'argent du beurre. » Ils sont corrects en français mais ne relient rien. Un candidat qui
+   place la même expression imagée dans chaque réponse s'entend réciter.
+2. **Un créneau « hypothèse au passé » imposé** : « Si les parents avaient reçu… », « Si les
+   parents avaient davantage pratiqué… ». La structure est plaquée pour montrer un
+   plus-que-parfait + conditionnel passé, pas parce que l'argument la demande. Garder le
+   `si + imparfait, + conditionnel`, plus naturel à l'oral, et seulement s'il sert.
+3. **Un participe présent en tête de phrase** : « Élevant un enfant… », « Laissant tout
+   faire… », « Restant passifs devant les écrans… ». Correct, mais quasi absent de l'oral.
+   → `Quand on élève…`, `Si on laisse…`.
+
+Et le paragraphe intitulé « contre-argument » n'en est presque jamais un : il glisse vers un
+sujet voisin. Il faut écrire la vraie objection, puis y replacer sa matière en appui.
+
+**Deux textes sur un même sujet arrivent parfois avec des positions différentes** (fiche 3 :
+l'un partait de « obliger échoue », l'autre de « le sport est nécessaire »). Les fusionner en
+une seule chaîne d'arguments plutôt que d'en choisir un : ici, le sport est nécessaire → mais
+l'obligation ruine l'envie → donc c'est le choix qui dure.
+
 ⚠️ **Open question — « علیرضا ».** She asked twice that Claude "keep Alireza's mind in hand"
 while merging. That name appears nowhere in the repo and she has not answered the question,
 asked twice. Fiche 2 was therefore built on the only documented reasoning profile: the IDIOLECT
