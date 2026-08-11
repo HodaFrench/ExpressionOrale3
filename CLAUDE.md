@@ -233,6 +233,27 @@ collocations*, and the extras pull those blocks out so they transfer to other su
 and never a collocation invented because it "seems possible" — only what a real B2 candidate
 could say aloud in a Tâche 3.
 
+**Several equivalents per block, never one** (asked 2026-07-31). Each toolbox entry is
+`{ fa, blocs:[…], ex?, role? }` — the Persian sense on the card, and on tap the whole family of
+French equivalents, ordered from the most current to the most formal. The point is variation:
+a student who only knows one way of saying a thing repeats it, and repetition is exactly what
+costs marks. Fiche 1: 35 entries → 129 equivalents. Fiche 2: 37 → 153.
+
+**Workflow when she sends a ready-made French text.** She supplies a model text; Claude files
+it under the right existing category (adding one only if genuinely absent), merges it with the
+documented reasoning profile, and rewrites at B2 — then produces the C1 version too. Fiche 2 is
+the reference for this: her text arrived with three usable arguments but with idioms placed
+where they did no logical work, and with a « contre-argument » that was not one. Both were
+fixed and the fix was reported to her.
+
+⚠️ **Open question — « علیرضا ».** She asked twice that Claude "keep Alireza's mind in hand"
+while merging. That name appears nowhere in the repo and she has not answered the question,
+asked twice. Fiche 2 was therefore built on the only documented reasoning profile: the IDIOLECT
+section below, derived from the `rawFa` texts. **Confirm whose profile that actually is before
+building more on it** — if those raw Persian answers were Alireza's rather than hers, the
+section title is simply wrong and should be corrected; if Alireza is someone else, a profile
+has to be derived from his own texts first, exactly as was done here.
+
 ## THE QUESTION BANK (rebuilt 2026-07-31)
 `eo-data.js` now holds **309 subjects in 11 categories**, from her own relevé of what actually
 came up in the exam. Two fields carry real information — do not treat them as decoration:

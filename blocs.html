@@ -78,12 +78,16 @@
        -webkit-tap-highlight-color:rgba(83,52,131,.15); touch-action:manipulation; }
   .bl-fa{ display:block; font-size:14.5px; font-weight:600; color:#222; }
   .bl-fa i{ font-style:normal; font-size:12px; color:var(--gray); }
+  .bl-n{ display:inline-block; font-family:'Courier New',monospace; font-size:11.5px;
+         font-weight:800; color:#fff; background:var(--fr); border-radius:20px;
+         padding:1px 7px; margin-inline-start:7px; vertical-align:middle; }
+  .bl-list{ display:block; margin-top:6px; }
   .bl-fr{ display:block; font-size:15.5px; font-weight:700; color:var(--fr);
           background:var(--fr-bg); border:1px solid var(--fr-bd); border-radius:7px;
-          padding:3px 9px; margin-top:6px; direction:ltr; text-align:left; }
+          padding:3px 9px; margin-bottom:4px; direction:ltr; text-align:left; }
   .bl-ex{ display:block; font-size:13.5px; color:var(--gray); font-style:italic;
           margin-top:4px; direction:ltr; text-align:left; }
-  .bl:not(.on) .bl-fr, .bl:not(.on) .bl-ex{ display:none; }
+  .bl:not(.on) .bl-list, .bl:not(.on) .bl-ex{ display:none; }
   .bl:not(.on)::after{ content:"بزن ↓"; display:block; font-size:11.5px; color:var(--gray); margin-top:4px; }
 
   /* ── échelle ── */
@@ -179,11 +183,14 @@
     }
 
     /* un bloc : persan visible, français au clic — comme les segments */
-    function bl(fa, fr, ex, role){
+    /* un bloc = un sens en persan + PLUSIEURS équivalents français */
+    function bl(item){
+      const list = Array.isArray(item.blocs) ? item.blocs : [item.bloc];
       return `<span class="bl" onclick="this.classList.toggle('on')">
-        <span class="bl-fa">${esc(fa)}${role?` <i>(${esc(role)})</i>`:''}</span>
-        <span class="bl-fr">${esc(fr)}</span>
-        ${ex?`<span class="bl-ex">${esc(ex)}</span>`:''}
+        <span class="bl-fa">${esc(item.fa)}${item.role?` <i>(${esc(item.role)})</i>`:''}</span>
+        <span class="bl-n">${list.length}</span>
+        <span class="bl-list">${list.map(x=>`<span class="bl-fr">${esc(x)}</span>`).join('')}</span>
+        ${item.ex?`<span class="bl-ex">${esc(item.ex)}</span>`:''}
       </span>`;
     }
 
@@ -191,11 +198,11 @@
       const O = data.outils; if (!O) return '';
       const grp = (t, arr) => `<h3 class="grp">${t}</h3><div class="blgrid">${arr}</div>`;
       const corps =
-        grp('افعال و ساخت‌ها', O.verbes.map(v=>bl(v.fa, v.bloc, v.ex, '')).join('')) +
-        grp('کالوکیشن‌ها',    O.collocations.map(v=>bl(v.fa, v.bloc, '', '')).join('')) +
-        grp('صفت + اسم',      O.adjectifs.map(v=>bl(v.fa, v.bloc, '', '')).join('')) +
-        grp('عبارت‌های استدلالی', O.expressions.map(v=>bl(v.fa, v.bloc, '', v.role)).join(''));
-      return card('outils', '🧱 جعبه‌ی بلوک‌ها — روی هرکدام بزن', corps, true);
+        grp('افعال و ساخت‌ها', O.verbes.map(bl).join('')) +
+        grp('کالوکیشن‌ها',    O.collocations.map(bl).join('')) +
+        grp('صفت + اسم',      O.adjectifs.map(bl).join('')) +
+        grp('عبارت‌های استدلالی', O.expressions.map(bl).join(''));
+      return card('outils', '🧱 جعبه‌ی بلوک‌ها — بزن تا همه‌ی معادل‌ها را ببینی', corps, true);
     }
 
     function extrasHtml(){
