@@ -233,7 +233,25 @@ collocations*, and the extras pull those blocks out so they transfer to other su
 and never a collocation invented because it "seems possible" — only what a real B2 candidate
 could say aloud in a Tâche 3.
 
-## Progress (7 / 120 done)
+## THE QUESTION BANK (rebuilt 2026-07-31)
+`eo-data.js` now holds **309 subjects in 11 categories**, from her own relevé of what actually
+came up in the exam. Two fields carry real information — do not treat them as decoration:
+- **`freq`** — how many times the subject was observed (43× down to 1×). The list is sorted by
+  it, so the top of the list *is* the priority order. Displayed on every card.
+- **`diff`** — her ambiguity index /10. `0` means she left it blank; the badge is then hidden.
+
+**IDs 1–7 are frozen.** They are the seven questions that already have trainers, and
+`eo-trainers.js` is keyed by id. When the bank was rebuilt, each of the seven was matched back
+by normalised text and kept its original id; everything else was numbered from 8 upward. Any
+future rebuild must do the same — breaking an id silently orphans a trainer.
+
+Themes gained an `emoji` field, shown on the cards and in the hub tabs.
+
+**Pending state is explicit,** at her request: a card with no trainer reads
+« هنوز جواب داده نشده », is dashed and slightly faded, and is not a link. Only `done` cards
+navigate to `EO_practice.html`.
+
+## Progress (7 / 309 done)
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1 seul, 504 mots).
 - ✅ `#2` "Quel est l'intérêt d'avoir une expérience … à l'étranger ?" (C1 seul, 536 mots).
 - ✅ `#3` "…quel rôle joue la télévision dans l'éducation des enfants ?" (C1 seul, 516 mots).

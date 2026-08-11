@@ -411,8 +411,8 @@
       <span class="eyebrow">Entraînement</span>
       <h2>تمرین ترجمه‌ی شفاهی</h2>
       <p>
-        سؤال‌ها به ترتیب <strong>احتمال تکرار در آزمون</strong> چیده شده‌اند — شماره‌ی کوچک‌تر یعنی مهم‌تر.
-        این‌ها تمرین‌هایی است که تا امروز آماده شده:
+        بانک سؤال از روی <strong>آمار واقعیِ دفعاتی که هر سؤال در آزمون آمده</strong> ساخته شده.
+        عدد کنار هر کارت همان تعداد است. این‌ها تمرین‌هایی است که تا امروز آماده شده:
       </p>
     </div>
     <div class="grid g-3" id="readyGrid"></div>
@@ -592,7 +592,7 @@ const themeOf = id => (typeof EO_THEMES !== 'undefined')
       <span class="edge" style="background:${t.color}"></span>
       <span class="in">
         <span class="meta">
-          <span class="rank" title="رتبه‌ی تکرار در آزمون">#${q.id}</span>
+          <span class="rank" title="تعداد دفعاتی که در آزمون آمده">${q.freq}×</span>
           <span class="theme-tag" style="background:${t.color}">${esc(t.fa)}</span>
         </span>
         <span class="q">${esc(q.q)}</span>
