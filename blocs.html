@@ -142,11 +142,17 @@
     // Deux formats coexistent : les anciennes entrées ont paragraphs/level à plat,
     // les nouvelles ont un tableau versions[]. On ramène tout à une liste de versions.
     const VERSIONS = !data ? []
-      : [{ id:'b2', level:'B2', paragraphs:data.textes.b2 },
-         { id:'c1', level:'C1', paragraphs:data.textes.c1 }];
+      // Les niveaux ne sont plus figés : on prend ceux que la fiche contient,
+      // du plus accessible au plus exigeant.
+      : (function(){
+          const ORDRE = ['n7','b1','b2','c1'];
+          const NOM   = { n7:'11/20', b1:'B1', b2:'B2', c1:'C1' };
+          return ORDRE.filter(k => data.textes && data.textes[k])
+                      .map(k => ({ id:k, level:NOM[k], paragraphs:data.textes[k] }));
+        })();
     // Les versions sont rangées du plus accessible au plus exigeant.
     // Par défaut on ouvre sur C1 (le comportement d'avant), sauf choix mémorisé.
-    let vIdx = 0;   // on ouvre sur B2 : c'est le niveau visé par les élèves
+    let vIdx = 0;   // on ouvre sur le niveau le plus accessible de la fiche
     try {
       const saved = localStorage.getItem('hk-blocs-level');
       const i = VERSIONS.findIndex(v => v.id === saved);

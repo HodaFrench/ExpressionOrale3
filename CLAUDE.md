@@ -120,37 +120,34 @@ a neighbour). The target is the register of a thoughtful interview: eloquent but
 thinking aloud, qualifying itself, warm. Podium solemnity applied to "convince your friend to
 sort his rubbish" reads as parody and as memorised. Over-polish is itself a scoring risk.
 
-## THE THREE LEVELS (11/20 added 2026-07-31)
-The user asked for a third version aimed at **11/20 in TCF Canada Expression Orale**. Context
-she and Claude established: on the official scale, **10–11/20 = NCLC 7**, the minimum for most
-federal programmes; 12–13 = NCLC 8; 14–15 = NCLC 9. So 11 sits at the *top of the entry band* —
-one point below a full level jump.
+## LES NIVEAUX (révisé 2026-08-14 : B1 + B2)
+Elle a tranché pour les fiches élèves : **B1 et B2, sans C1.** Un C1 n'aide pas un élève qui
+vise le seuil ; il lui donne des phrases qu'il ne pourra pas dire proprement.
 
-**Ordering in `versions[]` is ascending: `n7` → `b2` → `c1`.** `EO_practice.html` defaults to
-`c1` when nothing is stored, so the previous behaviour is unchanged.
+| | Longueur | Phrase moyenne | Marque |
+|---|---|---|---|
+| **B1** | **350–400 mots** | ~10 mots | principales seulement, connecteurs de base |
+| **B2** | **500–540 mots** | ~13 mots | relatives, subjonctif courant, quelques nominalisations |
 
-### What actually distinguishes the 11/20 version
-Not "worse French" — *simpler* French, delivered cleanly. Concretely:
-- **Short sentences.** Target ~12 words average, against ~17 for B2+/C1. Measure it.
-- **Main clauses.** Avoid stacked relatives, avoid `dont`, avoid participial constructions
-  (`enfermés dans…`, `venus de…`). Use `si on…, on…` instead.
-- **Plain connectors only**: *et, mais, parce que, aussi, donc, par exemple, alors, bien sûr*.
-  Drop *or, en revanche, quant à, cela dit* (keep `cela dit` only as `mais`).
-- **No nominalisation**: `le fait d'accepter un cadre`, not `l'acceptation d'un cadre`.
-- **Repetition is allowed.** Reusing a word is normal at this level and costs nothing.
-- **Shorter overall — 430–470 words.** A candidate at this level speaks more slowly, so the
-  same ~4 minutes carries fewer words. Writing 530 words here would be unrealistic to deliver.
+⚠️ **B1 est nettement plus court, et c'est délibéré.** À ce niveau on parle plus lentement,
+avec des pauses : les mêmes quatre minutes portent beaucoup moins de mots. Écrire 500 mots
+serait irréalisable à l'oral.
 
-### What must NOT be lowered
-The **structure** is what earns marks: opening frame, thesis with its two named reasons,
-argument → example, counter-argument, verdict. Keep all five paragraphs and keep her tricolons.
-A simply-worded but well-organised answer scores better than an ornate but shapeless one.
+### Ce qui distingue concrètement B1 de B2
+| B2 | B1 |
+|---|---|
+| `un message ne demande qu'un instant, alors qu'une visite demande de se déplacer` | `Écrire un message, c'est facile. Aller voir quelqu'un, c'est plus difficile.` |
+| `à force de voir la vie que les autres mettent en ligne` | `Quand on regarde la vie des autres sur les réseaux` |
+| `il amplifie ce qui existait déjà` | `il rend plus fort ce qui existe déjà` |
+| `tous trouvent en ligne des liens qu'aucun voisinage ne leur offrirait` | `Ces personnes trouvent des amis sur Internet.` |
 
-### Point to make to the user when relevant
-The level of the text does not set the score — delivery does (fluency, pronunciation,
-hesitation, actually answering the question). A C1 text delivered haltingly can score below a
-11/20 text delivered fluently. The three versions exist so she can pick what she can say
-*smoothly*, not what looks hardest.
+**Ce qui ne baisse jamais :** les six blocs, les trois arguments nommés, le contre-argument,
+le pivot conditionnel. C'est la structure qui rapporte des points, pas la syntaxe.
+
+### Techniquement
+`blocs.html` ne code plus les niveaux en dur. Il lit les clés présentes dans `textes` et les
+range dans l'ordre `n7 → b1 → b2 → c1`, en ouvrant sur le plus accessible. Les fiches #1 à #3
+gardent donc leur paire b2/c1 sans rien casser — **mais il leur manque un B1**, c'est une dette.
 
 ## HER IDIOLECT — derived from the `rawFa` of #1, #2, #3 (2026-07-30)
 The user asked that her *thinking model, her way of connecting sentences and her ordering* be
