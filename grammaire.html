@@ -96,6 +96,23 @@
   }
   @media (min-width:640px){ :root{ --gut:22px; } body{ font-size:17px; } .header h1{ font-size:26px; } }
   @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+  /* ── charpente ── */
+  .cp{ background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+  .cp-head{ display:flex; align-items:center; gap:10px; padding:12px 15px; cursor:pointer; min-height:44px; }
+  .cp-lb{ font-size:12.5px; font-weight:800; color:#fff; padding:3px 11px; border-radius:7px; }
+  .lb-intro{ background:#0f3460; } .lb-arg{ background:#533483; } .lb-conc{ background:#1f6b4e; }
+  .cp-t{ font-size:12.5px; color:var(--gray); }
+  .cp .tog{ margin-inline-start:auto; color:var(--gray); font-size:13px; }
+  .cp-body{ display:none; padding:0 15px 14px; }
+  .cp.open .cp-body{ display:block; }
+  .cp.open .tog{ transform:rotate(180deg); }
+  .cp-role{ font-size:13.5px; color:var(--gray); padding-bottom:10px; border-bottom:1px dashed var(--line); margin-bottom:10px; }
+  .mv{ margin-bottom:12px; }
+  .mv-fa{ font-size:13.5px; font-weight:700; color:#444; margin-bottom:5px; }
+  .mv-fr{ direction:ltr; text-align:left; font-family:'Newsreader',Georgia,serif; font-size:15.5px;
+          background:var(--fr-bg); border:1px solid var(--fr-bd); color:var(--fr);
+          border-radius:7px; padding:5px 10px; margin-bottom:4px; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -111,6 +128,7 @@
 <footer>Hoda KHEDMATI — Expression Orale · Tâche 3</footer>
 
 <script src="grammaire-data.js"></script>
+<script src="charpente.js"></script>
 <script>
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
@@ -182,6 +200,13 @@ function render(){
       }).join('')}</tbody>
     </table></div>
 
+    <h2>قالب — چه چیزی همیشه ثابت است</h2>
+    <p class="sub">
+      این‌ها از دلِ همین متن‌ها بیرون کشیده شده، نه از خودم: فرمول‌هایی که در دستِ‌کم نیمی از آن‌ها تکرار شده‌اند.
+      حدود <b>۳۷٪</b> هر متن از همین‌هاست. یعنی شاگرد با یاد گرفتنِ همین چند ده جمله، برای هر موضوع تازه فقط ۶۳٪ را می‌سازد.
+    </p>
+    <div id="charpente"></div>
+
     <h2>متن‌ها</h2>
     <p class="sub">روی هر شماره بزن تا متنش با ساختارهای هایلایت‌شده باز شود.</p>
     <div class="tsel">
@@ -202,7 +227,44 @@ function render(){
     </div>`).join('')}`;
 }
 
+
+function charpenteHtml(){
+  if (typeof CHARPENTE === 'undefined') return '';
+  return CHARPENTE.map((b, bi) => `
+    <div class="cp" id="cp${bi}">
+      <div class="cp-head" onclick="document.getElementById('cp${bi}').classList.toggle('open')">
+        <span class="cp-lb ${b.cls}">${esc(b.bloc)}</span>
+        <span class="cp-t">${esc(b.cible)}</span>
+        <span class="tog">▾</span>
+      </div>
+      <div class="cp-body">
+        <p class="cp-role">${esc(b.role)}</p>
+        ${b.moves.map(m => `
+          <div class="mv">
+            <div class="mv-fa">${esc(m.fa)}</div>
+            ${m.frames.map(f => `<div class="mv-fr">${esc(f)}</div>`).join('')}
+          </div>`).join('')}
+      </div>
+    </div>`).join('') + `
+    <div class="cp open" id="cppp">
+      <div class="cp-head" onclick="document.getElementById('cppp').classList.toggle('open')">
+        <span class="cp-lb lb-conc">♻️ جمله‌های همه‌کاره</span>
+        <span class="cp-t">روی تقریباً هر موضوعی کار می‌کند</span>
+        <span class="tog">▾</span>
+      </div>
+      <div class="cp-body">
+        ${PASSE_PARTOUT.map(g => `
+          <div class="mv">
+            <div class="mv-fa">${esc(g.fa)}</div>
+            ${g.frames.map(f => `<div class="mv-fr">${esc(f)}</div>`).join('')}
+          </div>`).join('')}
+      </div>
+    </div>`;
+}
+
 window.go = i => { cur = i; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+const _r = render;
+render = function(){ _r(); const el = document.getElementById('charpente'); if (el) el.innerHTML = charpenteHtml(); };
 render();
 </script>
 </body>
