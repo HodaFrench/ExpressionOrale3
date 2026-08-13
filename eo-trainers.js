@@ -711,7 +711,7 @@ const EO_TRAINERS = {
           {fr:"du quartier où chercher un logement à Dubaï,", fa:"از محله‌ای که در دبی باید دنبالِ خانه می‌گشتم،"},
           {fr:"ni de la façon d'y obtenir une promotion.", fa:"و نه از راهِ گرفتنِ ارتقا در آنجا."},
           {fr:"Cela dit,", fa:"با این حال،"},
-          {fr:"je reste convaincue", fa:"همچنان معتقدم"},
+          {fr:"je reste convaincue", fa:"همچنان معتقدم (مؤنث)"},
           {fr:"que ça se gère —", fa:"که این قابلِ مدیریت است —"},
           {fr:"à condition de réutiliser", fa:"به شرطِ استفاده از"},
           {fr:"ce qu'on a déjà appris, ailleurs,", fa:"آنچه پیش‌تر، جای دیگر، آموخته‌ایم،"},
@@ -842,7 +842,7 @@ const EO_TRAINERS = {
           {fr:"je devais chercher un appartement à Dubaï,", fa:"باید در دبی دنبالِ آپارتمان می‌گشتم،"},
           {fr:"ni comment obtenir une promotion là-bas.", fa:"و نه چگونه آنجا ارتقا بگیرم."},
           {fr:"Cela dit,", fa:"با این حال،"},
-          {fr:"je reste convaincue", fa:"همچنان معتقدم"},
+          {fr:"je reste convaincue", fa:"همچنان معتقدم (مؤنث)"},
           {fr:"qu'on peut gérer ce problème,", fa:"که می‌شود این مشکل را مدیریت کرد،"},
           {fr:"si on utilise", fa:"اگر استفاده کنیم از"},
           {fr:"ce qu'on a déjà appris ailleurs", fa:"آنچه پیش‌تر جای دیگر آموخته‌ایم"},
@@ -1344,7 +1344,7 @@ const EO_TRAINERS = {
       ]},
 
       { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~30 ثانیه', segments:[
-        {fr:"En définitive,", fa:"در نهایت،"},
+        {fr:"En définitive,", fa:"در پایان،"},
         {fr:"il me semble que la télévision,", fa:"به نظرم می‌رسد که تلویزیون،"},
         {fr:"même si elle est concurrencée", fa:"حتی اگر رقیب پیدا کرده"},
         {fr:"et qu’elle a beaucoup changé,", fa:"و بسیار تغییر کرده باشد،"},
@@ -1473,7 +1473,7 @@ const EO_TRAINERS = {
       ]},
 
       { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~30 ثانیه', segments:[
-        {fr:"En définitive,", fa:"در نهایت،"},
+        {fr:"En définitive,", fa:"در پایان،"},
         {fr:"il me semble que les études,", fa:"به نظرم می‌رسد که تحصیل،"},
         {fr:"pourvu qu’elles soient ciblées", fa:"به‌شرطِ هدفمند بودن"},
         {fr:"et adossées à une gestion financière réfléchie,", fa:"و اتکا به مدیریتِ مالیِ سنجیده،"},
@@ -1511,7 +1511,7 @@ const EO_TRAINERS = {
         {fr:"Certes,", fa:"البته،"},
         {fr:"certains s’opposent frontalement", fa:"برخی رودررو مخالف‌اند"},
         {fr:"à mon point de vue ;", fa:"با نظرِ من؛"},
-        {fr:"néanmoins,", fa:"با این‌حال،"},
+        {fr:"néanmoins,", fa:"با این‌همه،"},
         {fr:"je suis convaincu", fa:"من متقاعدم"},
         {fr:"qu’il existe des raisons indéniables", fa:"که دلایلی انکارناپذیر وجود دارد"},
         {fr:"de vivre pleinement", fa:"برای کاملاً زیستنِ"},
@@ -1560,7 +1560,7 @@ const EO_TRAINERS = {
         {fr:"ouvre l’accès", fa:"دسترسی را می‌گشاید"},
         {fr:"à des savoirs", fa:"به دانش‌ها"},
         {fr:"et à des techniques de pointe", fa:"و فنونِ پیشرفته"},
-        {fr:"qui font défaut", fa:"که وجود ندارند"},
+        {fr:"qui font défaut", fa:"که کم است"},
         {fr:"dans le pays d’origine.", fa:"در کشورِ مبدأ."},
         {fr:"De nos jours,", fa:"امروزه،"},
         {fr:"la technologie exige", fa:"فناوری می‌طلبد"},
@@ -1616,7 +1616,7 @@ const EO_TRAINERS = {
       ]},
 
       { label:'CONCLUSION', cls:'lb-conc', time:'⏱ ~35 ثانیه', segments:[
-        {fr:"En définitive,", fa:"در نهایت،"},
+        {fr:"En définitive,", fa:"در پایان،"},
         {fr:"il me semble que,", fa:"به نظرم می‌رسد که،"},
         {fr:"à condition d’avoir un horizon clair", fa:"به‌شرطِ داشتنِ افقی روشن"},
         {fr:"vers lequel avancer,", fa:"که به‌سویش پیش روند،"},

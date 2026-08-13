@@ -58,7 +58,7 @@ const BLOCS_SUJETS = [
         {fr:"contribue à développer l'esprit critique", fa:"به رشدِ روحیه‌ی نقد کمک می‌کند"},
         {fr:"et à renforcer la cohésion sociale.", fa:"و به تقویتِ انسجام اجتماعی."},
         {fr:"Un enfant qui découvre une exposition", fa:"کودکی که نمایشگاهی را کشف می‌کند"},
-        {fr:"n'apprend pas seulement des dates :", fa:"فقط تاریخ یاد نمی‌گیرد:"},
+        {fr:"n'apprend pas seulement des dates :", fa:"فقط سال و تاریخِ تقویمی یاد نمی‌گیرد:"},
         {fr:"il apprend à observer,", fa:"یاد می‌گیرد مشاهده کند،"},
         {fr:"à comparer,", fa:"مقایسه کند،"},
         {fr:"à se poser des questions.", fa:"از خودش سؤال بپرسد."},
