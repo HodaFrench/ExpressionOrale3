@@ -294,15 +294,22 @@ Themes gained an `emoji` field, shown on the cards and in the hub tabs.
 navigate to `EO_practice.html`.
 
 ### État des fiches « blocs » (2026-08-14)
-| # | sujet | thème | niveaux | équivalents |
-|---|---|---|---|---|
-| 1 | gratuité des loisirs culturels | culture | B2 · C1 | 129 |
-| 2 | l'autorité dans l'éducation | famille | B2 · C1 | 153 |
-| 3 | obliger les enfants au sport | sport | B2 · C1 | 145 |
-| 4 | Internet et l'isolement | techno | **B1 · B2** | 97 |
-| 5 | le téléphone pour les enfants | techno | **B1 · B2** | 94 |
+| # | sujet | thème | freq | niveaux | équivalents |
+|---|---|---|---|---|---|
+| 1 | gratuité des loisirs culturels | culture | 16× | B2 · C1 | 129 |
+| 2 | l'autorité dans l'éducation | famille | 26× | B2 · C1 | 153 |
+| 3 | obliger les enfants au sport | sport | 6× | B2 · C1 | 145 |
+| 4 | Internet et l'isolement | techno | 26× | B1 · B2 | 97 |
+| 5 | le téléphone pour les enfants | techno | 26× | B1 · B2 | 94 |
+| 6 | travailler jusqu'à 70 ans | travail | 26× | B1 · B2 | 91 |
 
 Dette : `#1`–`#3` n'ont pas de B1. Leur B2 existe, il ne reste qu'à le simplifier.
+
+⚠️ **Ne pas réutiliser deux fois de suite le même pivot rhétorique.** La fiche 5 est bâtie sur
+« la question est mal posée » (on ne peut pas mettre un enfant de 7 ans et un ado de 16 dans la
+même phrase). Refaire le même mouvement sur la fiche 6 — « on ne peut pas mettre un professeur
+et un maçon dans la même phrase » — aurait produit exactement le tic de gabarit qu'on reproche
+aux textes reçus. La fiche 6 pivote donc ailleurs : **choisir ou subir**.
 
 **`verifier-gloses.js` est désormais agnostique aux niveaux** : il lit les clés présentes dans
 `textes` au lieu de supposer b2/c1. Il plantait sur les fiches B1/B2 — corrigé.
