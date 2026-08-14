@@ -4,7 +4,7 @@ const fs = require('fs');
 const norm = s => s.replace(/[«»"'’،:؛.!?—–\-]/g,'').replace(/\s+/g,' ').trim().toLowerCase();
 const segs = [];
 const B = eval(fs.readFileSync('blocs-data.js','utf8') + '\n; BLOCS_SUJETS');
-for (const f of B) for (const lvl of ['b2','c1']) for (const p of f.textes[lvl])
+for (const f of B) for (const lvl of Object.keys(f.textes)) for (const p of f.textes[lvl])
   for (const s of p.segments) segs.push({doc:`bloc${f.id}`, lvl, fr:s.fr, fa:s.fa});
 const T = eval(fs.readFileSync('eo-trainers.js','utf8') + '\n; EO_TRAINERS');
 for (const id of Object.keys(T)) {

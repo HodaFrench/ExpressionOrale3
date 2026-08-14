@@ -293,7 +293,21 @@ Themes gained an `emoji` field, shown on the cards and in the hub tabs.
 « هنوز جواب داده نشده », is dashed and slightly faded, and is not a link. Only `done` cards
 navigate to `EO_practice.html`.
 
-## Progress (7 / 309 done)
+### État des fiches « blocs » (2026-08-14)
+| # | sujet | thème | niveaux | équivalents |
+|---|---|---|---|---|
+| 1 | gratuité des loisirs culturels | culture | B2 · C1 | 129 |
+| 2 | l'autorité dans l'éducation | famille | B2 · C1 | 153 |
+| 3 | obliger les enfants au sport | sport | B2 · C1 | 145 |
+| 4 | Internet et l'isolement | techno | **B1 · B2** | 97 |
+| 5 | le téléphone pour les enfants | techno | **B1 · B2** | 94 |
+
+Dette : `#1`–`#3` n'ont pas de B1. Leur B2 existe, il ne reste qu'à le simplifier.
+
+**`verifier-gloses.js` est désormais agnostique aux niveaux** : il lit les clés présentes dans
+`textes` au lieu de supposer b2/c1. Il plantait sur les fiches B1/B2 — corrigé.
+
+## Progress — entraînements 7/309 · fiches blocs 5
 - ✅ `#1` "Faire des études permet de réussir sa carrière…" (C1 seul, 504 mots).
 - ✅ `#2` "Quel est l'intérêt d'avoir une expérience … à l'étranger ?" (C1 seul, 536 mots).
 - ✅ `#3` "…quel rôle joue la télévision dans l'éducation des enfants ?" (C1 seul, 516 mots).
