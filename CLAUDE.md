@@ -302,6 +302,12 @@ navigate to `EO_practice.html`.
 | 4 | Internet et l'isolement | techno | 26× | B1 · B2 | 97 |
 | 5 | le téléphone pour les enfants | techno | 26× | B1 · B2 | 94 |
 | 6 | travailler jusqu'à 70 ans | travail | 26× | B1 · B2 | 91 |
+| 7 | études et réussite professionnelle | edu | **43×** | B1 · B2 | 92 |
+
+⚠️ La fiche 7 traite le sujet **le plus fréquent de toute la banque (43×)**, et il existe
+déjà un entraînement à elle sur la même question. Les deux ne doivent pas se ressembler : son
+entraînement repose sur « l'effet de signal » et « la transférabilité du savoir » ; la fiche
+élève pivote sur « le diplôme ouvre la porte, mais il ne garde pas la place ».
 
 Dette : `#1`–`#3` n'ont pas de B1. Leur B2 existe, il ne reste qu'à le simplifier.
 
