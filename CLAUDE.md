@@ -303,11 +303,17 @@ navigate to `EO_practice.html`.
 | 5 | le téléphone pour les enfants | techno | 26× | B1 · B2 | 94 |
 | 6 | travailler jusqu'à 70 ans | travail | 26× | B1 · B2 | 91 |
 | 7 | études et réussite professionnelle | edu | **43×** | B1 · B2 | 92 |
+| 8 | vivre à l'étranger : le bilan | immigration | **37×** | B1 · B2 | 90 |
 
 ⚠️ La fiche 7 traite le sujet **le plus fréquent de toute la banque (43×)**, et il existe
 déjà un entraînement à elle sur la même question. Les deux ne doivent pas se ressembler : son
 entraînement repose sur « l'effet de signal » et « la transférabilité du savoir » ; la fiche
 élève pivote sur « le diplôme ouvre la porte, mais il ne garde pas la place ».
+
+Même situation pour la fiche 8 : son entraînement #6 traite déjà ce sujet, autour des
+opportunités et du regard qui change. La fiche élève pivote ailleurs — on compare mal, parce
+que les avantages se voient et que les pertes ne se voient pas. **Relire systématiquement son
+entraînement avant d'écrire une fiche sur le même sujet.**
 
 Dette : `#1`–`#3` n'ont pas de B1. Leur B2 existe, il ne reste qu'à le simplifier.
 
