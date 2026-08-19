@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>مقدمه‌ها — TCF Avec Hoda KHEDMATI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#1a1a2e; --gray:#6b6b88; --line:#e3e3f0; --soft:#f3f3f9;
+    --navy:#0f3460; --purple:#533483; --green:#1f6b4e;
+    --fr:#0f3460; --fr-bg:#eef4fc; --fr-bd:#c9ddf4;
+    --tap:44px; --gut:18px; --maxw:920px;
+  }
+  html{ -webkit-text-size-adjust:100%; }
+  body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:16.5px; line-height:1.8;
+        background:#fbfbfe; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a,button,.tr-seg,.f{ -webkit-tap-highlight-color:rgba(83,52,131,.15); touch-action:manipulation; }
+  :focus-visible{ outline:3px solid var(--purple); outline-offset:3px; }
+
+  .navbar{ background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
+  .navbar .in{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:14px;
+    padding:6px max(var(--gut),env(safe-area-inset-right)) 6px max(var(--gut),env(safe-area-inset-left)); }
+  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px;
+             display:inline-flex; align-items:center; min-height:var(--tap); padding:0 6px; }
+  .navbar .brand{ margin-inline-start:auto; font-size:13px; opacity:.85; font-weight:600; }
+
+  .shell{ max-width:var(--maxw); margin:0 auto;
+    padding:0 max(var(--gut),env(safe-area-inset-right)) 60px max(var(--gut),env(safe-area-inset-left)); }
+
+  .header{ background:linear-gradient(135deg,var(--navy),var(--purple)); color:#fff;
+           border-radius:16px; padding:20px; margin:18px 0 0; }
+  .badge{ display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+          font-size:12.5px; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:10px; }
+  .header h1{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+              font-size:21px; line-height:1.4; font-weight:500; }
+  .header .fa{ font-size:14px; opacity:.9; margin-top:6px; }
+
+  .guide{ background:#fff8e9; border:1px solid #f0dfb8; border-inline-start:4px solid #b8860b;
+          border-radius:12px; padding:14px 16px; margin-top:16px; font-size:14.5px; color:#5c4413; }
+  .guide .hint{ font-size:13px; margin-top:8px; padding-top:8px; border-top:1px dashed #e0cfa0; }
+
+  .lvlbar{ display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+           background:#fff; border:2px solid var(--line); border-radius:14px;
+           padding:10px 14px; margin:16px 0 12px; }
+  .lvlbar .lbl{ font-size:13px; font-weight:800; }
+  .lvl{ background:var(--soft); border:2px solid var(--line); color:var(--ink); min-height:var(--tap);
+        padding:7px 24px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; }
+  .lvl.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
+  .lvl-note{ font-size:12.5px; color:var(--gray); }
+
+  .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+  .tbtn{ background:#fff; border:2px solid var(--line); color:var(--ink); min-height:var(--tap);
+         padding:9px 20px; border-radius:24px; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; }
+
+  .etape{ background:#fff; border:1px solid var(--line); border-radius:14px; margin-bottom:12px; overflow:hidden; }
+  .et-head{ background:var(--soft); padding:9px 15px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .et-num{ font-size:12.5px; font-weight:800; color:#fff; padding:2px 10px; border-radius:7px; }
+  .n1{ background:var(--navy); } .n2{ background:var(--purple); }
+  .n3{ background:#b8860b; }     .n4{ background:var(--green); }
+  .et-fr{ font-size:13.5px; font-weight:700; }
+  .et-fa{ font-size:12.5px; color:var(--gray); }
+  .flow{ padding:14px 15px 16px; display:flex; flex-wrap:wrap; gap:6px 5px; }
+
+  .tr-seg{ display:inline-block; cursor:pointer; border-radius:7px; padding:2px 4px;
+           border-bottom:2px dotted var(--line); min-height:var(--tap); }
+  .tr-fr{ display:none; font-family:'Newsreader',Georgia,serif; direction:ltr;
+          font-size:16.5px; font-weight:500; color:var(--fr);
+          background:var(--fr-bg); border:1px solid var(--fr-bd);
+          border-radius:6px; padding:1px 7px; margin-bottom:3px; }
+  .tr-seg.on .tr-fr{ display:block; }
+  .tr-fa{ display:block; font-size:14.5px; color:#333; }
+  .tr-seg.on{ border-bottom-color:var(--fr-bd); }
+
+  h2{ font-size:19px; font-weight:800; margin:28px 0 4px; }
+  .sub{ font-size:14px; color:var(--gray); margin-bottom:12px; }
+  .grp{ font-size:13px; font-weight:800; color:var(--gray); margin:16px 0 8px; }
+  .grp:first-child{ margin-top:0; }
+  .fbox{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:15px; }
+  .f{ display:block; background:var(--soft); border:1px dashed var(--line); border-radius:10px;
+      padding:9px 12px; margin-bottom:8px; cursor:pointer; min-height:var(--tap); }
+  .f-fa{ display:block; font-size:14px; font-weight:600; color:#222; }
+  .f-fr{ display:none; font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+         font-size:15.5px; font-weight:500; color:var(--fr);
+         background:var(--fr-bg); border:1px solid var(--fr-bd);
+         border-radius:6px; padding:3px 9px; margin-top:6px; }
+  .f.on .f-fr{ display:block; }
+  .f:not(.on)::after{ content:"بزن ↓"; display:block; font-size:11.5px; color:var(--gray); margin-top:4px; }
+
+  .autres{ display:grid; gap:8px; grid-template-columns:1fr; margin-top:12px; }
+  .autre{ display:block; background:#fff; border:1px solid var(--line); border-radius:11px;
+          padding:11px 14px; text-decoration:none; color:inherit; min-height:var(--tap); }
+  .autre .n{ font-family:'Courier New',monospace; font-size:13px; font-weight:800; color:var(--purple); }
+  .autre .t{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+             font-size:15px; margin-top:2px; display:block; }
+
+  footer{ margin-top:44px; padding:22px 0 calc(22px + env(safe-area-inset-bottom));
+          border-top:1px solid var(--line); font-size:13px; color:var(--gray); text-align:center; }
+
+  @media (hover:hover) and (pointer:fine){
+    .navbar a:hover{ text-decoration:underline; }
+    .lvl:hover{ border-color:var(--purple); } .lvl.on:hover{ color:#fff; }
+    .autre:hover{ border-color:var(--purple); }
+  }
+  @media (min-width:640px){
+    :root{ --gut:22px; } body{ font-size:17px; }
+    .header h1{ font-size:24px; }
+    .autres{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar"><div class="in">
+  <a href="index.html">← خانه</a>
+  <a href="blocs.html?id=1">بلوک‌ها</a>
+  <span class="brand">TCF Avec Hoda KHEDMATI</span>
+</div></div>
+
+<div class="shell" id="root"></div>
+<footer>Hoda KHEDMATI — Expression Orale · Tâche 3</footer>
+
+<script src="intros-data.js"></script>
+<script>
+var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+var faNum = function(n){ return String(n).replace(/[0-9]/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'[d]; }); };
+var pid = parseInt(new URLSearchParams(location.search).get('id'), 10);
+var D = INTROS.filter(function(x){ return x.id === pid; })[0] || INTROS[0];
+var lvl = 'b1';
+var upto = [];
+
+function etape(k){
+  for (var i = 0; i < ETAPES.length; i++) if (ETAPES[i].id === k) return ETAPES[i];
+  return { n:'', fr:'', fa:'' };
+}
+function blocs(){ return D[lvl] || D.b1; }
+
+function render(){
+  var bs = blocs();
+
+  var corpsEtapes = bs.map(function(b, pi){
+    var e = etape(b.etape);
+    var segs = b.segs.map(function(sg, si){
+      return '<span class="tr-seg" data-p="' + pi + '" data-i="' + si + '" onclick="hit(' + pi + ',' + si + ')">'
+           + '<span class="tr-fr">' + esc(sg[0]) + '</span>'
+           + '<span class="tr-fa">' + esc(sg[1]) + '</span></span>';
+    }).join('');
+    return '<div class="etape">'
+         + '<div class="et-head">'
+         +   '<span class="et-num n' + e.n + '">' + faNum(e.n) + '</span>'
+         +   '<span class="et-fr">' + esc(e.fr) + '</span>'
+         +   '<span class="et-fa">' + esc(e.fa) + '</span>'
+         + '</div><div class="flow">' + segs + '</div></div>';
+  }).join('');
+
+  var corpsFormules = ETAPES.map(function(e){
+    var lignes = FORMULES.filter(function(f){ return f.etape === e.id; }).map(function(f){
+      return '<span class="f" onclick="this.classList.toggle(\'on\')">'
+           + '<span class="f-fa">' + esc(f.fa) + '</span>'
+           + '<span class="f-fr">' + esc(f.fr) + '</span></span>';
+    }).join('');
+    return '<h3 class="grp">' + faNum(e.n) + '. ' + esc(e.fr) + ' — ' + esc(e.fa) + '</h3>' + lignes;
+  }).join('');
+
+  var autres = INTROS.filter(function(x){ return x.id !== D.id; }).map(function(x){
+    return '<a class="autre" href="introductions.html?id=' + x.id + '">'
+         + '<span class="n">' + faNum(x.freq) + '× در آزمون</span>'
+         + '<span class="t">' + esc(x.q) + '</span></a>';
+  }).join('');
+
+  document.getElementById('root').innerHTML =
+    '<div class="header">'
+  +   '<span class="badge">🟦 مقدمه · ' + lvl.toUpperCase() + ' · ' + faNum(D.freq) + '× در آزمون</span>'
+  +   '<h1>' + esc(D.q) + '</h1>'
+  +   '<div class="fa">' + esc(D.qFa) + '</div>'
+  + '</div>'
+  + '<div class="guide"><strong>🎯 چهار مرحله‌ی مقدمه.</strong> '
+  + 'هر مقدمه همیشه همین چهار قدم را دارد، به همین ترتیب. '
+  + 'فارسی را بخوان و بلند به فرانسه بگو؛ هر جا گیر کردی روی همان عبارت بزن.'
+  + '<div class="hint">مقدمه لازم نیست زیبا باشد — باید سریع و تمیز تو را به استدلالِ اول برساند. '
+  + 'هرگز با «Avec l\'essor de…» شروع نکن: وقتِ چهار دقیقه را می‌خورد.</div></div>'
+  + '<div class="lvlbar"><span class="lbl">سطح:</span>'
+  +   '<button class="lvl' + (lvl==='b1'?' on':'') + '" onclick="setLvl(\'b1\')">B1</button>'
+  +   '<button class="lvl' + (lvl==='b2'?' on':'') + '" onclick="setLvl(\'b2\')">B2</button>'
+  +   '<span class="lvl-note">همان چهار مرحله، دو سطح زبانی</span></div>'
+  + '<div class="toolbar">'
+  +   '<button class="tbtn" onclick="revealAll(true)">👁️ نمایش همه</button>'
+  +   '<button class="tbtn" onclick="revealAll(false)">🙈 مخفی کردن همه</button></div>'
+  + corpsEtapes
+  + '<h2>دوازده فرمولی که باید حفظ شوند</h2>'
+  + '<p class="sub">پنجاه مقدمه را حفظ نکن. همین دوازده‌تا را حفظ کن — بقیه از دلشان درمی‌آید.</p>'
+  + '<div class="fbox">' + corpsFormules + '</div>'
+  + '<h2>موضوع‌های دیگر</h2>'
+  + '<p class="sub">همان چهار مرحله، روی سؤال‌های دیگر.</p>'
+  + '<div class="autres">' + autres + '</div>';
+}
+
+function apply(pi){
+  var els = document.querySelectorAll('.tr-seg[data-p="' + pi + '"]');
+  for (var i = 0; i < els.length; i++){
+    if (parseInt(els[i].dataset.i, 10) <= upto[pi]) els[i].classList.add('on');
+    else els[i].classList.remove('on');
+  }
+}
+window.hit = function(pi, si){ upto[pi] = (upto[pi] >= si) ? si - 1 : si; apply(pi); };
+window.revealAll = function(show){
+  blocs().forEach(function(b, pi){ upto[pi] = show ? b.segs.length - 1 : -1; apply(pi); });
+};
+window.setLvl = function(v){ if (v !== lvl){ lvl = v; boot(); } };
+
+function boot(){
+  render();
+  upto = blocs().map(function(){ return -1; });
+}
+boot();
+</script>
+</body>
+</html>
