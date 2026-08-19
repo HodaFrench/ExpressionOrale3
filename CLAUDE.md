@@ -120,6 +120,27 @@ a neighbour). The target is the register of a thoughtful interview: eloquent but
 thinking aloud, qualifying itself, warm. Podium solemnity applied to "convince your friend to
 sort his rubbish" reads as parody and as memorised. Over-polish is itself a scoring risk.
 
+## LES INTRODUCTIONS — modèle en quatre étapes (imposé 2026-08-19)
+Elle a fourni un livret de 50 introductions A2→B1 dont la dernière page dit exactement ce que
+je faisais de travers. Ouvertures interdites : « Avec l'essor de… », « Avec la place que… ».
+Correctes mais lourdes : elles coûtent du temps sur quatre minutes, invitent à la faute, et
+retardent l'entrée dans le premier argument. Six de mes neuf fiches commençaient ainsi.
+
+**Le modèle, à suivre dans cet ordre :**
+1. *Présenter le sujet* — `Aujourd'hui, X occupe une place importante dans…` ·
+   `X joue un rôle important dans…` · `X fait partie de notre vie quotidienne.`
+2. *Montrer son importance* — `X permet de…` · `X peut avoir des effets sur…`
+3. *Poser la problématique* — `On peut donc se demander si…` ·
+   `La question est donc de savoir si…`
+4. *Donner son avis* — `À mon avis, …` · `Personnellement, je pense que…`
+   puis **immédiatement** `Tout d'abord, …`
+
+Une bonne introduction ici est *naturelle, contrôlable, avec problématique et opinion*. Elle
+n'a pas à être belle : elle doit amener vite et proprement au premier argument.
+
+Les quinze introductions du corpus ont été refaites sur ce modèle. Vérification : zéro
+ouverture en « Avec… ».
+
 ## LES NIVEAUX (révisé 2026-08-14 : B1 + B2)
 Elle a tranché pour les fiches élèves : **B1 et B2, sans C1.** Un C1 n'aide pas un élève qui
 vise le seuil ; il lui donne des phrases qu'il ne pourra pas dire proprement.
