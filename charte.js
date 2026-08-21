@@ -89,4 +89,18 @@ const CHARTE = {
     "d'aucuns",
     "Avec l'essor de…",          // ouverture bannie par le livret
   ],
+
+  // ── 8. PAS D'IMAGES : dire ce que la phrase veut dire ──
+  // Une image n'explique rien à qui apprend la langue. « Des métiers
+  // qui resteraient fermés » oblige l'élève à deviner ; à l'oral il
+  // ne devinera pas. Contrôle automatique : verif-flou.js
+  images: [
+    ["des métiers qui resteraient fermés", "des métiers qu'on ne peut pas exercer sans diplôme"],
+    ["le diplôme ouvre des portes",        "le diplôme aide beaucoup à commencer"],
+    ["apprendre beaucoup de choses",       "apprendre un métier"],
+    ["des compétences qui dépassent les cours", "des compétences qu'on n'apprend pas seulement dans les livres"],
+    ["le diplôme ne garantit rien à lui seul",  "le diplôme ne garantit pas un bon poste"],
+    ["le diplôme n'est qu'un point de départ",  "le diplôme seul ne suffit pas"],
+    ["c'est la personne qui fait la différence", "c'est le travail de chacun qui décide de la suite"],
+  ],
 };
