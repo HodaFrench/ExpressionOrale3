@@ -120,6 +120,26 @@
   .gr .e{ direction:ltr; text-align:left; font-size:15px; color:#444; font-style:italic; margin-top:3px; }
 
   @media(min-width:640px){ .blgrid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+  /* 🎤 trame de prise de parole */
+  .pr-intro{ font-size:14px; color:var(--gray); margin-bottom:14px; }
+  .pr-bloc{ border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+  .pr-head{ background:var(--soft); padding:8px 13px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .pr-num{ background:var(--navy); color:#fff; font-size:12px; font-weight:800;
+           width:22px; height:22px; border-radius:50%; display:inline-flex;
+           align-items:center; justify-content:center; flex:none; }
+  .pr-tps{ margin-inline-start:auto; font-size:12px; color:var(--gray); font-weight:700; }
+  .pr-idees{ list-style:none; padding:11px 13px 4px; margin:0; }
+  .pr-idees li{ padding:5px 0 7px; border-bottom:1px dashed var(--line); }
+  .pr-idees li:last-child{ border-bottom:0; }
+  .pr-fr{ display:block; font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:15.5px; font-weight:500; color:var(--navy); }
+  .pr-fa{ display:block; font-size:13px; color:var(--gray); margin-top:1px; }
+  .pr-amorces{ background:#f7f5fc; border-top:1px solid var(--line); padding:10px 13px;
+               display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .pr-lbl{ font-size:12.5px; font-weight:800; color:var(--purple); }
+  .pr-am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14px;
+          background:#fff; border:1px solid #d9d2ec; border-radius:16px; padding:3px 11px; }
 </style>
 </head>
 <body>
@@ -211,6 +231,29 @@
       return card('outils', '🧱 جعبه‌ی بلوک‌ها — بزن تا همه‌ی معادل‌ها را ببینی', corps, true);
     }
 
+
+    /* 🎤 la trame de prise de parole : les idées, pas le texte */
+    function pratiqueHtml(){
+      if (!data.pratique) return '';
+      const corps = data.pratique.map((b, i) => `
+        <div class="pr-bloc">
+          <div class="pr-head">
+            <span class="pr-num">${i+1}</span>
+            <span class="tr-plabel ${b.cls}">${esc(b.label)}</span>
+            <span class="pr-tps">${esc(b.duree||'')}</span>
+          </div>
+          <ul class="pr-idees">${b.idees.map(x => `
+            <li><span class="pr-fr">${esc(x.fr)}</span><span class="pr-fa">${esc(x.fa)}</span></li>`).join('')}</ul>
+          <div class="pr-amorces">
+            <span class="pr-lbl">شروع کن با:</span>
+            ${b.amorces.map(a => `<span class="pr-am">${esc(a)}</span>`).join('')}
+          </div>
+        </div>`).join('');
+      return card('prat', '🎤 حالا وقت تمرینه!',
+        `<p class="pr-intro">متن را نبین. فقط با همین ایده‌ها و عبارت‌های شروع، بلند حرف بزن.
+         هر بلوک را جدا تمرین کن، بعد پشتِ هم. زمانِ هر بلوک کنارش نوشته است.</p>${corps}`, true);
+    }
+
     function extrasHtml(){
       let out = '';
       if (data.echelle) out += card('ech', '🔄 یک ایده، سه ارتفاع',
@@ -264,6 +307,7 @@
           <strong>🎯 روشِ تمرین:</strong> فارسی را از چپ به راست دنبال کن و بلند به فرانسه بگو. هر جا گیر کردی، روی همان عبارتِ فارسی بزن تا فرانسه‌اش نمایش داده شود؛ دوباره بزن تا پنهان شود.
           <div class="hint">این متن‌ها عمداً دور کالوکیشن‌های مصطلح ساخته شده‌اند. جعبه‌ی بالا همان بلوک‌ها را جدا کرده تا در موضوع‌های دیگر هم به کارت بیایند.</div>
         </div>
+        ${pratiqueHtml()}
         ${VERSIONS.length > 1 ? `
         <div class="levelbar">
           <span class="lvl-label">سطح متن:</span>

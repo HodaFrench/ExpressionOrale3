@@ -2174,6 +2174,98 @@ const BLOCS_SUJETS = [
   theseFa: "تحصیل نقشی تعیین‌کننده دارد، اما به‌تنهایی کافی نیست.",
   note: "Fiche reconstruite selon la charte : longueurs fixées par bloc, quatre mouvements par argument, liste fermée de connecteurs.",
 
+  pratique: [
+    { label:"INTRODUCTION", cls:"lb-intro", duree:"۴۵ ثانیه",
+      idees:[
+        {fr:"les études supérieures · la vie des jeunes", fa:"تحصیلاتِ عالی · زندگیِ جوان‌ها"},
+        {fr:"acquérir des connaissances · se spécialiser", fa:"کسب دانش · تخصص گرفتن"},
+        {fr:"préparer son avenir professionnel", fa:"آماده کردنِ آینده‌ی شغلی"},
+        {fr:"MAIS : du temps · un coût élevé · pas de garantie", fa:"اما: وقت · هزینه‌ی بالا · بدونِ تضمین"},
+        {fr:"→ la question : est-ce que ça suffit ?", fa:"→ پرسش: آیا کافی است؟"},
+        {fr:"→ mon avis : rôle déterminant, mais pas suffisant", fa:"→ نظرِ من: تعیین‌کننده، اما کافی نه"},
+      ],
+      amorces:[
+        "Aujourd'hui, X occupe une place importante dans…",
+        "X permet de… · Cependant, X demande…",
+        "La question est donc de savoir si…",
+        "Personnellement, je pense que… · Je vais développer trois arguments.",
+      ] },
+    { label:"ARGUMENT 1 — l'accès aux métiers", cls:"lb-arg", duree:"۶۰ ثانیه",
+      idees:[
+        {fr:"professions réglementées · diplôme obligatoire", fa:"حرفه‌های دارای مقررات · مدرکِ اجباری"},
+        {fr:"médecin · avocat · architecte", fa:"پزشک · وکیل · معمار"},
+        {fr:"même très doué → impossible sans diplôme", fa:"حتی خیلی بااستعداد ← بدونِ مدرک ممکن نیست"},
+        {fr:"le premier emploi · pas d'expérience", fa:"اولین شغل · بدونِ سابقه"},
+        {fr:"deux candidatures → un seul critère", fa:"دو درخواست ← یک معیار"},
+        {fr:"→ entrer plus facilement · négocier le salaire", fa:"→ راحت‌تر وارد شدن · مذاکره‌ی حقوق"},
+      ],
+      amorces:[
+        "Tout d'abord, …",
+        "En effet, …",
+        "Par exemple, …",
+        "Par conséquent, …",
+      ] },
+    { label:"ARGUMENT 2 — des compétences durables", cls:"lb-arg", duree:"۶۰ ثانیه",
+      idees:[
+        {fr:"apprendre à travailler, pas seulement le contenu", fa:"یاد گرفتنِ کار کردن، نه فقط محتوا"},
+        {fr:"organiser son temps · chercher une information fiable", fa:"سامان دادنِ وقت · یافتنِ اطلاعاتِ معتبر"},
+        {fr:"défendre une idée · respecter des délais", fa:"دفاع از یک ایده · رعایتِ مهلت"},
+        {fr:"le mémoire : des mois de travail seul · rigueur · persévérance", fa:"پایان‌نامه: ماه‌ها کارِ تنها · دقت · پشتکار"},
+        {fr:"→ exactement ce que l'employeur recherche", fa:"→ دقیقاً همان که کارفرما می‌خواهد"},
+        {fr:"→ utile même si on change de métier", fa:"→ مفید حتی با عوض کردنِ شغل"},
+      ],
+      amorces:[
+        "Ensuite, …",
+        "En effet, …",
+        "Prenons l'exemple de…",
+        "C'est pourquoi…",
+      ] },
+    { label:"ARGUMENT 3 — mais rien n'est garanti", cls:"lb-arg", duree:"۵۰ ثانیه",
+      idees:[
+        {fr:"le diplôme ne garantit pas un bon poste", fa:"مدرک شغلِ خوب را تضمین نمی‌کند"},
+        {fr:"certaines filières · très peu de débouchés", fa:"بعضی رشته‌ها · فرصتِ شغلیِ کم"},
+        {fr:"le marché évolue plus vite que les programmes", fa:"بازار سریع‌تر از برنامه‌ها عوض می‌شود"},
+        {fr:"diplômé il y a 15 ans → outils qui n'existaient pas", fa:"فارغ‌التحصیلِ ۱۵ سال پیش ← ابزارهای تازه"},
+        {fr:"après l'embauche : la façon de travailler · l'équipe", fa:"بعد از استخدام: شیوه‌ی کار · تیم"},
+        {fr:"→ se former tout au long de la vie", fa:"→ آموزش در تمامِ عمر"},
+      ],
+      amorces:[
+        "Cependant, il ne faut pas oublier que…",
+        "En effet, …",
+        "Par exemple, …",
+        "C'est pourquoi…",
+      ] },
+    { label:"CONTRE-ARGUMENT", cls:"lb-arg", duree:"۵۰ ثانیه",
+      idees:[
+        {fr:"ce que disent les autres :", fa:"آنچه دیگران می‌گویند:"},
+        {fr:"des entrepreneurs ont réussi sans diplôme", fa:"کارآفرینانی بدونِ مدرک موفق شده‌اند"},
+        {fr:"des jeunes diplômés au chômage", fa:"فارغ‌التحصیلانِ جوانِ بیکار"},
+        {fr:"JE CONCÈDE : c'est vrai, ça existe", fa:"می‌پذیرم: درست است، هست"},
+        {fr:"MAIS : ce sont des exceptions", fa:"اما: این‌ها استثنا هستند"},
+        {fr:"ils ont appris par la pratique", fa:"با تمرینِ عملی یاد گرفته‌اند"},
+        {fr:"→ en général : plus de salaire · moins de chômage", fa:"→ در کل: حقوقِ بیشتر · بیکاریِ کمتر"},
+      ],
+      amorces:[
+        "Bien sûr, certaines personnes défendent le contraire.",
+        "Il est vrai que… · Je ne vais pas prétendre le contraire.",
+        "Cependant, il convient de nuancer ce point.",
+        "Par ailleurs, …",
+      ] },
+    { label:"CONCLUSION", cls:"lb-conc", duree:"۳۰ ثانیه",
+      idees:[
+        {fr:"verdict : un véritable atout · je le conseille", fa:"حکم: برگِ برنده‌ی واقعی · توصیه‌اش می‌کنم"},
+        {fr:"nuance : le diplôme seul ne suffit pas", fa:"نُوانس: مدرکِ تنها کافی نیست"},
+        {fr:"il faut aussi : expérience · qualités humaines · envie d'apprendre", fa:"لازم است: تجربه · ویژگی‌های انسانی · میلِ یادگیری"},
+        {fr:"chute : aide à commencer, mais le travail décide de la suite", fa:"فرود: برای شروع کمک می‌کند، ولی کار ادامه را تعیین می‌کند"},
+      ],
+      amorces:[
+        "Pour conclure, je pense que…",
+        "Cependant, …",
+        "Tout dépend ensuite de…",
+        "En fin de compte, …",
+      ] },
+  ],
+
   textes: {
     b1: [
       { label:"INTRODUCTION", cls:"lb-intro", segments:[
