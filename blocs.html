@@ -140,6 +140,16 @@
   .pr-lbl{ font-size:12.5px; font-weight:800; color:var(--purple); }
   .pr-am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14px;
           background:#fff; border:1px solid #d9d2ec; border-radius:16px; padding:3px 11px; }
+
+  /* bouton vers l'entraîneur de parole */
+  .go-parler{ display:flex; align-items:center; gap:13px; text-decoration:none; color:#fff;
+              background:linear-gradient(135deg,var(--navy),var(--purple));
+              border-radius:16px; padding:15px 17px; margin:16px 0 4px; min-height:var(--tap); }
+  .gp-ico{ font-size:26px; flex:none; }
+  .gp-txt{ flex:1; }
+  .gp-txt b{ display:block; font-size:16.5px; font-weight:800; }
+  .gp-txt i{ display:block; font-style:normal; font-size:12.5px; opacity:.88; margin-top:2px; }
+  .gp-fl{ font-size:22px; flex:none; opacity:.9; }
 </style>
 </head>
 <body>
@@ -232,26 +242,17 @@
     }
 
 
-    /* 🎤 la trame de prise de parole : les idées, pas le texte */
+    /* 🎤 lien vers l'entraîneur : un bloc à la fois, pas une liste */
     function pratiqueHtml(){
       if (!data.pratique) return '';
-      const corps = data.pratique.map((b, i) => `
-        <div class="pr-bloc">
-          <div class="pr-head">
-            <span class="pr-num">${i+1}</span>
-            <span class="tr-plabel ${b.cls}">${esc(b.label)}</span>
-            <span class="pr-tps">${esc(b.duree||'')}</span>
-          </div>
-          <ul class="pr-idees">${b.idees.map(x => `
-            <li><span class="pr-fr">${esc(x.fr)}</span><span class="pr-fa">${esc(x.fa)}</span></li>`).join('')}</ul>
-          <div class="pr-amorces">
-            <span class="pr-lbl">شروع کن با:</span>
-            ${b.amorces.map(a => `<span class="pr-am">${esc(a)}</span>`).join('')}
-          </div>
-        </div>`).join('');
-      return card('prat', '🎤 حالا وقت تمرینه!',
-        `<p class="pr-intro">متن را نبین. فقط با همین ایده‌ها و عبارت‌های شروع، بلند حرف بزن.
-         هر بلوک را جدا تمرین کن، بعد پشتِ هم. زمانِ هر بلوک کنارش نوشته است.</p>${corps}`, true);
+      return `<a class="go-parler" href="parler.html?id=${data.id}">
+        <span class="gp-ico">🎤</span>
+        <span class="gp-txt">
+          <b>حالا وقت تمرینه!</b>
+          <i>یک بلوک در هر صفحه · با زمان‌سنج · کمک کم‌کم برداشته می‌شود</i>
+        </span>
+        <span class="gp-fl">←</span>
+      </a>`;
     }
 
     function extrasHtml(){
