@@ -3,124 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>تمرینِ گفتار — TCF Avec Hoda KHEDMATI</title>
+<title>مسیرِ حرف زدن — TCF Avec Hoda KHEDMATI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
   *{ margin:0; padding:0; box-sizing:border-box; }
   :root{
-    --ink:#1a1a2e; --gray:#6b6b88; --line:#e3e3f0; --soft:#f5f4fa;
-    --navy:#0f3460; --purple:#533483; --green:#1f6b4e; --amber:#a8791f; --red:#a83232;
-    --tap:48px; --gut:18px; --maxw:640px;
+    --ink:#1a1a2e; --gray:#6b6b88; --line:#e6e6f0; --soft:#f6f5fb;
+    --navy:#0f3460; --purple:#6b3fa0; --amber:#c2860a; --green:#1f7a55;
+    --tap:48px; --gut:16px; --maxw:560px;
   }
   html{ -webkit-text-size-adjust:100%; }
-  body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:17px; line-height:1.75;
-        background:#fbfbfe; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:16.5px; line-height:1.7;
+        background:#fafaff; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   button{ font-family:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent; }
   :focus-visible{ outline:3px solid var(--purple); outline-offset:3px; }
 
-  .navbar{ background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
-  .navbar .in{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:14px;
-    padding:6px max(var(--gut),env(safe-area-inset-right)) 6px max(var(--gut),env(safe-area-inset-left)); }
-  .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px;
-             display:inline-flex; align-items:center; min-height:var(--tap); padding:0 6px; }
-  .navbar .brand{ margin-inline-start:auto; font-size:12.5px; opacity:.85; font-weight:600; }
+  .bar{ background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
+  .bar .in{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:12px;
+    padding:4px max(var(--gut),env(safe-area-inset-right)) 4px max(var(--gut),env(safe-area-inset-left)); }
+  .bar a{ color:#fff; text-decoration:none; font-weight:700; font-size:14.5px;
+          display:inline-flex; align-items:center; min-height:44px; padding:0 4px; }
+  .bar .t{ margin-inline-start:auto; font-size:12px; opacity:.85; font-weight:600; }
 
   .shell{ max-width:var(--maxw); margin:0 auto;
-    padding:0 max(var(--gut),env(safe-area-inset-right)) 40px max(var(--gut),env(safe-area-inset-left)); }
+    padding:0 max(var(--gut),env(safe-area-inset-right)) 36px max(var(--gut),env(safe-area-inset-left)); }
 
-  /* ── progression : voir où on en est, tout le temps ── */
-  .prog{ display:flex; gap:5px; margin:16px 0 4px; }
-  .prog i{ flex:1; height:7px; border-radius:4px; background:var(--line); transition:background .25s; }
-  .prog i.done{ background:var(--green); }
-  .prog i.now{ background:var(--purple); }
-  .prog-lbl{ font-size:12.5px; color:var(--gray); text-align:center; margin-bottom:14px; }
+  /* ── où j'en suis : six pastilles, toujours visibles ── */
+  .etapes{ display:flex; gap:6px; margin:14px 0 6px; }
+  .etapes b{ flex:1; height:34px; border-radius:9px; background:var(--soft);
+             border:2px solid var(--line); display:flex; align-items:center; justify-content:center;
+             font-size:15px; transition:.2s; }
+  .etapes b.done{ background:#e4f2ec; border-color:#b6ddcb; }
+  .etapes b.now{ background:var(--navy); border-color:var(--navy); transform:scale(1.06); }
+  .etapes-lbl{ text-align:center; font-size:12.5px; color:var(--gray); margin-bottom:12px; }
 
-  /* ── la carte du bloc en cours : une seule chose à l'écran ── */
-  .bloc{ background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden;
-         box-shadow:0 2px 10px rgba(15,52,96,.05); }
-  .bloc-head{ padding:16px 18px 14px; border-bottom:1px solid var(--line); }
-  .etq{ display:inline-block; font-size:12px; font-weight:800; color:#fff;
-        padding:3px 12px; border-radius:20px; background:var(--navy); margin-bottom:8px; }
-  .etq.arg{ background:var(--purple); } .etq.conc{ background:var(--green); }
-  .bloc-titre{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
-               font-size:19px; font-weight:500; line-height:1.35; }
+  /* ── le bloc ── */
+  .bloc{ background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+  .tete{ padding:15px 17px 13px; }
+  .tete .nom{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+              font-size:18px; font-weight:500; line-height:1.3; }
+  .tete .ico{ font-size:26px; }
 
-  /* ── chronomètre : le temps se voit, il ne se devine pas ── */
-  .chrono{ padding:12px 18px; background:var(--soft); display:flex; align-items:center; gap:12px; }
-  .chrono-bar{ flex:1; height:9px; background:var(--line); border-radius:5px; overflow:hidden; }
-  .chrono-fill{ height:100%; width:100%; background:var(--green); transition:width 1s linear; }
-  .chrono-fill.warn{ background:var(--amber); } .chrono-fill.over{ background:var(--red); }
-  .chrono-txt{ font-family:'Courier New',monospace; font-weight:800; font-size:16px; min-width:52px; text-align:center; }
-  .chrono-btn{ background:#fff; border:2px solid var(--line); border-radius:22px;
-               min-height:38px; padding:4px 16px; font-size:13.5px; font-weight:700; color:var(--ink); }
+  /* ── chrono ── */
+  .chrono{ display:flex; align-items:center; gap:11px; padding:9px 17px; background:var(--soft);
+           border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .cbar{ flex:1; height:8px; background:var(--line); border-radius:5px; overflow:hidden; }
+  .cfill{ display:block; height:100%; width:100%; background:var(--green); transition:width 1s linear; }
+  .cfill.w{ background:var(--amber); } .cfill.o{ background:#b33; }
+  .ctxt{ font-family:'Courier New',monospace; font-weight:800; font-size:15px; min-width:46px; text-align:center; }
+  .cbtn{ background:#fff; border:2px solid var(--line); border-radius:20px; min-height:36px;
+         padding:2px 15px; font-size:13px; font-weight:800; color:var(--ink); }
 
-  /* ── la première phrase : supprimer le coût du démarrage ── */
-  .depart{ margin:16px 18px 0; background:#eef4fc; border:1px solid #c9ddf4;
-           border-inline-start:4px solid var(--navy); border-radius:12px; padding:13px 15px; }
-  .depart .lbl{ font-size:12px; font-weight:800; color:var(--navy); }
-  .depart .ph{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
-               font-size:18px; font-weight:500; margin-top:5px; }
+  /* ── LA CHAÎNE : le cœur ── */
+  .chaine{ padding:6px 15px 12px; }
+  .maillon{ display:flex; gap:11px; align-items:flex-start; padding:9px 0; }
+  .mico{ width:42px; height:42px; border-radius:12px; flex:none;
+         display:flex; align-items:center; justify-content:center; font-size:22px;
+         background:var(--soft); border:2px solid var(--line); }
+  .mtxt{ flex:1; min-width:0; padding-top:1px; }
+  .mfr{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+        font-size:16px; font-weight:500; line-height:1.35; }
+  .mfa{ font-size:13.5px; color:var(--gray); margin-top:2px; }
 
-  /* ── les idées ── */
-  .idees{ list-style:none; padding:14px 18px 6px; }
-  .idees li{ padding:9px 0; border-bottom:1px dashed var(--line); display:flex; gap:10px; align-items:flex-start; }
-  .idees li:last-child{ border-bottom:0; }
-  .idees .pt{ width:7px; height:7px; border-radius:50%; background:var(--purple); margin-top:11px; flex:none; }
-  .id-fr{ display:block; font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
-          font-size:16.5px; font-weight:500; color:var(--navy); }
-  .id-fa{ display:block; font-size:13.5px; color:var(--gray); }
+  /* couleur = rôle logique. l'élève apprend la FORME du raisonnement */
+  .mv1 .mico{ background:#e8eef7; border-color:#bacce6; }
+  .mv2 .mico{ background:#f0e9f7; border-color:#d3c1e6; }
+  .mv3 .mico{ background:#fbf1dc; border-color:#ecd9ab; }
+  .mv4 .mico{ background:#e4f2ec; border-color:#b6ddcb; }
+  .mv1 .mfr{ color:var(--navy); } .mv2 .mfr{ color:var(--purple); }
+  .mv3 .mfr{ color:var(--amber); } .mv4 .mfr{ color:var(--green); }
 
-  /* ── mode « repères seuls » : on cache le français, on garde le sens ── */
-  body.fade1 .id-fr{ filter:blur(5px); opacity:.35; }
-  body.fade1 .idees li:active .id-fr,
-  body.fade1 .id-fr.vu{ filter:none; opacity:1; }
-  body.fade2 .idees, body.fade2 .depart, body.fade2 .amorces{ display:none; }
-  .fade2-msg{ display:none; padding:22px 18px; text-align:center; font-size:15px; color:var(--gray); }
-  body.fade2 .fade2-msg{ display:block; }
+  /* la flèche porte le NOM du lien : c'est ça, « عقلانی » */
+  .fleche{ display:flex; align-items:center; gap:8px; padding:2px 0 2px 0; margin-inline-start:20px; }
+  .fleche i{ width:2px; height:16px; background:var(--line); flex:none; }
+  .fleche span{ font-size:11.5px; font-weight:800; color:var(--gray);
+                background:var(--soft); border-radius:20px; padding:1px 10px; }
 
-  .amorces{ background:#f7f5fc; border-top:1px solid var(--line); padding:12px 18px;
-            display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
-  .am-lbl{ font-size:12.5px; font-weight:800; color:var(--purple); width:100%; }
-  .am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14.5px;
-       background:#fff; border:1px solid #d9d2ec; border-radius:16px; padding:4px 12px; }
+  /* ── cacher le français : la vraie production ── */
+  body.cache .mfr{ filter:blur(6px); opacity:.4; }
+  body.cache .mfr.vu{ filter:none; opacity:1; }
+  .astuce{ font-size:12px; color:var(--gray); padding:0 17px 12px; display:none; }
+  body.cache .astuce{ display:block; }
+
+  /* ── amorces ── */
+  .amorces{ background:#f7f5fc; border-top:1px solid var(--line); padding:11px 17px;
+            display:flex; flex-wrap:wrap; gap:6px; }
+  .amorces b{ width:100%; font-size:12px; color:var(--purple); }
+  .am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14px;
+       background:#fff; border:1px solid #dcd3ea; border-radius:15px; padding:3px 11px; }
 
   /* ── commandes ── */
-  .cmds{ display:flex; gap:10px; margin-top:16px; }
-  .btn{ flex:1; min-height:var(--tap); border-radius:14px; border:2px solid var(--line);
-        background:#fff; font-size:15px; font-weight:800; color:var(--ink); }
-  .btn.go{ background:var(--green); border-color:var(--green); color:#fff; flex:2; }
-  .btn.go:disabled{ opacity:.45; }
+  .cmds{ display:flex; gap:9px; margin-top:14px; }
+  .b{ min-height:var(--tap); border-radius:14px; border:2px solid var(--line);
+      background:#fff; font-size:15px; font-weight:800; color:var(--ink); padding:0 16px; }
+  .b.go{ flex:1; background:var(--green); border-color:var(--green); color:#fff; }
+  .b.sw{ flex:1; }
+  .b.sw.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
 
-  /* ── réglage de l'aide ── */
-  .aide{ background:#fff; border:1px solid var(--line); border-radius:14px;
-         padding:12px 15px; margin-top:14px; }
-  .aide-lbl{ font-size:13px; font-weight:800; margin-bottom:9px; }
-  .aide-row{ display:flex; gap:7px; }
-  .aide-b{ flex:1; min-height:42px; border-radius:11px; border:2px solid var(--line);
-           background:var(--soft); font-size:13px; font-weight:700; color:var(--ink); padding:4px; }
-  .aide-b.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
-  .aide-note{ font-size:12px; color:var(--gray); margin-top:8px; }
+  /* ── légende : ce que veulent dire les couleurs ── */
+  .leg{ background:#fff; border:1px solid var(--line); border-radius:14px;
+        padding:11px 14px; margin-top:13px; display:flex; flex-wrap:wrap; gap:7px; }
+  .leg b{ width:100%; font-size:12.5px; margin-bottom:2px; }
+  .leg span{ font-size:12px; font-weight:700; border-radius:16px; padding:3px 11px; }
+  .l1{ background:#e8eef7; color:var(--navy); } .l2{ background:#f0e9f7; color:var(--purple); }
+  .l3{ background:#fbf1dc; color:var(--amber); } .l4{ background:#e4f2ec; color:var(--green); }
 
-  /* ── fin ── */
-  .fin{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px 20px; text-align:center; }
-  .fin .big{ font-size:42px; }
-  .fin h2{ font-size:21px; font-weight:800; margin:8px 0; }
-  .fin p{ font-size:14.5px; color:var(--gray); }
-  .fin .recap{ text-align:start; background:var(--soft); border-radius:12px; padding:12px 15px; margin-top:16px; font-size:13.5px; }
-  .fin .recap b{ color:var(--navy); }
-
-  footer{ margin-top:40px; padding:20px 0 calc(20px + env(safe-area-inset-bottom));
-          border-top:1px solid var(--line); font-size:12.5px; color:var(--gray); text-align:center; }
+  .fin{ background:#fff; border:1px solid var(--line); border-radius:18px;
+        padding:26px 20px; text-align:center; }
+  .fin .e{ font-size:40px; } .fin h2{ font-size:20px; margin:6px 0; }
+  .fin p{ font-size:14px; color:var(--gray); }
+  footer{ margin-top:36px; padding:18px 0 calc(18px + env(safe-area-inset-bottom));
+          border-top:1px solid var(--line); font-size:12px; color:var(--gray); text-align:center; }
 </style>
 </head>
 <body>
 
-<div class="navbar"><div class="in">
+<div class="bar"><div class="in">
   <a href="index.html">← خانه</a>
-  <a id="lienFiche" href="blocs.html?id=7">متنِ کامل</a>
-  <span class="brand">تمرینِ گفتار</span>
+  <a id="lf" href="blocs.html?id=10">متن</a>
+  <span class="t">مسیرِ حرف زدن</span>
 </div></div>
 
 <div class="shell" id="root"></div>
@@ -128,139 +131,99 @@
 
 <script src="blocs-data.js"></script>
 <script>
-var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
-var faNum = function(n){ return String(n).replace(/[0-9]/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'[d]; }); };
+var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
+var fa=function(n){return String(n).replace(/[0-9]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d];});};
 
-var pid = parseInt(new URLSearchParams(location.search).get('id'), 10) || 7;
-var F = BLOCS_SUJETS.filter(function(x){ return x.id === pid; })[0];
-document.getElementById('lienFiche').href = 'blocs.html?id=' + pid;
+var pid = parseInt(new URLSearchParams(location.search).get('id'),10) || 10;
+var F = BLOCS_SUJETS.filter(function(x){return x.id===pid;})[0];
+document.getElementById('lf').href = 'blocs.html?id=' + pid;
+var P = (F && F.parcours) ? F.parcours : [];
 
-var P = (F && F.pratique) ? F.pratique : [];
-var i = 0;              // bloc en cours
-var faits = [];         // blocs terminés
-var aide = 0;           // 0 = tout · 1 = repères · 2 = rien
-var secs = 0, tot = 0, tick = null, lance = false;
+var ICO  = ['📣','🧭','🔍','⚖️','💬','🎯'];
+var LIEN = { 1:'می‌گویم چه', 2:'چرا؟', 3:'مثلاً', 4:'پس' };
+var i=0, faits=[], cache=false, secs=0, tot=0, tick=null, run=false;
 
-function dureeSec(txt){
-  var m = String(txt||'').replace(/[۰-۹]/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); }).match(/\d+/);
-  return m ? parseInt(m[0], 10) : 60;
-}
-function mmss(s){
-  var neg = s < 0; s = Math.abs(s);
-  return (neg ? '−' : '') + Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
-}
-function classeEtq(lbl){
-  if (/CONCLUSION/.test(lbl)) return 'conc';
-  if (/INTRODUCTION/.test(lbl)) return '';
-  return 'arg';
-}
+function mmss(s){ var n=s<0; s=Math.abs(s); return (n?'−':'')+Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 
 function render(){
-  document.body.className = 'fade' + aide;
+  document.body.className = cache ? 'cache' : '';
 
   if (i >= P.length){
     document.getElementById('root').innerHTML =
-      '<div class="fin"><div class="big">🎉</div><h2>تمام شد</h2>'
-    + '<p>هر شش بلوک را گفتی. حالا یک بار پشتِ سرِ هم، بدونِ توقف.</p>'
-    + '<div class="recap">'
-    +   '<b>دفعه‌ی بعد:</b> اگر این بار با «همه‌چیز» تمرین کردی، دفعه‌ی بعد برو روی «فقط نشانه». '
-    +   'وقتی آن هم راحت شد، «بدونِ کمک». هر بار یک پله.'
-    + '</div>'
-    + '<div class="cmds"><button class="btn" onclick="recommencer()">↻ از اول</button>'
-    +   '<button class="btn go" onclick="monter()">پله‌ی بعد ↑</button></div></div>';
+      '<div class="fin"><div class="e">🎉</div><h2>هر شش بلوک را گفتی</h2>'
+    + '<p>حالا یک بار پشتِ سرِ هم، بدونِ توقف.<br>دفعه‌ی بعد دکمه‌ی «فرانسه را بپوشان» را بزن.</p>'
+    + '<div class="cmds"><button class="b" onclick="reset()">↻ از اول</button>'
+    + '<button class="b go" onclick="cache=true;reset()">سخت‌ترش کن 🙈</button></div></div>';
     return;
   }
 
   var b = P[i];
-  tot = dureeSec(b.duree);
-  if (!lance) secs = tot;
+  tot = b.sec; if (!run) secs = tot;
 
-  var idees = b.idees.map(function(x){
-    return '<li><span class="pt"></span><span>'
-         + '<span class="id-fr" onclick="this.classList.add(\'vu\')">' + esc(x.fr) + '</span>'
-         + '<span class="id-fa">' + esc(x.fa) + '</span></span></li>';
-  }).join('');
-
-  var amorces = b.amorces.map(function(a){ return '<span class="am">' + esc(a) + '</span>'; }).join('');
+  var chaine = '';
+  b.maillons.forEach(function(m, k){
+    if (k > 0 && m.mv !== b.maillons[k-1].mv)
+      chaine += '<div class="fleche"><i></i><span>'+ (LIEN[m.mv]||'') +'</span></div>';
+    chaine += '<div class="maillon mv'+m.mv+'">'
+           +   '<span class="mico">'+m.ico+'</span>'
+           +   '<span class="mtxt">'
+           +     '<span class="mfr" onclick="this.classList.add(\'vu\')">'+esc(m.fr)+'</span>'
+           +     '<span class="mfa">'+esc(m.fa)+'</span>'
+           +   '</span></div>';
+  });
 
   document.getElementById('root').innerHTML =
-    '<div class="prog">' + P.map(function(_, k){
-        return '<i class="' + (faits.indexOf(k) >= 0 ? 'done' : (k === i ? 'now' : '')) + '"></i>';
-      }).join('') + '</div>'
-  + '<div class="prog-lbl">بلوکِ ' + faNum(i+1) + ' از ' + faNum(P.length) + '</div>'
+    '<div class="etapes">' + P.map(function(_,k){
+      return '<b class="'+(faits.indexOf(k)>=0?'done':(k===i?'now':''))+'">'+ICO[k]+'</b>';
+    }).join('') + '</div>'
+  + '<div class="etapes-lbl">بلوکِ '+fa(i+1)+' از '+fa(P.length)+'</div>'
 
   + '<div class="bloc">'
-  +   '<div class="bloc-head">'
-  +     '<span class="etq ' + classeEtq(b.label) + '">' + faNum(i+1) + '</span>'
-  +     '<div class="bloc-titre">' + esc(b.label) + '</div>'
-  +   '</div>'
-
+  +   '<div class="tete"><span class="ico">'+ICO[i]+'</span><div class="nom">'+esc(b.label)+'</div></div>'
   +   '<div class="chrono">'
-  +     '<span class="chrono-txt" id="ctxt">' + mmss(secs) + '</span>'
-  +     '<div class="chrono-bar"><i class="chrono-fill" id="cfill" style="display:block;width:'
-  +        (tot ? Math.max(0, secs/tot*100) : 100) + '%"></i></div>'
-  +     '<button class="chrono-btn" onclick="toggle()">' + (lance ? '⏸' : '▶︎ شروع') + '</button>'
+  +     '<span class="ctxt" id="ct">'+mmss(secs)+'</span>'
+  +     '<span class="cbar"><i class="cfill" id="cf" style="width:100%"></i></span>'
+  +     '<button class="cbtn" onclick="go()">'+(run?'⏸':'▶︎')+'</button>'
   +   '</div>'
-
-  +   '<div class="depart"><div class="lbl">با این جمله شروع کن — بلند بگو</div>'
-  +     '<div class="ph">' + esc(b.amorces[0] || '') + '</div></div>'
-
-  +   '<ul class="idees">' + idees + '</ul>'
-
-  +   '<div class="amorces"><span class="am-lbl">برای هر حرکت:</span>' + amorces + '</div>'
-
-  +   '<div class="fade2-msg">🎙️ بدونِ کمک. فقط اسمِ بلوک را داری.<br>'
-  +     'اگر گیر کردی، دکمه‌ی «کمک» را بزن.</div>'
+  +   '<div class="chaine">'+chaine+'</div>'
+  +   '<div class="astuce">💡 روی هر خطِ مات بزن تا فرانسه‌اش را ببینی.</div>'
+  +   '<div class="amorces"><b>عبارت‌های شروع</b>'
+  +     b.amorces.map(function(a){return '<span class="am">'+esc(a)+'</span>';}).join('')
+  +   '</div>'
   + '</div>'
 
   + '<div class="cmds">'
-  +   (i > 0 ? '<button class="btn" onclick="prec()">→ قبلی</button>' : '')
-  +   '<button class="btn go" onclick="suivant()">گفتم ✓ بعدی</button>'
+  +   (i>0 ? '<button class="b" onclick="prec()">→</button>' : '')
+  +   '<button class="b sw'+(cache?' on':'')+'" onclick="sw()">'+(cache?'🙈 پوشانده':'👁️ فرانسه را بپوشان')+'</button>'
+  +   '<button class="b go" onclick="next()">گفتم ✓</button>'
   + '</div>'
 
-  + '<div class="aide"><div class="aide-lbl">چقدر کمک می‌خواهی؟</div>'
-  +   '<div class="aide-row">'
-  +     '<button class="aide-b' + (aide===0?' on':'') + '" onclick="setAide(0)">همه‌چیز</button>'
-  +     '<button class="aide-b' + (aide===1?' on':'') + '" onclick="setAide(1)">فقط نشانه</button>'
-  +     '<button class="aide-b' + (aide===2?' on':'') + '" onclick="setAide(2)">بدونِ کمک</button>'
-  +   '</div>'
-  +   '<div class="aide-note">هر بار که راحت‌تر شدی یک پله بالا برو. سخت‌تر شدنِ تمرین همان چیزی است که در حافظه می‌مانَد.</div>'
-  + '</div>';
+  + '<div class="leg"><b>رنگ‌ها مسیرِ استدلال را نشان می‌دهند:</b>'
+  +   '<span class="l1">۱ می‌گویم چه</span><span class="l2">۲ چرا</span>'
+  +   '<span class="l3">۳ مثال</span><span class="l4">۴ پس</span></div>';
 }
 
 function maj(){
-  var t = document.getElementById('ctxt'), f = document.getElementById('cfill');
-  if (!t || !f) return;
+  var t=document.getElementById('ct'), f=document.getElementById('cf');
+  if(!t||!f) return;
   t.textContent = mmss(secs);
-  var pct = tot ? Math.max(0, secs / tot * 100) : 0;
-  f.style.width = pct + '%';
-  f.className = 'chrono-fill' + (secs < 0 ? ' over' : (pct < 25 ? ' warn' : ''));
-  if (secs < 0){ f.style.width = '100%'; }
+  var p = tot ? Math.max(0, secs/tot*100) : 0;
+  f.style.width = (secs<0?100:p)+'%';
+  f.className = 'cfill' + (secs<0?' o':(p<25?' w':''));
 }
-window.toggle = function(){
-  lance = !lance;
-  if (tick){ clearInterval(tick); tick = null; }
-  if (lance) tick = setInterval(function(){ secs--; maj(); }, 1000);
-  render();
-};
-window.suivant = function(){
-  if (faits.indexOf(i) < 0) faits.push(i);
-  if (tick){ clearInterval(tick); tick = null; }
-  lance = false; i++; render();
-};
-window.prec = function(){
-  if (tick){ clearInterval(tick); tick = null; }
-  lance = false; if (i > 0) i--; render();
-};
-window.setAide = function(v){ aide = v; render(); };
-window.recommencer = function(){ i = 0; faits = []; lance = false; render(); };
-window.monter = function(){ if (aide < 2) aide++; i = 0; faits = []; lance = false; render(); };
+window.go = function(){ run=!run; if(tick){clearInterval(tick);tick=null;}
+  if(run) tick=setInterval(function(){secs--;maj();},1000); render(); };
+window.next = function(){ if(faits.indexOf(i)<0) faits.push(i);
+  if(tick){clearInterval(tick);tick=null;} run=false; i++; render(); };
+window.prec = function(){ if(tick){clearInterval(tick);tick=null;} run=false; if(i>0)i--; render(); };
+window.sw   = function(){ cache=!cache; render(); };
+window.reset= function(){ i=0; faits=[]; run=false; render(); };
 
-if (!P.length){
+if(!P.length){
   document.getElementById('root').innerHTML =
-    '<div class="fin"><div class="big">🚧</div><h2>این موضوع هنوز ترامه ندارد</h2>'
-  + '<p>فعلاً موضوعِ «تحصیل و موفقیت شغلی» آماده است.</p>'
-  + '<div class="cmds"><a class="btn go" style="text-decoration:none;display:flex;align-items:center;justify-content:center" href="parler.html?id=7">برو به آن</a></div></div>';
+    '<div class="fin"><div class="e">🚧</div><h2>این موضوع هنوز مسیر ندارد</h2>'
+  + '<p>فعلاً «مصرف‌گرایی» آماده است.</p>'
+  + '<div class="cmds"><a class="b go" style="text-decoration:none;display:flex;align-items:center;justify-content:center" href="parler.html?id=10">برو به آن</a></div></div>';
 } else render();
 </script>
 </body>

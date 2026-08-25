@@ -244,12 +244,12 @@
 
     /* 🎤 lien vers l'entraîneur : un bloc à la fois, pas une liste */
     function pratiqueHtml(){
-      if (!data.pratique) return '';
+      if (!data.parcours && !data.pratique) return '';
       return `<a class="go-parler" href="parler.html?id=${data.id}">
         <span class="gp-ico">🎤</span>
         <span class="gp-txt">
           <b>حالا وقت تمرینه!</b>
-          <i>یک بلوک در هر صفحه · با زمان‌سنج · کمک کم‌کم برداشته می‌شود</i>
+          <i>مسیرِ تصویری · یک بلوک در هر صفحه · با زمان‌سنج</i>
         </span>
         <span class="gp-fl">←</span>
       </a>`;
