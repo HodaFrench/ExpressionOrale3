@@ -175,8 +175,8 @@
       // Les niveaux ne sont plus figés : on prend ceux que la fiche contient,
       // du plus accessible au plus exigeant.
       : (function(){
-          const ORDRE = ['n7','b1','b2','c1'];
-          const NOM   = { n7:'11/20', b1:'B1', b2:'B2', c1:'C1' };
+          const ORDRE = ['a1','n7','b1','b2','c1'];
+          const NOM   = { a1:'A1', n7:'11/20', b1:'B1', b2:'B2', c1:'C1' };
           return ORDRE.filter(k => data.textes && data.textes[k])
                       .map(k => ({ id:k, level:NOM[k], paragraphs:data.textes[k] }));
         })();
