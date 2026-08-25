@@ -10,13 +10,13 @@
 <style>
   *{ margin:0; padding:0; box-sizing:border-box; }
   :root{
-    --ink:#1a1a2e; --gray:#6b6b88; --line:#e6e6f0; --soft:#f6f5fb;
-    --navy:#0f3460; --purple:#6b3fa0; --amber:#c2860a; --green:#1f7a55;
+    --ink:#2E2118; --gray:#8A7360; --line:#F0E2D4; --soft:#FDF4EC;
+    --navy:#C2410C; --purple:#B45309; --amber:#B45309; --green:#0F766E;
     --tap:48px; --gut:16px; --maxw:560px;
   }
   html{ -webkit-text-size-adjust:100%; }
   body{ font-family:'Vazirmatn',Tahoma,sans-serif; font-size:16.5px; line-height:1.7;
-        background:#fafaff; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+        background:#FFFCF7; color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   button{ font-family:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent; }
   :focus-visible{ outline:3px solid var(--purple); outline-offset:3px; }
 
@@ -35,7 +35,7 @@
   .etapes b{ flex:1; height:34px; border-radius:9px; background:var(--soft);
              border:2px solid var(--line); display:flex; align-items:center; justify-content:center;
              font-size:15px; transition:.2s; }
-  .etapes b.done{ background:#e4f2ec; border-color:#b6ddcb; }
+  .etapes b.done{ background:#E6F5F3; border-color:#A9DBD5; }
   .etapes b.now{ background:var(--navy); border-color:var(--navy); transform:scale(1.06); }
   .etapes-lbl{ text-align:center; font-size:12.5px; color:var(--gray); margin-bottom:12px; }
 
@@ -51,7 +51,7 @@
            border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .cbar{ flex:1; height:8px; background:var(--line); border-radius:5px; overflow:hidden; }
   .cfill{ display:block; height:100%; width:100%; background:var(--green); transition:width 1s linear; }
-  .cfill.w{ background:var(--amber); } .cfill.o{ background:#b33; }
+  .cfill.w{ background:var(--amber); } .cfill.o{ background:#BE3455; }
   .ctxt{ font-family:'Courier New',monospace; font-weight:800; font-size:15px; min-width:46px; text-align:center; }
   .cbtn{ background:#fff; border:2px solid var(--line); border-radius:20px; min-height:36px;
          padding:2px 15px; font-size:13px; font-weight:800; color:var(--ink); }
@@ -68,10 +68,10 @@
   .mfa{ font-size:13.5px; color:var(--gray); margin-top:2px; }
 
   /* couleur = rôle logique. l'élève apprend la FORME du raisonnement */
-  .mv1 .mico{ background:#e8eef7; border-color:#bacce6; }
-  .mv2 .mico{ background:#f0e9f7; border-color:#d3c1e6; }
-  .mv3 .mico{ background:#fbf1dc; border-color:#ecd9ab; }
-  .mv4 .mico{ background:#e4f2ec; border-color:#b6ddcb; }
+  .mv1 .mico{ background:#FDE9DC; border-color:#F3C6A8; }
+  .mv2 .mico{ background:#FEF1E6; border-color:#EBD9C2; }
+  .mv3 .mico{ background:#FDF3DF; border-color:#EBD9C2; }
+  .mv4 .mico{ background:#E6F5F3; border-color:#A9DBD5; }
   .mv1 .mfr{ color:var(--navy); } .mv2 .mfr{ color:var(--purple); }
   .mv3 .mfr{ color:var(--amber); } .mv4 .mfr{ color:var(--green); }
 
@@ -88,11 +88,11 @@
   body.cache .astuce{ display:block; }
 
   /* ── amorces ── */
-  .amorces{ background:#f7f5fc; border-top:1px solid var(--line); padding:11px 17px;
+  .amorces{ background:#FEF6EC; border-top:1px solid var(--line); padding:11px 17px;
             display:flex; flex-wrap:wrap; gap:6px; }
   .amorces b{ width:100%; font-size:12px; color:var(--purple); }
   .am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14px;
-       background:#fff; border:1px solid #dcd3ea; border-radius:15px; padding:3px 11px; }
+       background:#fff; border:1px solid #EBD9C2; border-radius:15px; padding:3px 11px; }
 
   /* ── commandes ── */
   .cmds{ display:flex; gap:9px; margin-top:14px; }
@@ -107,8 +107,8 @@
         padding:11px 14px; margin-top:13px; display:flex; flex-wrap:wrap; gap:7px; }
   .leg b{ width:100%; font-size:12.5px; margin-bottom:2px; }
   .leg span{ font-size:12px; font-weight:700; border-radius:16px; padding:3px 11px; }
-  .l1{ background:#e8eef7; color:var(--navy); } .l2{ background:#f0e9f7; color:var(--purple); }
-  .l3{ background:#fbf1dc; color:var(--amber); } .l4{ background:#e4f2ec; color:var(--green); }
+  .l1{ background:#FDE9DC; color:var(--navy); } .l2{ background:#FEF1E6; color:var(--purple); }
+  .l3{ background:#FDF3DF; color:var(--amber); } .l4{ background:#E6F5F3; color:var(--green); }
 
   .fin{ background:#fff; border:1px solid var(--line); border-radius:18px;
         padding:26px 20px; text-align:center; }

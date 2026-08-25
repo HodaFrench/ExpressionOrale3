@@ -7,18 +7,18 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   :root{
-    --ink:#1a1a2e; --navy:#0f3460; --purple:#533483;
-    --line:#e2e2ee; --soft:#f6f6fb; --gray:#6b7280;
-    --fr:#1565c0; --fr-bg:#e9f2fd; --fr-bd:#bcd9f7; --amber:#e65100;
+    --ink:#2E2118; --navy:#C2410C; --purple:#B45309;
+    --line:#F0E2D4; --soft:#FDF4EC; --gray:#8A7360;
+    --fr:#0F766E; --fr-bg:#E6F5F3; --fr-bd:#A9DBD5; --amber:#B45309;
   }
-  body{ font-family:'Tahoma',Arial,sans-serif; background:linear-gradient(135deg,#1a1a2e,#16213e); color:var(--ink); line-height:1.9; min-height:100vh; padding-bottom:60px; }
+  body{ font-family:'Tahoma',Arial,sans-serif; background:linear-gradient(135deg,#2E2118,#16213e); color:var(--ink); line-height:1.9; min-height:100vh; padding-bottom:60px; }
   .navbar{ background:rgba(0,0,0,.5); padding:14px 18px; display:flex; align-items:center; justify-content:center; gap:18px; position:sticky; top:0; z-index:100; }
   .navbar a{ color:#fff; text-decoration:none; font-weight:700; font-size:15px; display:inline-flex; align-items:center; min-height:44px; padding:0 6px; -webkit-tap-highlight-color:rgba(255,255,255,.2); touch-action:manipulation; }
   .navbar a:hover{ color:#00d4ff; }
   .navbar span{ color:#00d4ff; font-size:14px; }
 
   .container{ max-width:1000px; margin:0 auto; padding:34px 18px; }
-  .header{ background:linear-gradient(135deg,var(--navy),var(--purple)); color:#fff; padding:32px 28px; border-radius:20px; margin-bottom:24px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45); }
+  .header{ background:linear-gradient(135deg,#C2410C,#EA8C2B); color:#fff; padding:32px 28px; border-radius:20px; margin-bottom:24px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.45); }
   .header .badge{ display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); font-size:13.5px; font-weight:700; padding:5px 14px; border-radius:20px; margin-bottom:14px; }
   .header h1{ font-size:24px; font-weight:800; margin-bottom:12px; direction:ltr; line-height:1.35; }
   .header .meta{ font-size:14px; opacity:.9; }
@@ -43,7 +43,7 @@
   .lvl-label{ font-size:13px; font-weight:800; color:var(--ink); }
   .lvl{ background:var(--soft); color:var(--ink); border:2px solid var(--line); min-height:44px; padding:7px 22px; border-radius:20px; font-family:inherit; font-size:14px; font-weight:800; cursor:pointer; transition:.2s; }
   .lvl:hover{ border-color:var(--purple); color:var(--purple); }
-  .lvl.on{ background:var(--navy,#0f3460); border-color:var(--navy,#0f3460); color:#fff; }
+  .lvl.on{ background:var(--navy,#C2410C); border-color:var(--navy,#C2410C); color:#fff; }
   .lvl-note{ display:none; font-size:13px; color:#5E5E7A; margin-inline-start:auto; }
   @media (min-width:560px){ .lvl-note{ display:inline; } }
 
@@ -97,14 +97,14 @@
   .ech-r .k{ flex:none; font-size:11px; font-weight:800; padding:2px 7px; border-radius:5px; margin-top:4px; }
   .ech-r .k.s{ background:#fceeed; color:#b3261e; }
   .ech-r .k.a{ background:var(--fr-bg); color:var(--fr); }
-  .ech-r .k.b{ background:#eaf4ef; color:#1f6b4e; }
+  .ech-r .k.b{ background:#E6F5F3; color:#0F766E; }
   .ech-r .t{ direction:ltr; text-align:left; font-size:15.5px; line-height:1.5; }
 
   /* ── anti-traduction ── */
   .at{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; margin-bottom:9px; }
   .at-l{ direction:ltr; text-align:left; font-size:15.5px; line-height:1.55; padding:2px 0; }
   .at .bad{ color:#b3261e; text-decoration:line-through; }
-  .at .good{ color:#1f6b4e; font-weight:600; }
+  .at .good{ color:#0F766E; font-weight:600; }
   .at-w{ font-size:13.5px; color:#444; margin-top:8px; padding-top:8px; border-top:1px dashed var(--line); }
   .at ul{ margin:6px 14px 0; direction:ltr; text-align:left; }
   .at li{ font-size:14px; color:#444; line-height:1.6; }
@@ -135,15 +135,15 @@
   .pr-fr{ display:block; font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
           font-size:15.5px; font-weight:500; color:var(--navy); }
   .pr-fa{ display:block; font-size:13px; color:var(--gray); margin-top:1px; }
-  .pr-amorces{ background:#f7f5fc; border-top:1px solid var(--line); padding:10px 13px;
+  .pr-amorces{ background:#FEF6EC; border-top:1px solid var(--line); padding:10px 13px;
                display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
   .pr-lbl{ font-size:12.5px; font-weight:800; color:var(--purple); }
   .pr-am{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14px;
-          background:#fff; border:1px solid #d9d2ec; border-radius:16px; padding:3px 11px; }
+          background:#fff; border:1px solid #EBD9C2; border-radius:16px; padding:3px 11px; }
 
   /* bouton vers l'entraîneur de parole */
   .go-parler{ display:flex; align-items:center; gap:13px; text-decoration:none; color:#fff;
-              background:linear-gradient(135deg,var(--navy),var(--purple));
+              background:linear-gradient(135deg,#C2410C,#EA8C2B);
               border-radius:16px; padding:15px 17px; margin:16px 0 4px; min-height:var(--tap); }
   .gp-ico{ font-size:26px; flex:none; }
   .gp-txt{ flex:1; }
@@ -163,13 +163,31 @@
   .pf-lbl{ font-size:11.5px; font-weight:800; color:var(--purple); flex:none; min-width:74px; }
   .pf-list{ display:flex; flex-wrap:wrap; gap:5px; }
   .pf-list i{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-style:normal;
-              font-size:14px; background:#eef4fc; border:1px solid #cfe0f5;
+              font-size:14px; background:#E6F5F3; border:1px solid #A9DBD5;
               border-radius:14px; padding:2px 10px; }
-  .pf-row:nth-of-type(3) .pf-list i{ background:#f3eefa; border-color:#ddd0ee; }
-  .pf-ctx{ font-size:12.5px; color:#6b5b1f; background:#fffaf0; border-top:1px solid var(--line);
+  .pf-row:nth-of-type(3) .pf-list i{ background:#FEF1E6; border-color:#EBD9C2; }
+  .pf-ctx{ font-size:12.5px; color:#7A4B12; background:#FEF9F0; border-top:1px solid var(--line);
            margin-top:9px; padding:8px 13px; }
   .pf-ex{ font-family:'Newsreader',Georgia,serif; direction:ltr; font-size:14.5px;
           color:var(--navy); padding:8px 13px 11px; border-top:1px solid var(--line); }
+  .bl-ico{ font-size:17px; margin-inline-end:6px; }
+
+  /* histoire */
+  .sc-intro{ font-size:13.5px; color:var(--gray); margin-bottom:16px; }
+  .sc-lst{ }
+  .sc{ display:flex; gap:13px; }
+  .sc-g{ display:flex; flex-direction:column; align-items:center; flex:none; }
+  .sc-ico{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center;
+           justify-content:center; font-size:23px; background:var(--soft);
+           border:2px solid var(--line); flex:none; }
+  .sc-fil{ flex:1; width:3px; background:var(--line); margin:5px 0; border-radius:2px; }
+  .sc-d{ flex:1; min-width:0; padding-bottom:20px; }
+  .sc-bloc{ font-size:11.5px; font-weight:800; color:var(--navy); letter-spacing:.02em; }
+  .sc-bloc em{ font-style:normal; color:var(--green); background:var(--green-soft);
+               border-radius:12px; padding:1px 9px; margin-inline-start:6px; font-size:11px; }
+  .sc-fr{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
+          font-size:16px; line-height:1.5; margin-top:6px; }
+  .sc-fa{ font-size:14px; color:var(--ink-2); margin-top:5px; }
 </style>
 </head>
 <body>
@@ -243,7 +261,7 @@
     function bl(item){
       const list = Array.isArray(item.blocs) ? item.blocs : [item.bloc];
       return `<span class="bl" onclick="this.classList.toggle('on')">
-        <span class="bl-fa">${esc(item.fa)}${item.role?` <i>(${esc(item.role)})</i>`:''}</span>
+        <span class="bl-fa">${item.ico?`<span class="bl-ico">${item.ico}</span>`:''}${esc(item.fa)}${item.role?` <i>(${esc(item.role)})</i>`:''}</span>
         <span class="bl-n">${list.length}</span>
         <span class="bl-list">${list.map(x=>`<span class="bl-fr">${esc(x)}</span>`).join('')}</span>
         ${item.ex?`<span class="bl-ex">${esc(item.ex)}</span>`:''}
@@ -302,6 +320,25 @@
          با این کلمه می‌آید، و بارِ مثبت دارد یا منفی.</p>${corps}`, false);
     }
 
+
+    /* 📖 l'histoire : une scène par argument, pour que le plan tienne à la mémoire */
+    function histoireHtml(){
+      if (!data.histoire) return '';
+      const h = data.histoire;
+      const sc = h.scenes.map((x, k) => `
+        <div class="sc">
+          <div class="sc-g"><span class="sc-ico">${x.ico}</span>
+            ${k < h.scenes.length-1 ? '<span class="sc-fil"></span>' : ''}</div>
+          <div class="sc-d">
+            <div class="sc-bloc">${esc(x.bloc)} <em>${esc(x.emo)}</em></div>
+            <div class="sc-fr">${esc(x.fr)}</div>
+            <div class="sc-fa">${esc(x.fa)}</div>
+          </div>
+        </div>`).join('');
+      return card('hist', `📖 ${esc(h.titre)} — ${esc(h.titreFa)}`,
+        `<p class="sc-intro">${esc(h.introFa)}</p><div class="sc-lst">${sc}</div>`, true);
+    }
+
     function extrasHtml(){
       let out = '';
       if (data.echelle) out += card('ech', '🔄 یک ایده، سه ارتفاع',
@@ -356,6 +393,7 @@
           <strong>🎯 روشِ تمرین:</strong> فارسی را از چپ به راست دنبال کن و بلند به فرانسه بگو. هر جا گیر کردی، روی همان عبارتِ فارسی بزن تا فرانسه‌اش نمایش داده شود؛ دوباره بزن تا پنهان شود.
           <div class="hint">این متن‌ها عمداً دور کالوکیشن‌های مصطلح ساخته شده‌اند. جعبه‌ی بالا همان بلوک‌ها را جدا کرده تا در موضوع‌های دیگر هم به کارت بیایند.</div>
         </div>
+        ${histoireHtml()}
         ${pratiqueHtml()}
         ${VERSIONS.length > 1 ? `
         <div class="levelbar">
