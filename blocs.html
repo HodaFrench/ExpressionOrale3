@@ -188,6 +188,20 @@
   .sc-fr{ font-family:'Newsreader',Georgia,serif; direction:ltr; text-align:left;
           font-size:16px; line-height:1.5; margin-top:6px; }
   .sc-fa{ font-size:14px; color:var(--ink-2); margin-top:5px; }
+
+  /* ce que l'élève écrit */
+  .mien{ margin-top:11px; background:var(--soft); border:1px dashed var(--line);
+         border-radius:11px; padding:10px 12px; }
+  .mien-t{ font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:7px; }
+  .mien-e{ font-weight:600; color:var(--green); margin-inline-start:7px; font-size:11.5px; }
+  .mien-x{ width:100%; font-family:inherit; font-size:14.5px; line-height:1.7;
+           border:1px solid var(--line); border-radius:9px; padding:9px 11px;
+           background:#fff; color:var(--ink); resize:vertical; min-height:66px; }
+  .mien-x:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .mien-cmd{ display:flex; gap:9px; margin-top:6px; flex-wrap:wrap; }
+  .mien-b{ background:#fff; border:2px solid var(--line); border-radius:20px; min-height:42px;
+           padding:0 16px; font-family:inherit; font-size:13.5px; font-weight:700;
+           color:var(--ink); cursor:pointer; }
 </style>
 </head>
 <body>
@@ -321,6 +335,58 @@
     }
 
 
+
+    /* ── ce que l'élève écrit reste ── */
+    const CLE = n => `eo3:hist:${id}:${n}`;
+    function lire(n){ try { return JSON.parse(localStorage.getItem(CLE(n))||'null'); } catch(e){ return null; } }
+    function ecrire(n, t){
+      try { localStorage.setItem(CLE(n), JSON.stringify({ t, d: Date.now() })); return true; }
+      catch(e){ return false; }
+    }
+    let minuteur = {};
+    window.noter = function(n){
+      clearTimeout(minuteur[n]);
+      const x = document.getElementById('x'+n), e = document.getElementById('e'+n);
+      if (e) e.textContent = '…';
+      minuteur[n] = setTimeout(() => {
+        const ok = ecrire(n, x.value);
+        if (e) e.textContent = ok ? (x.value.trim() ? '✓ ذخیره شد' : '') : '⚠️ ذخیره نشد';
+      }, 600);
+    };
+    function restaurer(){
+      if (!data.histoire) return;
+      data.histoire.scenes.forEach((_, n) => {
+        const v = lire(n), x = document.getElementById('x'+n), e = document.getElementById('e'+n);
+        if (v && v.t && x){
+          x.value = v.t;
+          if (e) e.textContent = '✓ ' + new Date(v.d).toLocaleDateString('fa-IR');
+        }
+      });
+    }
+    window.exporter = function(){
+      if (!data.histoire) return;
+      const L = [`# ${data.q}`, ''];
+      data.histoire.scenes.forEach((sc, n) => {
+        const v = lire(n);
+        if (v && v.t && v.t.trim()){
+          L.push(`## ${sc.bloc}`, v.t.trim(), '');
+        }
+      });
+      const txt = L.join('\n');
+      if (L.length <= 2){ alert('هنوز چیزی ننوشته‌ای.'); return; }
+      navigator.clipboard ? navigator.clipboard.writeText(txt).then(
+        () => alert('نوشته‌هایت کپی شد. جایی بچسبانشان تا گم نشوند.'),
+        () => prompt('کپی کن:', txt)) : prompt('کپی کن:', txt);
+    };
+    window.effacer = function(){
+      if (!confirm('همه‌ی نوشته‌های این درس پاک شود؟')) return;
+      data.histoire.scenes.forEach((_, n) => { try { localStorage.removeItem(CLE(n)); } catch(e){} });
+      data.histoire.scenes.forEach((_, n) => {
+        const x = document.getElementById('x'+n), e = document.getElementById('e'+n);
+        if (x) x.value = ''; if (e) e.textContent = '';
+      });
+    };
+
     /* 📖 l'histoire : une scène par argument, pour que le plan tienne à la mémoire */
     function histoireHtml(){
       if (!data.histoire) return '';
@@ -333,10 +399,16 @@
             <div class="sc-bloc">${esc(x.bloc)} <em>${esc(x.emo)}</em></div>
             <div class="sc-fr">${esc(x.fr)}</div>
             <div class="sc-fa">${esc(x.fa)}</div>
+            <div class="mien">
+              <div class="mien-t">✍️ حالا تو بنویس — داستان یا ایده‌ی خودت برای این بخش
+                <span class="mien-e" id="e${k}"></span></div>
+              <textarea class="mien-x" id="x${k}" rows="3"
+                placeholder="مثلاً: خودم یک بار ..." oninput="noter(${k})"></textarea>
+            </div>
           </div>
         </div>`).join('');
       return card('hist', `📖 ${esc(h.titre)} — ${esc(h.titreFa)}`,
-        `<p class="sc-intro">${esc(h.introFa)}</p><div class="sc-lst">${sc}</div>`, true);
+        `<p class="sc-intro">${esc(h.introFa)}</p><div class="sc-lst">${sc}</div><div class="mien-cmd"><button class="mien-b" onclick="exporter()">📋 کپیِ نوشته‌هایم</button><button class="mien-b" onclick="effacer()">🗑️ پاک کردن</button></div>`, true);
     }
 
     function extrasHtml(){
@@ -423,6 +495,8 @@
       });
       window.revealAll = show => V().paragraphs.forEach((p,pi)=>{ upto[pi]=show?p.segments.length-1:-1; apply(pi); });
     }
+
+    restaurer();   // remettre ce que l'élève avait écrit
 
     window.addEventListener('scroll', ()=> document.getElementById('top').classList.toggle('show', window.pageYOffset>320));
   </script>
