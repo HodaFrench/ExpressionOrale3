@@ -202,6 +202,9 @@
   .mien-b{ background:#fff; border:2px solid var(--line); border-radius:20px; min-height:42px;
            padding:0 16px; font-family:inherit; font-size:13.5px; font-weight:700;
            color:var(--ink); cursor:pointer; }
+  .bx-note{ font-size:13px; color:var(--gray); background:var(--soft);
+             border-radius:9px; padding:8px 12px; margin-bottom:12px; }
+  .grp em{ font-style:normal; font-size:11.5px; color:var(--gray); font-weight:600; }
 </style>
 </head>
 <body>
@@ -282,15 +285,30 @@
       </span>`;
     }
 
+    /* la boîte suit le niveau du texte : on ne montre pas du B2 à un débutant */
     function outilsHtml(){
       const O = data.outils; if (!O) return '';
-      const grp = (t, arr) => `<h3 class="grp">${t}</h3><div class="blgrid">${arr}</div>`;
+      const N = V().id;                                   // a1 · b1 · b2 · c1
+      const PLAFOND = { a1:['a2'], n7:['a2','b1'], b1:['a2','b1'],
+                        b2:['a2','b1','b2'], c1:['a2','b1','b2'] }[N] || ['a2','b1','b2'];
+      const garde = e => PLAFOND.indexOf(e.niv || 'a2') >= 0;
+
+      const grp = (t, arr) => arr.length
+        ? `<h3 class="grp">${t} <em>${arr.length}</em></h3><div class="blgrid">${arr.map(bl).join('')}</div>`
+        : '';
       const corps =
-        grp('افعال و ساخت‌ها', O.verbes.map(bl).join('')) +
-        grp('کالوکیشن‌ها',    O.collocations.map(bl).join('')) +
-        grp('صفت + اسم',      O.adjectifs.map(bl).join('')) +
-        grp('عبارت‌های استدلالی', O.expressions.map(bl).join(''));
-      return card('outils', '🧱 جعبه‌ی بلوک‌ها — بزن تا همه‌ی معادل‌ها را ببینی', corps, true);
+        grp('افعال و ساخت‌ها',      O.verbes.filter(garde)) +
+        grp('کالوکیشن‌ها',         O.collocations.filter(garde)) +
+        grp('صفت + اسم',           O.adjectifs.filter(garde)) +
+        grp('عبارت‌های استدلالی',   O.expressions.filter(garde));
+
+      const total = Object.values(O).flat().length;
+      const montre = Object.values(O).flat().filter(garde).length;
+      const note = `<p class="bx-note">مطابقِ سطحِ <b>${esc(V().level)}</b> — ${montre} بلوک از ${total}.
+        ${N==='b2'||N==='c1' ? 'همه‌ی بلوک‌ها نمایش داده می‌شوند.'
+          : 'سطحِ بالاتر را بزن تا بلوک‌های سخت‌تر هم بیایند.'}</p>`;
+
+      return card('outils', '🧱 جعبه‌ی بلوک‌ها — بزن تا همه‌ی معادل‌ها را ببینی', note + corps, true);
     }
 
 
